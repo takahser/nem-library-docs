@@ -1,4 +1,4 @@
-#NEM Library Documentation
+# NEM Library Documentation
 
 View the documentation [here](https://aleixmorgadas.github.io/nem-library-docs).
 
