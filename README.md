@@ -10,7 +10,7 @@ Install mkdocs
 pip install mkdocs
 ```
 
-Run mkdocs on server mode (be sure that you are in `docs` folder)
+Run mkdocs on server mode
 
 ```sh
 mkdocs serve
