@@ -1,0 +1,15 @@
+site_name: NEM Library
+pages:
+  - Home: 'index.md'
+  - Documentation:
+    - 'documentation/architecture.md'
+    - 'documentation/blockchain.md'
+    - 'documentation/node.md'
+    - 'documentation/account.md'
+    - 'documentation/namespace.md'
+    - 'documentation/mosaic.md'
+    - 'documentation/transaction.md'
+  - Support: 'support.md'
+  - Roadmap: 'roadmap.md'
+  - About: 'about.md'
+theme: readthedocs
