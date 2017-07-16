@@ -35,7 +35,7 @@ npm install -g typescript
 | [Firefox][Firefox] | \>= 53.0|
 | [Chrome][Chrome]| \>= 58.0.3029.81 |
 | [Chromium][Chromium] | \>= 59.0.3071.86 |
-| [Opera][Opera] | Soon |
+| [Opera][Opera] | \>= 46.0.2597.46 |
 | [Edge][Edge] | \>= 40.15063.0.0 | 
 | [Safari][Safari] | \>= 10.0 |
 | [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) | \>= 5.0.0 |
