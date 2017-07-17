@@ -14,7 +14,7 @@ Multisig accounts can be created by converting a normal account to a multisig ac
 
 [Official Source](https://bob.nem.ninja/docs/#account-related-requests)
 
-## AccountHttp definition
+# AccountHttp definition
 
 ```typescript
 export declare class AccountHttp extends HttpEndpoint {
@@ -173,7 +173,7 @@ export declare class AccountHttp extends HttpEndpoint {
 }
 ```
 
-## AccountHttp usage
+# AccountHttp usage
 
 ```typescript
 import {AccountHttp, NEMLibrary, NetworkTypes, Address} from "nem-library";
@@ -188,6 +188,7 @@ accountHttp.getFromAddress(address).subscribe(accountInfoWithMetaData => {
     console.log(accountInfoWithMetaData);
 });
 ```
+
 
 Output:
 
@@ -216,3 +217,344 @@ AccountInfoWithMetaData {
 ```
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/account/AccountHttpExample.ts)
+
+# Models
+
+## Account
+
+```typescript
+/**
+ * Account model
+ */
+export declare class Account extends PublicAccount {
+    
+    private readonly privateKey;
+    /**
+     * Sign a transaction
+     * @param transaction
+     * @returns {{data: any, signature: string}}
+     */
+    signTransaction(transaction: Transaction): SignedTransaction;
+    
+    /**
+     * constructor with private key
+     * @param privateKey
+     * @returns {Account}
+     */
+    static createWithPrivateKey(privateKey: string): Account;
+}
+```
+
+
+## PublicAccount
+
+```typescript
+
+/**
+ * Public account
+ */
+export declare class PublicAccount {
+    
+    readonly address: Address;
+    readonly publicKey: string;
+    
+    /**
+     * @returns {boolean}
+     */
+    hasPublicKey(): boolean;
+    
+    /**
+     * Creates a new PublicAccount from a public key
+     * @param publicKey
+     * @returns {PublicAccount}
+     */
+    static createWithPublicKey(publicKey: string): PublicAccount;
+}
+```
+
+## Address
+
+```typescript
+/**
+ * Address model
+ */
+export declare class Address {
+    
+    private readonly value;
+    private readonly networkType;
+    constructor(address: string);
+    
+    /**
+     * Get address in plain format ex: TALICEROONSJCPHC63F52V6FY3SDMSVAEUGHMB7C
+     * @returns {string}
+     */
+    plain(): string;
+    
+    /**
+     * Get address in pretty format ex: TALICE-ROONSJ-CPHC63-F52V6F-Y3SDMS-VAEUGH-MB7C
+     * @returns {string}
+     */
+    pretty(): string;
+    
+    /**
+     * Address network
+     * @returns {number}
+     */
+    network(): NetworkTypes;
+}
+
+```
+
+## Balance
+
+```typescript
+/**
+ * Balance model
+ */
+export declare class Balance {
+    
+    /**
+     * The balance of the account in micro NEM.
+     */
+    readonly balance: number;
+    
+    /**
+     * The vested part of the balance of the account in micro NEM.
+     */
+    readonly vestedBalance: number;
+    
+    /**
+     * The unvested part of the balance of the account in micro NEM.
+     */
+    readonly unvestedBalance: number;
+}
+
+```
+## AccountInfo
+
+```typescript
+export declare enum RemoteStatus {
+    REMOTE = "REMOTE",
+    ACTIVATING = "ACTIVATING",
+    ACTIVE = "ACTIVE",
+    DEACTIVATING = "DEACTIVATING",
+    INACTIVE = "INACTIVE",
+}
+export declare enum Status {
+    UNKNOWN = "UNKNOWN",
+    LOCKED = "LOCKED",
+    UNLOCKED = "UNLOCKED",
+}
+
+/**
+ * The account structure describes basic information for an account.
+ */
+export declare class AccountInfo {
+    
+    /**
+     * The balance of the account in micro NEM.
+     */
+    readonly balance: Balance;
+    
+    /**
+     * The importance of the account.
+     */
+    readonly importance: number;
+    
+    /**
+     * The public key of the account.
+     */
+    readonly publicAccount: PublicAccount;
+    
+    /**
+     * The number blocks that the account already harvested.
+     */
+    readonly harvestedBlocks: number;
+    
+    /**
+     * Total number of cosignatories
+     */
+    readonly cosignatoriesCount?: number;
+    
+    /**
+     * Minimum number of cosignatories needed for a transaction to be processed
+     */
+    readonly minCosignatories?: number;
+}
+
+export declare class AccountInfoWithMetaData extends AccountInfo {
+    
+    /**
+     * The harvesting status of a queried account
+     */
+    readonly status: Status;
+    
+    /**
+     * The status of remote harvesting of a queried account
+     */
+    readonly remoteStatus: RemoteStatus;
+    
+    /**
+     * JSON array of AccountInfo structures. The account is cosignatory for each of the accounts in the array.
+     */
+    readonly cosignatoryOf: AccountInfo[];
+    
+    /**
+     * JSON array of AccountInfo structures. The array holds all accounts that are a cosignatory for this account.
+     */
+    readonly cosignatories: AccountInfo[];
+}
+
+export declare class AccountStatus {
+    
+    /**
+     * The harvesting status of a queried account
+     */
+    readonly status: Status;
+    
+    /**
+     * The status of remote harvesting of a queried account
+     */
+    readonly remoteStatus: RemoteStatus;
+    
+    /**
+     * JSON array of AccountInfo structures. The account is cosignatory for each of the accounts in the array.
+     */
+    readonly cosignatoryOf: AccountInfo[];
+    
+    /**
+     * JSON array of AccountInfo structures. The array holds all accounts that are a cosignatory for this account.
+     */
+    readonly cosignatories: AccountInfo[];
+}
+
+```
+## AccountHarvestInfo
+
+```typescript
+/**
+ * A HarvestInfo object contains information about a block that an account harvested.
+ */
+export declare class AccountHarvestInfo {
+    
+    /**
+     * The number of seconds elapsed since the creation of the nemesis block.
+     */
+    readonly timeStamp: number;
+    
+    /**
+     * The database id for the harvested block.
+     */
+    readonly id: number;
+    
+    /**
+     * The block difficulty. The initial difficulty was set to 100000000000000. The block difficulty is always between one tenth and ten times the initial difficulty.
+     */
+    readonly difficulty: number;
+    
+    /**
+     * The total fee collected by harvesting the block.
+     */
+    readonly totalFee: number;
+    
+    /**
+     * The height of the harvested block.
+     */
+    readonly height: number;
+}
+
+```
+
+## AccountHistoricalInfo
+
+```typescript
+/**
+ * Nodes can support a feature for retrieving historical data of accounts.
+ * If this is supported, it returns an array of AccountHistoricalInfo
+ */
+export declare class AccountHistoricalInfo {
+    
+    /**
+     * The balance of the account in micro NEM.
+     */
+    readonly balance: Balance;
+    
+    /**
+     * The importance of the account.
+     */
+    readonly importance: number;
+    
+    /**
+     * The public key of the account.
+     */
+    readonly address: Address;
+    
+    /**
+     * The page rank part of the importance.
+     */
+    readonly pageRank: number;
+}
+```
+
+## AccountImportanceInfo
+
+```typescript
+/**
+ * Each account is assigned an importance in the NEM network. The ability of an account to generate new blocks is proportional to its importance. The importance is a number between 0 and 1.
+ */
+export declare class AccountImportanceInfo {
+    
+    /**
+     * The address of the account.
+     */
+    readonly address: Address;
+    
+    /**
+     * Substructure that describes the importance of the account.
+     */
+    readonly importance: AccountImportanceData;
+}
+
+/**
+ * Substructure that describes the importance of the account.
+ */
+export declare class AccountImportanceData {
+    /**
+     * Indicates if the fields "score", "ev" and "height" are available.isSet can have the values 0 or 1. In case isSet is 0 the fields are not available.
+     */
+    readonly isSet: number;
+    
+    /**
+     * The importance of the account. The importance ranges between 0 and 1.
+     */
+    readonly score?: number;
+    
+    /**
+     * The page rank portion of the importance. The page rank ranges between 0 and 1.
+     */
+    readonly ev?: number;
+    
+    /**
+     * The height at which the importance calculation was performed.
+     */
+    readonly height?: number;
+}
+
+```
+## NodeHarvestInfo
+
+```typescript
+export declare class NodeHarvestInfo {
+    
+    /**
+     * Maximum unlocked slots
+     */
+    readonly maxUnlocked: number;
+    
+    /**
+     * Number of slots unlocked
+     */
+    readonly numUnlocked: number;
+}
+
+```
