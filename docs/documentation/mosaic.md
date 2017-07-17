@@ -30,16 +30,65 @@ import {MosaicHttp, NEMLibrary, NetworkTypes} from "nem-library";
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const mosaicHttp = new MosaicHttp({domain: TestVariables.DEFAULT_TEST_DOMAIN});
+const mosaicHttp = new MosaicHttp({domain: "104.128.226.60"});
 const namespace = "server";
 
 mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions => {
     console.log(mosaicDefinitions);
 });
-    
 ```
 
 Output
+
+```
+[ MosaicDefinition {
+    creator:
+     PublicAccount {
+       address: [Object],
+       publicKey: '0e4573c386c5f891d2e61bfb5a96144fbd9881980b885751dba471ae1807dc34' },
+    id: MosaicId { namespaceId: 'server', name: 'testmosaic' },
+    description: 'descritpio',
+    properties:
+     MosaicProperties {
+       initialSupply: 1000000,
+       supplyMutable: true,
+       transferable: true,
+       divisibility: 0 },
+    levy: undefined,
+    metaId: 447 },
+  MosaicDefinition {
+    creator:
+     PublicAccount {
+       address: [Object],
+       publicKey: '0e4573c386c5f891d2e61bfb5a96144fbd9881980b885751dba471ae1807dc34' },
+    id: MosaicId { namespaceId: 'server', name: 'alcapone' },
+    description: 'the one and only al capone',
+    properties:
+     MosaicProperties {
+       initialSupply: 10000000,
+       supplyMutable: true,
+       transferable: true,
+       divisibility: 0 },
+    levy: MosaicLevy { type: 1, recipient: [Object], mosaicId: [Object], fee: 5 },
+    metaId: 385 },
+  MosaicDefinition {
+    creator:
+     PublicAccount {
+       address: [Object],
+       publicKey: '0e4573c386c5f891d2e61bfb5a96144fbd9881980b885751dba471ae1807dc34' },
+    id: MosaicId { namespaceId: 'server', name: 'masteroftheworld' },
+    description: 'description',
+    properties:
+     MosaicProperties {
+       initialSupply: 100000000,
+       supplyMutable: true,
+       transferable: true,
+       divisibility: 0 },
+    levy: MosaicLevy { type: 1, recipient: [Object], mosaicId: [Object], fee: 5 },
+    metaId: 384 } ]
+```
+
+[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/mosaic/MosaicHttpExample.ts)
 
 # Models
 
