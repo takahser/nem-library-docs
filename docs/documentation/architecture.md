@@ -20,8 +20,8 @@ himself/herself comfortable with the easy way to fetch the state, and create new
 
 NEM Library follows the next rules:
 
-- **Infrastructure**: The HTTP requests are done following the Repository Pattern, and they return NEM Domain immutable 
-models via the Observable Pattern. So, the state fetched from the NEM Blockchain cannot be changed via code.
+- **Infrastructure**: The HTTP requests are done following the [Repository Pattern](https://msdn.microsoft.com/en-us/library/ff649690.aspx), and they return NEM Domain immutable 
+models via the [Observable Pattern](https://en.wikipedia.org/wiki/Observer_pattern). So, the state fetched from the NEM Blockchain cannot be changed via code.
 
 - **NEM Domain models**: The NEM Domain models are immutable by definition, the developer cannot change its attributes. 
 Instead, the developer can create Transactions and dispatch it to NEM Blockchain via TransactionHTTP.
