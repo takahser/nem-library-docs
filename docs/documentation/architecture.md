@@ -59,8 +59,7 @@ ReactiveX will offer developers the proper tools to handling these sort of error
 - **Concurrency made easy**: Observables and Schedulers in ReactiveX allow the programmer to abstract away
 low-level threading, synchronization, and concurrency issues.
 
-- **Frontend**: Simple manipulation of UI events and API responses on the Web using RxJS, or on mobile
-with Rx.NET and RxJava.
+- **Frontend**: Simple manipulation of UI events and API responses on the Web using RxJS
 
 - **Backend**: Embrace ReactiveX's asynchronicity, enabling concurrency and implementation independence.
 

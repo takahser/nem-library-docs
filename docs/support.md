@@ -26,7 +26,7 @@ Please, take in consideration the next template to report your issue:
 
 Provide as much information as you can.
 
-### **Open a new issue [here](github-issues)**.
+### **Open a new issue [here][github-issues]**.
 
 
 ## Feature requests
@@ -41,5 +41,5 @@ the feature you would like to see, why you need it, and how it should work.
 
 We love to listen your thoughts about NEM Library, you can find us in [Gitter][Gitter] or checkout our [About section](about.md)
 
-[github-issues]:(https://github.com/aleixmorgadas/nem-library-docs/issues)
+[github-issues]: https://github.com/aleixmorgadas/nem-library-docs/issues
 [Gitter]: https://gitter.im/nem-library-ts/Lobby
