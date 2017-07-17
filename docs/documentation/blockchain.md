@@ -8,7 +8,7 @@ Transactions reflect all account activities. In order for a client to have an up
 
 [Official Source](https://bob.nem.ninja/docs/#block-chain-related-requests)
 
-## BlockHttp definition
+# BlockHttp definition
 
 ```typescript
 export declare type BlockHeight = number;
@@ -28,7 +28,7 @@ export declare class BlockHttp extends HttpEndpoint {
 
 ```
 
-## BlockHttp usage
+# BlockHttp usage
 
 ```typescript
 import {BlockHttp, NEMLibrary, NetworkTypes} from "nem-library";
@@ -58,9 +58,9 @@ Block {
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/BlockHttpExample.ts)
 
-## Models
+# Models
 
-###Block
+## Block
 
 ```typescript
 
