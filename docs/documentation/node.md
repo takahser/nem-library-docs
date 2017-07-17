@@ -68,3 +68,227 @@ nodeHttp.getNodeInfo().subscribe(node => {
 });
 ```
 
+## Models
+
+### Node
+
+```typescript
+/**
+ * Nodes are the entities that perform communication in the network like sending and receiving data.
+ * A node has an identity which is tied to an account through which the node can identify itself to the network.
+ * The communication is done through the endpoint of the node. Additionally a node provides meta data information.
+ */
+export declare class Node {
+    
+    /**
+     * Denotes the beginning of the meta data substructure.
+     */
+    readonly metaData: NodeMetaData;
+    
+    /**
+     * Denotes the beginning of the endpoint substructure.
+     */
+    readonly endpoint: NodeEndpoint;
+    
+    /**
+     * Denotes the beginning of the identity substructure.
+     */
+    readonly identity: NodeIdentity;
+    
+}
+
+/**
+ * Node meta data
+ */
+export declare class NodeMetaData {
+    
+    /**
+     * The number of features the nodes has.
+     */
+    readonly features: number;
+    
+    /**
+     * The network id
+     */
+    readonly network: NetworkTypes;
+    
+    /**
+     * The name of the application that is running the node.
+     */
+    readonly application: string;
+    
+    /**
+     * The version of the application.
+     */
+    readonly version: string;
+    
+    /**
+     * The underlying platform (OS, java version).
+     */
+    readonly platform: string;
+}
+
+/**
+ * Node endpoint
+ */
+export declare class NodeEndpoint {
+    
+    /**
+     * The protocol used for the communication (HTTP or HTTPS).
+     */
+    readonly protocol: string;
+    
+    /**
+     * The port used for the communication.
+     */
+    readonly port: number;
+    
+    /**
+     * The IP address of the endpoint.
+     */
+    readonly host: string;
+}
+
+/**
+ * Node identity
+ */
+export declare class NodeIdentity {
+    
+    /**
+     * The name of the node.
+     */
+    readonly name: string;
+    
+    /**
+     * The public key used to identify the node.
+     */
+    readonly publickey: string;
+}
+
+```
+
+### NisNodeInfo
+
+```typescript
+/**
+ * A NodeCollection object holds arrays of nodes with different statuses.
+ */
+export declare class NisNodeInfo {
+    
+    /**
+     * Denotes the beginning of the node substructure.
+     */
+    readonly node: Node;
+    
+    /**
+     * Denotes the beginning of the application meta data substructure.
+     */
+    readonly nisInfo: ApplicationMetaData;
+}
+
+/**
+ * The application meta data object supplies additional information about the application running on a node.
+ */
+export declare class ApplicationMetaData {
+    
+    /**
+     * The current network time, i.e. the number of seconds that have elapsed since the creation of the nemesis block.
+     */
+    readonly currentTime: number;
+    
+    /**
+     * The name of the application running on the node.
+     */
+    readonly application: string;
+    
+    /**
+     * The network time when the application was started.
+     */
+    readonly startTime: number;
+    
+    /**
+     * The application version.
+     */
+    readonly version: string;
+    
+    /**
+     * The signer of the certificate used by the application.
+     */
+    readonly signer: string;
+}
+```
+
+### NodeCollection
+
+```typescript
+/**
+ * A NodeCollection object holds arrays of nodes with different statuses.
+ */
+export declare class NodeCollection {
+    
+    /**
+     * A connection to the node cannot be established.
+     */
+    readonly inactive: Node[];
+    
+    /**
+     * A connection can be established and the remote node responds in a timely manner.
+     */
+    readonly active: Node[];
+    
+    /**
+     * A connection can be established but the node cannot provide information within the timeout limits.
+     */
+    readonly busy: Node[];
+    
+    /**
+     * A fatal error occurs when trying to establish a connection or the node couldn't authenticate itself correctly.
+     */
+    readonly failure: Node[];
+}
+```
+
+### ExtendedNodeExperience
+
+```typescript
+/**
+ * When exchanging data with other nodes the result of the communication is divided into three
+ * different outcomes: success, neutral and failure.
+ * In the cases of success and failure the result is saved to be able to judge the quality of a node.
+ * This has influence on the probability that a certain node is selected as partner.
+ */
+export declare class ExtendedNodeExperience {
+    
+    /**
+     * Denotes the beginning of the of the Node substructure.
+     */
+    readonly node: Node;
+    
+    /**
+     * The number of synchronization attempts the node had with the remote node.
+     */
+    readonly syncs: number;
+    
+    /**
+     * Denotes the beginning of the of the NodeExperience substructure.
+     */
+    readonly experience: ExtendedNodeExperienceData;
+}
+
+/**
+ * Node experience data
+ */
+export declare class ExtendedNodeExperienceData {
+    
+    /**
+     * The number of successful communications with the remote node.
+     */
+    readonly s: number;
+    
+    /**
+     * The number of failed communications with the remote node.
+     */
+    readonly f: number;
+}
+
+```

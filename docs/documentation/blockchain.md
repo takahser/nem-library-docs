@@ -55,7 +55,7 @@ export declare enum BlockVersion {
 
 export declare enum BlockType {
   NEMESIS = -1,
-  REGULART = 1
+  REGULAR = 1
 }
 
 /**
