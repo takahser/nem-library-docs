@@ -4,7 +4,7 @@ NEM Library works perfect in a [multitier architecture](https://en.wikipedia.org
 it is the layer the between your business logic and the data tier. It enables the developers focus on the product rather than the 
 NEM Blockchain specific API details due its higher abstraction.
 
-![Tiers](../assets/images/nem-library-architecture.png)
+![Tiers](../img/nem-library-architecture.png)
 
 - **NEM Blockchain**: Where the truth resides.
 - **NEM Library**: Abstraction layer.
@@ -14,7 +14,7 @@ NEM Blockchain specific API details due its higher abstraction.
 NEM Library has a functional programming approach to deal with the immutability of the NEM Blockchain. So, the developer will find
 himself/herself comfortable with the easy way to fetch the state, and create new Transactions in order to change that state.
 
-![Functional](../assets/images/nem-library-functional-approach.png)
+![Functional](../img/nem-library-functional-approach.png)
 
 ### Brief description of NEM Library organization
 

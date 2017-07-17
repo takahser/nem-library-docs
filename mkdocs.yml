@@ -13,3 +13,7 @@ pages:
   - Roadmap: 'roadmap.md'
   - About: 'about.md'
 theme: readthedocs
+repo_url: https://github.com/aleixmorgadas/nem-library-docs/
+site_description: NEM Library Documentation for NEM Blockchain.
+google_analytics: ['UA-83164077-5', 'mkdocs.org']
+

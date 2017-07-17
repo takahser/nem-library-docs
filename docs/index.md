@@ -3,7 +3,7 @@
 NEM Library is an abstraction for [NEM Blockchain][NEM-official] using a [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) approach
 for creating Blockchain applications.
 
-![NEM Logo](assets/images/Nem-Logomark.png)
+![NEM Logo](img/Nem-Logomark.png)
 
 ## Installation
 
@@ -22,7 +22,7 @@ to be used, without counting other great benefits that TypeScript provides.
 npm install -g typescript
 ```
 
-![TypeScript Superset](assets/images/typescript-superset.png)
+![TypeScript Superset](img/typescript-superset.png)
 
 ## Platforms supported
 
@@ -44,7 +44,7 @@ npm install -g typescript
 Because of Ionic generates mobile applications, Android and iOS, the support is provided.  
 Remark that [Windows Phone](https://en.wikipedia.org/wiki/Windows_Phone) is not supported yet.
  
-![Tech](assets/images/technologies-supported.png)
+![Tech](img/technologies-supported.png)
 
 ## TypeScript compiler options
 
