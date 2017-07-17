@@ -21,11 +21,10 @@ himself/herself comfortable with the easy way to fetch the state, and create new
 NEM Library follows the next rules:
 
 - **Infrastructure**: The HTTP requests are done following the [Repository Pattern](https://msdn.microsoft.com/en-us/library/ff649690.aspx), and they return NEM Domain immutable 
-models via the [Observable Pattern](https://en.wikipedia.org/wiki/Observer_pattern). So, the state fetched from the NEM Blockchain cannot be changed via code.
+models via the [Observable Pattern](https://en.wikipedia.org/wiki/Observer_pattern). So, the state fetched from the NEM Blockchain cannot be changed via code. 
 
-- **NEM Domain models**: The NEM Domain models are immutable by definition, the developer cannot change its attributes. 
-Instead, the developer can create Transactions and dispatch it to NEM Blockchain via TransactionHTTP.
-
+- **NEM Domain models**: The NEM Domain models are [immutable](https://en.wikipedia.org/wiki/Immutable_object) by definition, the developer cannot change its attributes. 
+Instead, the developer have to create new Transactions and dispatch them to NEM Blockchain via TransactionHTTP, in order to change the NEM Blockchain state.
 
 ## Characteristics
 
@@ -45,6 +44,8 @@ A key objective is for interoperability to become a natural design of the NEM Li
 ideally to extend that components to work with other products or systems.
 
 ## Reactive
+
+NEM Library uses [RxJS](http://reactivex.io/) as Reactive Library. See its docs [here](http://reactivex.io/rxjs/)
 
 - **Functional**: Developers can avoid intricate stateful programs using clean input/output functions over
 observable streams.
