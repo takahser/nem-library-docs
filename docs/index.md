@@ -61,7 +61,7 @@ Until nem-library upgrade into [RxJS 6.0](https://www.npmjs.com/package/rxjs), `
 
 ## Changelog
 
-### 0.2.31
+### 0.2.32
 
 Stable version
 
