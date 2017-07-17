@@ -529,3 +529,31 @@ export declare class NodeHarvestInfo {
 }
 
 ```
+
+Output:
+
+```
+AccountInfoWithMetaData {
+  balance: 
+   Balance {
+     balance: 50481110745315,
+     vestedBalance: 50480744575985,
+     unvestedBalance: 366169330 },
+  importance: 0.005735794657626706,
+  publicAccount: 
+   PublicAccount {
+     address: 
+      Address {
+        value: 'TALICEROONSJCPHC63F52V6FY3SDMSVAEUGHMB7C',
+        networkType: 152 },
+     publicKey: '74375c15c6ce6bdbde59be88a069745a0de34444ea933f8c9f46ef407cf30196' },
+  harvestedBlocks: 116319,
+  cosignatoriesCount: undefined,
+  minCosignatories: undefined,
+  status: 'UNLOCKED',
+  remoteStatus: 'INACTIVE',
+  cosignatoryOf: [],
+  cosignatories: [] }
+```
+
+[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/account/AccountHttpExample.ts)
