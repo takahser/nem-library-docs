@@ -4,7 +4,7 @@ Nodes are the entities that exchange data in a network. A node is essentially a 
 
 [Official Source](https://bob.nem.ninja/docs/#node-related-requests)
 
-## NodeHttp definition
+# NodeHttp definition
 
 ```typescript
 export declare class NodeHttp extends HttpEndpoint {
@@ -54,7 +54,7 @@ export declare class NodeHttp extends HttpEndpoint {
 }
 ```
 
-## NodeHttp usage
+# NodeHttp usage
 
 ```typescript
 import {NodeHttp, NEMLibrary, NetworkTypes} from "nem-library";
@@ -85,9 +85,9 @@ Node {
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/node/NodeHttpExample.ts)
 
-## Models
+# Models
 
-### Node
+## Node
 
 ```typescript
 /**
@@ -184,7 +184,7 @@ export declare class NodeIdentity {
 
 ```
 
-### NisNodeInfo
+## NisNodeInfo
 
 ```typescript
 /**
@@ -235,7 +235,7 @@ export declare class ApplicationMetaData {
 }
 ```
 
-### NodeCollection
+## NodeCollection
 
 ```typescript
 /**
@@ -265,7 +265,7 @@ export declare class NodeCollection {
 }
 ```
 
-### ExtendedNodeExperience
+## ExtendedNodeExperience
 
 ```typescript
 /**
