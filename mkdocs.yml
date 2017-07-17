@@ -10,6 +10,12 @@ pages:
     - 'documentation/namespace.md'
     - 'documentation/mosaic.md'
     - 'documentation/transaction.md'
+  - Guide:
+    - 'guide/overview.md'
+    - 'guide/account.md'
+    - 'guide/transaction.md'
+    - 'guide/node.md'
+    - 'guide/namespace.md'
   - Support: 'support.md'
   - Roadmap: 'roadmap.md'
   - About: 'about.md'
