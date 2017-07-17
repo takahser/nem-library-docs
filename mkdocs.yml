@@ -17,6 +17,7 @@ pages:
     - 'guide/node.md'
     - 'guide/namespace.md'
   - Support: 'support.md'
+  - Development process: 'development_process.md'
   - Roadmap: 'roadmap.md'
   - About: 'about.md'
 theme: readthedocs
