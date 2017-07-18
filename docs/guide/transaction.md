@@ -48,7 +48,7 @@ const signedTransaction = account.signTransaction(transferTransaction);
 transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.log(x));
 ```
 
-### How to send a Transaction with a Message
+### How to create a Transaction with a Message
 
 ```typescript
 import {
