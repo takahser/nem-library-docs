@@ -43,7 +43,7 @@ const transferTransaction = TransferTransaction.create(
     EmptyMessage
 );
 
-const signedTransaction = account.signTransaction(multisigTransaction);
+const signedTransaction = account.signTransaction(transferTransaction);
 
 transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.log(x));
 ```
@@ -74,6 +74,8 @@ import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Transaction, XEM
 } from "nem-library";
+
+declare let process: any;
 
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
