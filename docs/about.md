@@ -1,6 +1,6 @@
 # About NEM Library
 
-The NEM Library origin is the need of a new development approach for enterprise
+The origin of NEM Library is the need of a new development approach for enterprise
 ready solutions build on top of [NEM Blockchain][NEM-official].
 
 The characteristics of NEM Library are similar to [NEM Framework][NEM-Framework] definition, but
