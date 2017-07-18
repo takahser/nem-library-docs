@@ -13,4 +13,22 @@ blockHttp.getBlockByHeight(1033023).subscribe(block => {
     console.log(block);
 });
 ```
+[Source code]()
+
+
+### How to get Last block of the blockchain
+
+```typescript
+import {ChainHttp, NEMLibrary, NetworkTypes} from "nem-library";
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const chainHttp = new ChainHttp({domain: "104.128.226.60"});
+chainHttp.getBlockchainLastBlock().subscribe(block => {
+    console.log(block);
+});
+```
+
+
 
