@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Account - NEM Library</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Account";
+    var mkdocs_page_input_path = "documentation/account.md";
+    var mkdocs_page_url = "/documentation/account/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83164077-5', 'mkdocs.org');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NEM Library</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Account</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#account-related-requests">Account related requests</a></li>
+    
+
+    <li class="toctree-l3"><a href="#accounthttp-definition">AccountHttp definition</a></li>
+    
+
+    <li class="toctree-l3"><a href="#accounthttp-usage">AccountHttp usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#models">Models</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#account">Account</a></li>
+        
+            <li><a class="toctree-l4" href="#publicaccount">PublicAccount</a></li>
+        
+            <li><a class="toctree-l4" href="#address">Address</a></li>
+        
+            <li><a class="toctree-l4" href="#balance">Balance</a></li>
+        
+            <li><a class="toctree-l4" href="#accountinfo">AccountInfo</a></li>
+        
+            <li><a class="toctree-l4" href="#accountharvestinfo">AccountHarvestInfo</a></li>
+        
+            <li><a class="toctree-l4" href="#accounthistoricalinfo">AccountHistoricalInfo</a></li>
+        
+            <li><a class="toctree-l4" href="#accountimportanceinfo">AccountImportanceInfo</a></li>
+        
+            <li><a class="toctree-l4" href="#nodeharvestinfo">NodeHarvestInfo</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../blockchain/">Blockchain</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../development_process/">Development process</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NEM Library</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+    
+    <li>Account</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/account.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="account-related-requests">Account related requests</h1>
+<p>This chapter will guide you through the process of retrieving account information from a NEM Infrastructure Server. The information that can be retrieved is the durable account data, its meta data and information about transactions and harvested blocks.</p>
+<p>NIS supports two different kind of accounts: normal accounts and multsig (short for: multi signature) accounts:</p>
+<p><strong>Normal accounts:</strong></p>
+<p>Normal accounts are created and controlled by a private key. Any action for the account like sending NEM to another account via a transfer transaction is signed with this private key. If an attacker gains knowledge of the private key, he/she can rob the account. The private key must therefore be kept secret by all means.</p>
+<p><strong>Multisig accounts:</strong></p>
+<p>Multisig accounts can be created by converting a normal account to a multisig account via a aggregate modification transaction. This adds cosignatories to the account. After that modification, only the cosignatories can initiate an action for the account. Any action must be signed by all cosignatories. This makes a multisig account significantly more secure than a normal account. When a single cosignatory private key is gained by an attacker, the attacker still can`t initiate any action on the account since all cosignatories must sign. It is strongly recommended to convert any account holding a significantly high amount of NEM into a multisig account with at least 3 cosignatories. Once converted to a multisig account, the original private key for the account plays no role any more.</p>
+<p><a href="https://bob.nem.ninja/docs/#account-related-requests">Official Source</a></p>
+<h1 id="accounthttp-definition">AccountHttp definition</h1>
+<pre><code class="typescript">export declare class AccountHttp extends HttpEndpoint {
+    constructor(serverConfig?: ServerConfig);
+
+    /**
+     * Gets an AccountInfoWithMetaData for an account.
+     * @param address - Address
+     * @return Observable&lt;AccountInfoWithMetaData&gt;
+     */
+    getFromAddress(address: Address): Observable&lt;AccountInfoWithMetaData&gt;;
+
+    /**
+     * Gets an AccountInfoWithMetaData for an account with publicKey
+     * @param publicKey - NEM
+     * @return Observable&lt;AccountInfoWithMetaData&gt;
+     */
+    getFromPublicKey(publicKey: string): Observable&lt;AccountInfoWithMetaData&gt;;
+
+    /**
+     * Given a delegate (formerly known as remote) account`s address, gets the AccountMetaDataPair for the account for which the given account is the delegate account.
+     * If the given account address is not a delegate account for any account, the request returns the AccountMetaDataPair for the given address.
+     * @param address - Address
+     * @return Observable&lt;AccountInfoWithMetaData&gt;
+     */
+    getOriginalAccountDataFromDelegatedAccountAddress(address: Address): Observable&lt;AccountInfoWithMetaData&gt;;
+
+    /**
+     * retrieve the original account data by providing the public key of the delegate account.
+     * @param publicKey - string
+     * @return Observable&lt;AccountInfoWithMetaData&gt;
+     */
+    getOriginalAccountDataFromDelegatedAccountPublicKey(publicKey: string): Observable&lt;AccountInfoWithMetaData&gt;;
+
+    /**
+     * Gets the AccountMetaData from an account.
+     * @param address - NEM Address
+     * @return Observable&lt;AccountStatus&gt;
+     */
+    status(address: Address): Observable&lt;AccountStatus&gt;;
+
+    /**
+     * A transaction is said to be incoming with respect to an account if the account is the recipient of the transaction.
+     * In the same way outgoing transaction are the transactions where the account is the sender of the transaction.
+     * Unconfirmed transactions are those transactions that have not yet been included in a block.
+     * Unconfirmed transactions are not guaranteed to be included in any block
+     * @param address - The address of the account.
+     * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
+     * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @return Observable&lt;Transaction[]&gt;
+     */
+    incomingTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
+
+    /**
+     * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
+     * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
+     * @param address - The address of the account.
+     * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
+     * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @return Observable&lt;Transaction[]&gt;
+     */
+    outgoingTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
+
+    /**
+     * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
+     * A maximum of 25 transaction meta data pairs is returned.
+     * For details about sorting and discussion of the second parameter see Incoming transactions.
+     * @param address - The address of the account.
+     * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
+     * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @return Observable&lt;Transaction[]&gt;
+     */
+    allTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
+
+    /**
+     * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
+     * @param address - NEM Address
+     * @return Observable&lt;Transaction[]&gt;
+     */
+    unconfirmedTransactions(address: Address): Observable&lt;Transaction[]&gt;;
+
+    /**
+     * Gets an array of harvest info objects for an account.
+     * @param address - Address
+     * @param hash - string
+     * @return Observable&lt;AccountHarvestInfo[]&gt;
+     */
+    getHarvestInfoDataForAnAccount(address: Address, hash: string): Observable&lt;AccountHarvestInfo[]&gt;;
+
+    /**
+     * Gets an array of account importance view model objects.
+     * @return Observable&lt;AccountImportanceInfo[]&gt;
+     */
+    getAccountImportances(): Observable&lt;AccountImportanceInfo[]&gt;;
+
+    /**
+     * Gets an array of namespace objects for a given account address.
+     * The parent parameter is optional. If supplied, only sub-namespaces of the parent namespace are returned.
+     * @param address - Address
+     * @param parent - The optional parent namespace id.
+     * @param id - The optional namespace database id up to which namespaces are returned.
+     * @param pageSize - The (optional) number of namespaces to be returned.
+     * @return Observable&lt;Namespace[]&gt;
+     */
+    getNamespaceOwnedByAddress(address: Address, parent?: string, id?: string, pageSize?: number): Observable&lt;Namespace[]&gt;;
+
+    /**
+     * Gets an array of mosaic definition objects for a given account address. The parent parameter is optional.
+     * If supplied, only mosaic definitions for the given parent namespace are returned.
+     * The id parameter is optional and allows retrieving mosaic definitions in batches of 25 mosaic definitions.
+     * @param address - The address of the account.
+     * @param parent - The optional parent namespace id.
+     * @param id - The optional mosaic definition database id up to which mosaic definitions are returned.
+     * @return Observable&lt;MosaicDefinition[]&gt;
+     */
+    getMosaicCreatedByAddress(address: Address, parent?: string, id?: string): Observable&lt;MosaicDefinition[]&gt;;
+
+    /**
+     * Gets an array of mosaic objects for a given account address.
+     * @param address - Address
+     * @return Observable&lt;Mosaic[]&gt;
+     */
+    getMosaicOwnedByAddress(address: Address): Observable&lt;Mosaic[]&gt;;
+
+    /**
+     * Unlocks an account (starts harvesting).
+     * @param host - string
+     * @param privateKey - string
+     * @return Observable&lt;boolean&gt;
+     */
+    unlockHarvesting(host: string, privateKey: string): Observable&lt;boolean&gt;;
+
+    /**
+     * Locks an account (stops harvesting).
+     * @param host - string
+     * @param privateKey - string
+     * @return Observable&lt;boolean&gt;
+     */
+    lockHarvesting(host: string, privateKey: string): Observable&lt;boolean&gt;;
+
+    /**
+     * Each node can allow users to harvest with their delegated key on that node.
+     * The NIS configuration has entries for configuring the maximum number of allowed harvesters and optionally allow harvesting only for certain account addresses.
+     * The unlock info gives information about the maximum number of allowed harvesters and how many harvesters are already using the node.
+     * @return Observable&lt;NodeHarvestInfo&gt;
+     */
+    unlockInfo(): Observable&lt;NodeHarvestInfo&gt;;
+
+    /**
+     * Gets historical information for an account.
+     * @param address - The address of the account.
+     * @param startHeight - The block height from which on the data should be supplied.
+     * @param endHeight - The block height up to which the data should be supplied. The end height must be greater than or equal to the start height.
+     * @param increment - The value by which the height is incremented between each data point. The value must be greater than 0. NIS can supply up to 1000 data points with one request. Requesting more than 1000 data points results in an error.
+     * @return Observable&lt;AccountHistoricalInfo[]&gt;
+     */
+    getHistoricalAccountData(address: Address, startHeight: number, endHeight: number, increment: number): Observable&lt;AccountHistoricalInfo[]&gt;;
+}
+</code></pre>
+
+<h1 id="accounthttp-usage">AccountHttp usage</h1>
+<pre><code class="typescript">import {AccountHttp, NEMLibrary, NetworkTypes, Address} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const address = new Address(&quot;&quot;);
+
+const accountHttp = new AccountHttp({domain: &quot;104.128.226.60&quot;});
+accountHttp.getFromAddress(address).subscribe(accountInfoWithMetaData =&gt; {
+    console.log(accountInfoWithMetaData);
+});
+</code></pre>
+
+<p>Output:</p>
+<pre><code>AccountInfoWithMetaData {
+  balance: 
+   Balance {
+     balance: 50481110745315,
+     vestedBalance: 50480744575985,
+     unvestedBalance: 366169330 },
+  importance: 0.005735794657626706,
+  publicAccount: 
+   PublicAccount {
+     address: 
+      Address {
+        value: 'TALICEROONSJCPHC63F52V6FY3SDMSVAEUGHMB7C',
+        networkType: 152 },
+     publicKey: '74375c15c6ce6bdbde59be88a069745a0de34444ea933f8c9f46ef407cf30196' },
+  harvestedBlocks: 116319,
+  cosignatoriesCount: undefined,
+  minCosignatories: undefined,
+  status: 'UNLOCKED',
+  remoteStatus: 'INACTIVE',
+  cosignatoryOf: [],
+  cosignatories: [] }
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/account/AccountHttpExample.ts">Run the code</a></p>
+<h1 id="models">Models</h1>
+<h2 id="account">Account</h2>
+<pre><code class="typescript">/**
+ * Account model
+ */
+export declare class Account extends PublicAccount {
+
+    private readonly privateKey;
+    /**
+     * Sign a transaction
+     * @param transaction
+     * @returns {{data: any, signature: string}}
+     */
+    signTransaction(transaction: Transaction): SignedTransaction;
+
+    /**
+     * constructor with private key
+     * @param privateKey
+     * @returns {Account}
+     */
+    static createWithPrivateKey(privateKey: string): Account;
+}
+</code></pre>
+
+<h2 id="publicaccount">PublicAccount</h2>
+<pre><code class="typescript">
+/**
+ * Public account
+ */
+export declare class PublicAccount {
+
+    readonly address: Address;
+    readonly publicKey: string;
+
+    /**
+     * @returns {boolean}
+     */
+    hasPublicKey(): boolean;
+
+    /**
+     * Creates a new PublicAccount from a public key
+     * @param publicKey
+     * @returns {PublicAccount}
+     */
+    static createWithPublicKey(publicKey: string): PublicAccount;
+}
+</code></pre>
+
+<h2 id="address">Address</h2>
+<pre><code class="typescript">/**
+ * Address model
+ */
+export declare class Address {
+
+    private readonly value;
+    private readonly networkType;
+    constructor(address: string);
+
+    /**
+     * Get address in plain format ex: TALICEROONSJCPHC63F52V6FY3SDMSVAEUGHMB7C
+     * @returns {string}
+     */
+    plain(): string;
+
+    /**
+     * Get address in pretty format ex: TALICE-ROONSJ-CPHC63-F52V6F-Y3SDMS-VAEUGH-MB7C
+     * @returns {string}
+     */
+    pretty(): string;
+
+    /**
+     * Address network
+     * @returns {number}
+     */
+    network(): NetworkTypes;
+}
+
+</code></pre>
+
+<h2 id="balance">Balance</h2>
+<pre><code class="typescript">/**
+ * Balance model
+ */
+export declare class Balance {
+
+    /**
+     * The balance of the account in micro NEM.
+     */
+    readonly balance: number;
+
+    /**
+     * The vested part of the balance of the account in micro NEM.
+     */
+    readonly vestedBalance: number;
+
+    /**
+     * The unvested part of the balance of the account in micro NEM.
+     */
+    readonly unvestedBalance: number;
+}
+
+</code></pre>
+
+<h2 id="accountinfo">AccountInfo</h2>
+<pre><code class="typescript">export declare enum RemoteStatus {
+    REMOTE = &quot;REMOTE&quot;,
+    ACTIVATING = &quot;ACTIVATING&quot;,
+    ACTIVE = &quot;ACTIVE&quot;,
+    DEACTIVATING = &quot;DEACTIVATING&quot;,
+    INACTIVE = &quot;INACTIVE&quot;,
+}
+export declare enum Status {
+    UNKNOWN = &quot;UNKNOWN&quot;,
+    LOCKED = &quot;LOCKED&quot;,
+    UNLOCKED = &quot;UNLOCKED&quot;,
+}
+
+/**
+ * The account structure describes basic information for an account.
+ */
+export declare class AccountInfo {
+
+    /**
+     * The balance of the account in micro NEM.
+     */
+    readonly balance: Balance;
+
+    /**
+     * The importance of the account.
+     */
+    readonly importance: number;
+
+    /**
+     * The public key of the account.
+     */
+    readonly publicAccount: PublicAccount;
+
+    /**
+     * The number blocks that the account already harvested.
+     */
+    readonly harvestedBlocks: number;
+
+    /**
+     * Total number of cosignatories
+     */
+    readonly cosignatoriesCount?: number;
+
+    /**
+     * Minimum number of cosignatories needed for a transaction to be processed
+     */
+    readonly minCosignatories?: number;
+}
+
+export declare class AccountInfoWithMetaData extends AccountInfo {
+
+    /**
+     * The harvesting status of a queried account
+     */
+    readonly status: Status;
+
+    /**
+     * The status of remote harvesting of a queried account
+     */
+    readonly remoteStatus: RemoteStatus;
+
+    /**
+     * JSON array of AccountInfo structures. The account is cosignatory for each of the accounts in the array.
+     */
+    readonly cosignatoryOf: AccountInfo[];
+
+    /**
+     * JSON array of AccountInfo structures. The array holds all accounts that are a cosignatory for this account.
+     */
+    readonly cosignatories: AccountInfo[];
+}
+
+export declare class AccountStatus {
+
+    /**
+     * The harvesting status of a queried account
+     */
+    readonly status: Status;
+
+    /**
+     * The status of remote harvesting of a queried account
+     */
+    readonly remoteStatus: RemoteStatus;
+
+    /**
+     * JSON array of AccountInfo structures. The account is cosignatory for each of the accounts in the array.
+     */
+    readonly cosignatoryOf: AccountInfo[];
+
+    /**
+     * JSON array of AccountInfo structures. The array holds all accounts that are a cosignatory for this account.
+     */
+    readonly cosignatories: AccountInfo[];
+}
+
+</code></pre>
+
+<h2 id="accountharvestinfo">AccountHarvestInfo</h2>
+<pre><code class="typescript">/**
+ * A HarvestInfo object contains information about a block that an account harvested.
+ */
+export declare class AccountHarvestInfo {
+
+    /**
+     * The number of seconds elapsed since the creation of the nemesis block.
+     */
+    readonly timeStamp: number;
+
+    /**
+     * The database id for the harvested block.
+     */
+    readonly id: number;
+
+    /**
+     * The block difficulty. The initial difficulty was set to 100000000000000. The block difficulty is always between one tenth and ten times the initial difficulty.
+     */
+    readonly difficulty: number;
+
+    /**
+     * The total fee collected by harvesting the block.
+     */
+    readonly totalFee: number;
+
+    /**
+     * The height of the harvested block.
+     */
+    readonly height: number;
+}
+
+</code></pre>
+
+<h2 id="accounthistoricalinfo">AccountHistoricalInfo</h2>
+<pre><code class="typescript">/**
+ * Nodes can support a feature for retrieving historical data of accounts.
+ * If this is supported, it returns an array of AccountHistoricalInfo
+ */
+export declare class AccountHistoricalInfo {
+
+    /**
+     * The balance of the account in micro NEM.
+     */
+    readonly balance: Balance;
+
+    /**
+     * The importance of the account.
+     */
+    readonly importance: number;
+
+    /**
+     * The public key of the account.
+     */
+    readonly address: Address;
+
+    /**
+     * The page rank part of the importance.
+     */
+    readonly pageRank: number;
+}
+</code></pre>
+
+<h2 id="accountimportanceinfo">AccountImportanceInfo</h2>
+<pre><code class="typescript">/**
+ * Each account is assigned an importance in the NEM network. The ability of an account to generate new blocks is proportional to its importance. The importance is a number between 0 and 1.
+ */
+export declare class AccountImportanceInfo {
+
+    /**
+     * The address of the account.
+     */
+    readonly address: Address;
+
+    /**
+     * Substructure that describes the importance of the account.
+     */
+    readonly importance: AccountImportanceData;
+}
+
+/**
+ * Substructure that describes the importance of the account.
+ */
+export declare class AccountImportanceData {
+    /**
+     * Indicates if the fields &quot;score&quot;, &quot;ev&quot; and &quot;height&quot; are available.isSet can have the values 0 or 1. In case isSet is 0 the fields are not available.
+     */
+    readonly isSet: number;
+
+    /**
+     * The importance of the account. The importance ranges between 0 and 1.
+     */
+    readonly score?: number;
+
+    /**
+     * The page rank portion of the importance. The page rank ranges between 0 and 1.
+     */
+    readonly ev?: number;
+
+    /**
+     * The height at which the importance calculation was performed.
+     */
+    readonly height?: number;
+}
+
+</code></pre>
+
+<h2 id="nodeharvestinfo">NodeHarvestInfo</h2>
+<pre><code class="typescript">export declare class NodeHarvestInfo {
+
+    /**
+     * Maximum unlocked slots
+     */
+    readonly maxUnlocked: number;
+
+    /**
+     * Number of slots unlocked
+     */
+    readonly numUnlocked: number;
+}
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../transaction/" class="btn btn-neutral float-right" title="Transaction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../transaction/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

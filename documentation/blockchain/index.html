@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Blockchain - NEM Library</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Blockchain";
+    var mkdocs_page_input_path = "documentation/blockchain.md";
+    var mkdocs_page_url = "/documentation/blockchain/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83164077-5', 'mkdocs.org');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NEM Library</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">Node</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Blockchain</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#blockchain-related-requests">Blockchain related requests</a></li>
+    
+
+    <li class="toctree-l3"><a href="#blockhttp-definition">BlockHttp definition</a></li>
+    
+
+    <li class="toctree-l3"><a href="#blockhttp-usage">BlockHttp usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#chainhttp-definition">ChainHttp definition</a></li>
+    
+
+    <li class="toctree-l3"><a href="#chainhttp-usage">ChainHttp usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#models">Models</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#block">Block</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../development_process/">Development process</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NEM Library</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+    
+    <li>Blockchain</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/blockchain.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="blockchain-related-requests">Blockchain related requests</h1>
+<p>NEM builds a block chain which contains every bit of information needed. Subsequent blocks in the block chain have increasing heights that differ by one. Each block can contain transactions. Transactions build the basis of all account activity. It is therefore important to understand the concept and the structures of blocks and transactions.</p>
+<p>Blocks are generated by accounts. If an account generates a block and the block gets included in the block chain, the generating account, called the harvester, gets all the transaction fees for transactions that are included in the block. A harvester will therefore usually include as many transactions as possible.</p>
+<p>Transactions reflect all account activities. In order for a client to have an up to date balance for every account it is crucial to know about every transaction that occurred and therefore the client must have knowledge about every single block in the chain (one says: the client must be synchronized with the block chain).</p>
+<p><a href="https://bob.nem.ninja/docs/#block-chain-related-requests">Official Source</a></p>
+<h1 id="blockhttp-definition">BlockHttp definition</h1>
+<pre><code class="typescript">export declare type BlockHeight = number;
+
+export declare type BlockChainScore = number;
+
+export declare class BlockHttp extends HttpEndpoint {
+    constructor(serverConfig?: ServerConfig);
+
+    /**
+     * Gets a block from the chain that has a given hash.
+     * @param BlockHeight - A BlockHeight JSON object
+     * @returns Observable&lt;Block&gt;
+     */
+    getBlockByHeight(blockHeight: BlockHeight): Observable&lt;Block&gt;;
+}
+
+</code></pre>
+
+<h1 id="blockhttp-usage">BlockHttp usage</h1>
+<pre><code class="typescript">import {BlockHttp, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const blockHttp = new BlockHttp({domain: &quot;104.128.226.60&quot;});
+blockHttp.getBlockByHeight(1033023).subscribe(block =&gt; {
+    console.log(block);
+});
+</code></pre>
+
+<p>Output</p>
+<pre><code>Block {
+  height: 1033023,
+  type: 1,
+  timeStamp: 72650707,
+  prevBlockHash: { data: 'ec766003b1f7ed462ddb5e3bd71d7def7f52cf34aa2ed3f0887bfbeaf59bb77c' },
+  signature: '1e58ab2147db1edf746e899569e2c371c3b532fdf29ed77f3ddf54723b1ccc9ce745fc01ccb97b445e90e509035b1909950c4ba3428c20f31056bab4feff2e00',
+  signer: '45880194fad01fcb55887b73eeffdc263914ed5749bf2f3acb928c843c57bd9a',
+  transactions: [],
+  version: -1744830463 }
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/BlockHttpExample.ts">Run the code</a></p>
+<h1 id="chainhttp-definition">ChainHttp definition</h1>
+<pre><code class="typescript">export declare class ChainHttp extends HttpEndpoint {
+    constructor(serverConfig?: ServerConfig);
+    /**
+     * Gets the current height of the block chain.
+     * @returns Observable&lt;BlockHeight&gt;
+     */
+    getBlockchainHeight(): Observable&lt;BlockHeight&gt;;
+    /**
+     * Gets the current score of the block chain. The higher the score, the better the chain.
+     * During synchronization, nodes try to get the best block chain in the network.
+     * @returns Observable&lt;BlockChainScore&gt;
+     */
+    getBlockchainScore(): Observable&lt;BlockChainScore&gt;;
+    /**
+     * Gets the current last block of the chain.
+     * @returns Observable&lt;Block&gt;
+     */
+    getBlockchainLastBlock(): Observable&lt;Block&gt;;
+}
+
+
+</code></pre>
+
+<h1 id="chainhttp-usage">ChainHttp usage</h1>
+<pre><code class="typescript">import {ChainHttp, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const chainHttp = new ChainHttp({domain: &quot;104.128.226.60&quot;});
+chainHttp.getBlockchainLastBlock().subscribe(block =&gt; {
+    console.log(block);
+});
+</code></pre>
+
+<p>Output</p>
+<pre><code>Block {
+  height: 1035218,
+  type: 1,
+  timeStamp: 72783289,
+  prevBlockHash: { data: '551c478f401323be74da2618bd686d30c8c805c2d7bb3c19c49a8c0be6333d7f' },
+  signature: '0ccb28a63fe3fb1f65c0815c76ba7bad5896b71a9e696d28dd29f3b5294e977b51ecbf4add3f528c965ef67eba1c62acbb74c0779f2fc1a1c7bda6cb467fdb05',
+  signer: 'b3180ba3814a293f6b0ade952a65abc2aad6a430e4c33a20c216c8c6ceba584f',
+  transactions: [],
+  version: -1744830463 }
+
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/ChainHttpExample.ts">Run the code</a></p>
+<h1 id="models">Models</h1>
+<h2 id="block">Block</h2>
+<pre><code class="typescript">
+export declare enum BlockVersion {
+  MAIN_NET = 0x68,
+  TEST_NET = 0x98
+}
+
+export declare enum BlockType {
+  NEMESIS = -1,
+  REGULAR = 1
+}
+
+/**
+ * A blockchain is the structure that contains the transaction information. A blockchain can contain up to 120 transactions. Blocks are generated and signed by accounts and are the instrument by which information is spread in the network.
+ */
+export declare class Block  {
+
+  /**
+   * The height of the blockchain. Each blockchain has a unique height. Subsequent blocks differ in height by 1.
+   */
+  readonly height: BlockHeight;
+
+  /**
+   * The blockchain type
+   */
+  readonly type: BlockType;
+
+  /**
+   * The number of seconds elapsed since the creation of the nemesis blockchain.
+   */
+  readonly timeStamp: number;
+
+  /**
+   * The sha3-256 hash of the last blockchain as hex-string.
+   */
+  readonly prevBlockHash: HashData;
+
+  /**
+   * The signature of the blockchain. The signature was generated by the signer and can be used to validate that the blockchain data was not modified by a node.
+   */
+  readonly signature: string;
+
+  /**
+   * The public key of the harvester of the blockchain as hexadecimal number.
+   */
+  readonly signer: string;
+
+  /**
+   * The array of transaction
+   */
+  readonly transactions: Transaction[];
+
+  /**
+   * The blockchain version
+   */
+  readonly version: BlockVersion;
+ }
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../guide/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../node/" class="btn btn-neutral" title="Node"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../node/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../guide/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

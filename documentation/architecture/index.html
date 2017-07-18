@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Architecture - NEM Library</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Architecture";
+    var mkdocs_page_input_path = "documentation/architecture.md";
+    var mkdocs_page_url = "/documentation/architecture/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83164077-5', 'mkdocs.org');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NEM Library</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Architecture</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#architecture">Architecture</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#brief-description-of-nem-library-organization">Brief description of NEM Library organization</a></li>
+        
+            <li><a class="toctree-l4" href="#characteristics">Characteristics</a></li>
+        
+            <li><a class="toctree-l4" href="#reactive">Reactive</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../blockchain/">Blockchain</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../development_process/">Development process</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NEM Library</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+    
+    <li>Architecture</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/architecture.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="architecture">Architecture</h1>
+<p>NEM Library works perfect in a <a href="https://en.wikipedia.org/wiki/Multitier_architecture">multitier architecture</a>, because 
+it is the layer the between your business logic and the data tier. It enables the developers focus on the product rather than the 
+NEM Blockchain specific API details due its higher abstraction.</p>
+<p><img alt="Tiers" src="../../img/nem-library-architecture.png" /></p>
+<ul>
+<li><strong>NEM Blockchain</strong>: Where the truth resides.</li>
+<li><strong>NEM Library</strong>: Abstraction layer.</li>
+<li><strong>Your Application</strong>: Where the business logic resides.</li>
+<li><strong>Final Users</strong>: People who benefit the NEM Blockchain Technology.</li>
+</ul>
+<p>NEM Library has a functional programming approach to deal with the immutability of the NEM Blockchain. So, the developer will find
+himself/herself comfortable with the easy way to fetch the state, and create new Transactions in order to change that state.</p>
+<p><img alt="Functional" src="../../img/nem-library-functional-approach.png" /></p>
+<h3 id="brief-description-of-nem-library-organization">Brief description of NEM Library organization</h3>
+<p>NEM Library follows the next rules:</p>
+<ul>
+<li>
+<p><strong>Infrastructure</strong>: The HTTP requests are done following the <a href="https://msdn.microsoft.com/en-us/library/ff649690.aspx">Repository Pattern</a>, and they return NEM Domain immutable 
+models via the <a href="https://en.wikipedia.org/wiki/Observer_pattern">Observable Pattern</a>. So, the state fetched from the NEM Blockchain cannot be changed via code. </p>
+</li>
+<li>
+<p><strong>NEM Domain models</strong>: The NEM Domain models are <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable</a> by definition, the developer cannot change its attributes. 
+Instead, the developer have to create new Transactions and dispatch them to NEM Blockchain via TransactionHTTP, in order to change the NEM Blockchain state.</p>
+</li>
+</ul>
+<h2 id="characteristics">Characteristics</h2>
+<ul>
+<li>
+<p><strong>Standardized Contracts</strong>: Guaranteeing interoperability and harmonization of data models.</p>
+</li>
+<li>
+<p><strong>Loose Coupling</strong>: Reducing the degree of component coupling fosters.</p>
+</li>
+<li>
+<p><strong>Abstraction</strong>: Increasing long-term consistency of interoperability and allowing underlying components to evolve independently.</p>
+</li>
+<li>
+<p><strong>Reusability</strong>: Enabling high-level interoperability between modules and potential component consumers.</p>
+</li>
+<li>
+<p><strong>Stateless</strong>: Increasing availability and scalability of components allowing them to interoperate more frequent and reliable.</p>
+</li>
+<li>
+<p><strong>Composability</strong>: For components to be effectively composable they must be interoperable.</p>
+</li>
+</ul>
+<p>A key objective is for interoperability to become a natural design of the NEM Library, 
+ideally to extend that components to work with other products or systems.</p>
+<h2 id="reactive">Reactive</h2>
+<p>NEM Library uses <a href="http://reactivex.io/">RxJS</a> as Reactive Library. See its docs <a href="http://reactivex.io/rxjs/">here</a></p>
+<ul>
+<li>
+<p><strong>Functional</strong>: Developers can avoid intricate stateful programs using clean input/output functions over
+observable streams.</p>
+</li>
+<li>
+<p><strong>Less is more</strong>:ReactiveX's operators often reduce what was once an elaborate challenge into a few lines
+of code.</p>
+</li>
+<li>
+<p><strong>Async error handling</strong>: Traditional try/catch is powerless for errors handling in asynchronous computations, but
+ReactiveX will offer developers the proper tools to handling these sort of errors.</p>
+</li>
+<li>
+<p><strong>Concurrency made easy</strong>: Observables and Schedulers in ReactiveX allow the programmer to abstract away
+low-level threading, synchronization, and concurrency issues.</p>
+</li>
+<li>
+<p><strong>Frontend</strong>: Simple manipulation of UI events and API responses on the Web using RxJS</p>
+</li>
+<li>
+<p><strong>Backend</strong>: Embrace ReactiveX's asynchronicity, enabling concurrency and implementation independence.</p>
+</li>
+<li>
+<p><strong>Connection Pool</strong>: NEM Library will offer a Connection Pool feature that will distribute load throughout the
+network ensuring maintained connectivity, higher speeds and higher availability.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>
