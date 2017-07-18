@@ -17,6 +17,8 @@ const transferTransaction: Transaction = TransferTransaction.create(
 );
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction.ts)
+
 ### How to sign a Transaction
 
 ```typescript
@@ -48,6 +50,8 @@ const signedTransaction = account.signTransaction(transferTransaction);
 transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.log(x));
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_sign_a_Transaction.ts)
+
 ### How to create a Transaction with a Message
 
 ```typescript
@@ -66,6 +70,8 @@ const transferTransaction: Transaction = TransferTransaction.create(
     Message.create("a transaction")
 );
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_send_a_Transaction_with_a_Message.ts)
 
 ### How to create a MultiSig Transaction
 
@@ -97,6 +103,8 @@ const multisigTransaction: MultisigTransaction = MultisigTransaction.create(
 );
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_MultiSig_Transaction.ts)
+
 ### How to filter Transactions by type
 
 ```typescript
@@ -120,3 +128,5 @@ accountHttp.allTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTC
         console.log("Just Multisig", x)
     });
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_filter_Transactions_by_type.ts)

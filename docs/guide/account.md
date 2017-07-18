@@ -13,6 +13,8 @@ accountHttp.allTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTC
     });
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_the_transactions_for_an_account.ts)
+
 ### How to receive incoming transactions for an account 
 
 ```typescript
@@ -27,6 +29,8 @@ accountHttp.incomingTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN
         console.log(x);
     });
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_incoming_transactions_for_an_account.ts)
 
 ### How to receive outgoing transactions for an account
 
@@ -43,6 +47,8 @@ accountHttp.outgoingTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN
     });
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_outgoing_transactions_for_an_account.ts)
+
 ### How to get the unconfirmed transactions for an account 
 
 ```typescript
@@ -58,6 +64,8 @@ accountHttp.unconfirmedTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV
     });
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_the_unconfirmed_transactions_for_an_account.ts)
+
 ### How to get Account Importances
 
 ```typescript
@@ -72,6 +80,8 @@ accountHttp.getAccountImportances()
         console.log(x);
     });
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_Account_Importances.ts)
 
 ### How to convert a Normal Account into Multisig Account
 
@@ -111,3 +121,5 @@ const signedTransaction = account.signTransaction(convertIntoMultisigTransaction
 
 transactionHttp.announceTransaction(signedTransaction).subscribe(x => console.log(x));
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_convert_a_Normal_Account_into_Multisig_Account.ts)
