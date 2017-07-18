@@ -7,7 +7,7 @@ NEM Library is developed following the [Agile Manifesto](http://agilemanifesto.o
 - Customer collaboration over contract negotiation
 - Responding to change over following the plan
 
-# Development
+# Development Methodology
 
 NEM Library is developed applying [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) and 
 [eXtreme Programming](https://en.wikipedia.org/wiki/Extreme_programming).

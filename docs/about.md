@@ -11,7 +11,7 @@ NEM Library is developed independently of any institution by [Guillem][GH-Guille
 
 Follow us on our social networks!
 
-- Guillem: [Twitter](https://twitter.com/gsolecubilo), [GitHub][GH-Guillem]
+- Guillem: [Twitter](https://twitter.com/gsolecubilo), [GitHub][GH-Guillem] Email; guillemchain at gmail.com
 - Aleix: [Twitter](https://twitter.com/aleix_mp), [GitHub][GH-Aleix], [Medium](https://medium.com/@aleixmorgadas), Email; aleix602 at gmail.com
 
 [GH-Guillem]: https://github.com/guillemsole
