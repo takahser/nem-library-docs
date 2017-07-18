@@ -26,7 +26,7 @@ export declare class TransactionHttp extends HttpEndpoint {
 ```typescript
 import {
     AccountHttp, NEMLibrary, NetworkTypes, Address, Account, TransferTransaction, TimeWindow,
-    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp
+    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, SignedTransaction
 } from "nem-library";
 import {XEM} from "nem-library/dist/src/models/mosaic/XEM";
 declare let process: any;
@@ -41,7 +41,7 @@ const cosignerAccount = Account.createWithPrivateKey(privateKey);
 
 const transferTransaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
-    "TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J",
+    new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J"),
     XEM(2),
     EmptyMessage
 );
@@ -54,7 +54,7 @@ const multisigTransaction = MultisigTransaction.create(
 
 const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
 
-const signedTransaction = cosignerAccount.signTransaction(multisigTransaction);
+const signedTransaction: SignedTransaction = cosignerAccount.signTransaction(multisigTransaction);
 
 transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.log(x));
 ```

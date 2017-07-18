@@ -3,9 +3,8 @@
 ```typescript
 import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, Transaction, TimeWindow,
-    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp
+    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, XEM
 } from "nem-library";
-import {XEM} from "nem-library/dist/src/models/mosaic/XEM";
 
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -23,9 +22,8 @@ const transferTransaction: Transaction = TransferTransaction.create(
 ```typescript
 import {
     AccountHttp, NEMLibrary, NetworkTypes, Address, Account, TransferTransaction, TimeWindow,
-    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp
+    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, XEM
 } from "nem-library";
-import {XEM} from "nem-library/dist/src/models/mosaic/XEM";
 declare let process: any;
 
 // Inicializate NEMLibrary for TEST_NET Network
@@ -55,9 +53,8 @@ transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.l
 ```typescript
 import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, Transaction, TimeWindow,
-    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Message
+    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Message, XEM
 } from "nem-library";
-import {XEM} from "nem-library/dist/src/models/mosaic/XEM";
 
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -75,9 +72,8 @@ const transferTransaction: Transaction = TransferTransaction.create(
 ```typescript
 import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,
-    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Transaction
+    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Transaction, XEM
 } from "nem-library";
-import {XEM} from "nem-library/dist/src/models/mosaic/XEM";
 
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -97,4 +93,28 @@ const multisigTransaction: MultisigTransaction = MultisigTransaction.create(
     transferTransaction,
     PublicAccount.createWithPublicKey(multisigAccountPublicKey)
 );
+```
+
+### How to filter Transactions by type
+
+```typescript
+import {
+    AccountHttp, Address, MultisigTransaction, NEMLibrary, NetworkTypes, Transaction,
+    TransactionTypes
+} from "nem-library";
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const accountHttp = new AccountHttp();
+
+accountHttp.allTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J"))
+    .map((transactions: Transaction[]): MultisigTransaction[] => {
+        console.log(">>>>>>>>>>>>");
+        console.log("All Transactions", transactions);
+        return <MultisigTransaction[]>transactions.filter(x => x.type == TransactionTypes.MULTISIG)
+    })
+    .subscribe((x: MultisigTransaction[]) => {
+        console.log("\n\n>>>>>>>>>>>>");
+        console.log("Just Multisig", x)
+    });
 ```
