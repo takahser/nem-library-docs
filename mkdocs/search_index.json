@@ -598,7 +598,7 @@
         {
             "location": "/development_process/", 
             "text": "Agile\n\n\nNEM Library is developed following the \nAgile Manifesto\n\u2019s values:\n\n\n\n\nIndividuals and interactions over processes and tools\n\n\nWorking software over extensive documentation\n\n\nCustomer collaboration over contract negotiation\n\n\nResponding to change over following the plan\n\n\n\n\nDevelopment Methodology\n\n\nNEM Library is developed applying \nTest-Driven Development\n and \n\neXtreme Programming\n.", 
-            "title": "Development process"
+            "title": "Internal Development Process"
         }, 
         {
             "location": "/development_process/#agile", 
