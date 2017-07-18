@@ -218,6 +218,7 @@ nodeHttp.getNodeInfo().subscribe(node =&gt; console.log(node));
 
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/node/How_to_get_NEM_Node_information.ts">Source code</a></p>
 <h3 id="how-to-get-extended-information-about-a-nem-node">How to get extended information about a NEM Node</h3>
 <pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
 
@@ -228,6 +229,7 @@ const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
 nodeHttp.getNisNodeInfo().subscribe(nisNodeInfo =&gt; console.log(nisNodeInfo));
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/node/How_to_get_extended_information_about_a_NEM_Node.ts">Source code</a></p>
 <h3 id="how-to-get-all-active-nodes">How to get all active nodes</h3>
 <pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
 
@@ -237,6 +239,8 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
 nodeHttp.getActiveNodes().subscribe(nodes =&gt; console.log(nodes));
 </code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/node/How_to_get_all_active_nodes.ts">Source code</a></p>
               
             </div>
           </div>

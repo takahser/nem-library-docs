@@ -235,6 +235,7 @@ const signedTransaction = account.signTransaction(provisionNamespaceTransaction)
 transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_create_a_Namespace.ts">Source code</a></p>
 <h3 id="how-to-create-a-sub-namespace">How to create a Sub-Namespace</h3>
 <pre><code class="typescript">import {
     NEMLibrary, NetworkTypes, Transaction, TimeWindow, ProvisionNamespaceTransaction, Account, TransactionHttp
@@ -263,6 +264,7 @@ transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; consol
 
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_create_a_Sub_Namespace.ts">Source code</a></p>
 <h3 id="how-to-know-if-a-namespace-exists">How to know if a Namespace exists</h3>
 <pre><code class="typescript">import {
     NEMLibrary, NetworkTypes, NamespaceHttp
@@ -277,6 +279,7 @@ const namespace = &quot;new-namespace&quot;;
 namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_know_if_a_Namespace_exists.ts">Source code</a></p>
 <h3 id="how-to-know-the-owner-of-a-namespace">How to know the owner of a Namespace</h3>
 <pre><code class="typescript">import {
     NEMLibrary, NetworkTypes, NamespaceHttp
@@ -291,6 +294,8 @@ const namespace = &quot;new-namespace&quot;;
 namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
 
 </code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_know_the_owner_of_a_Namespace.ts">Source code</a></p>
               
             </div>
           </div>
