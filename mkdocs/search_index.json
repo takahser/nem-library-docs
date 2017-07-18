@@ -596,17 +596,17 @@
             "title": "Join the development discussion"
         }, 
         {
-            "location": "/development_process/", 
+            "location": "/internal_development_process/", 
             "text": "Agile\n\n\nNEM Library is developed following the \nAgile Manifesto\n\u2019s values:\n\n\n\n\nIndividuals and interactions over processes and tools\n\n\nWorking software over extensive documentation\n\n\nCustomer collaboration over contract negotiation\n\n\nResponding to change over following the plan\n\n\n\n\nDevelopment Methodology\n\n\nNEM Library is developed applying \nTest-Driven Development\n and \n\neXtreme Programming\n.", 
             "title": "Internal Development Process"
         }, 
         {
-            "location": "/development_process/#agile", 
+            "location": "/internal_development_process/#agile", 
             "text": "NEM Library is developed following the  Agile Manifesto \u2019s values:   Individuals and interactions over processes and tools  Working software over extensive documentation  Customer collaboration over contract negotiation  Responding to change over following the plan", 
             "title": "Agile"
         }, 
         {
-            "location": "/development_process/#development-methodology", 
+            "location": "/internal_development_process/#development-methodology", 
             "text": "NEM Library is developed applying  Test-Driven Development  and  eXtreme Programming .", 
             "title": "Development Methodology"
         }, 
