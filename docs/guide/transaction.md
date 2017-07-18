@@ -17,6 +17,8 @@ const transferTransaction: Transaction = TransferTransaction.create(
 );
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction.ts)
+
 ### How to sign a Transaction
 
 ```typescript
@@ -43,12 +45,14 @@ const transferTransaction = TransferTransaction.create(
     EmptyMessage
 );
 
-const signedTransaction = account.signTransaction(multisigTransaction);
+const signedTransaction = account.signTransaction(transferTransaction);
 
 transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.log(x));
 ```
 
-### How to send a Transaction with a Message
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_sign_a_Transaction.ts)
+
+### How to create a Transaction with a Message
 
 ```typescript
 import {
@@ -67,6 +71,8 @@ const transferTransaction: Transaction = TransferTransaction.create(
 );
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_send_a_Transaction_with_a_Message.ts)
+
 ### How to create a MultiSig Transaction
 
 ```typescript
@@ -74,6 +80,8 @@ import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Transaction, XEM
 } from "nem-library";
+
+declare let process: any;
 
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -94,6 +102,8 @@ const multisigTransaction: MultisigTransaction = MultisigTransaction.create(
     PublicAccount.createWithPublicKey(multisigAccountPublicKey)
 );
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_MultiSig_Transaction.ts)
 
 ### How to filter Transactions by type
 
@@ -118,3 +128,5 @@ accountHttp.allTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTC
         console.log("Just Multisig", x)
     });
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_filter_Transactions_by_type.ts)
