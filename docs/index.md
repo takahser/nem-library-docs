@@ -5,6 +5,8 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
+### "Learn once, code everything"
+
 ## Installation
 
 ```sh
