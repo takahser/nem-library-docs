@@ -1,7 +1,7 @@
 # Architecture
 
 NEM Library works perfect in a [multitier architecture](https://en.wikipedia.org/wiki/Multitier_architecture), because 
-it is the layer the between your business logic and the data tier. It enables the developers focus on the product rather than the 
+it is the layer between your business logic and the data tier. It enables the developers focus on the product rather than the 
 NEM Blockchain specific API details due its higher abstraction.
 
 ![Tiers](../img/nem-library-architecture.png)
