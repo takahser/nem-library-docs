@@ -101,6 +101,15 @@ chainHttp.getBlockchainLastBlock().subscribe(block => {
 Output
 
 ```
+Block {
+  height: 1035218,
+  type: 1,
+  timeStamp: 72783289,
+  prevBlockHash: { data: '551c478f401323be74da2618bd686d30c8c805c2d7bb3c19c49a8c0be6333d7f' },
+  signature: '0ccb28a63fe3fb1f65c0815c76ba7bad5896b71a9e696d28dd29f3b5294e977b51ecbf4add3f528c965ef67eba1c62acbb74c0779f2fc1a1c7bda6cb467fdb05',
+  signer: 'b3180ba3814a293f6b0ade952a65abc2aad6a430e4c33a20c216c8c6ceba584f',
+  transactions: [],
+  version: -1744830463 }
 
 ```
 
