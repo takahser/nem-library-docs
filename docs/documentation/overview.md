@@ -46,7 +46,7 @@ The default values are:
 | Parameter | Value |
 | ---       | ---   |
 | protocol  | http    |
-| domain    | alice6.nem.ninja |
+| domain    | bigalice2.nem.ninja |
 | port      | 7890 |
 
 
@@ -55,5 +55,5 @@ The default values are:
 | Parameter | Value |
 | ---       | ---   |
 | protocol  | http    |
-| domain    | bigalice2.nem.ninja |
+| domain    | alice6.nem.ninja |
 | port      | 7890 |
