@@ -58,6 +58,55 @@ Block {
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/BlockHttpExample.ts)
 
+
+# ChainHttp definition
+
+```typescript
+export declare class ChainHttp extends HttpEndpoint {
+    constructor(serverConfig?: ServerConfig);
+    /**
+     * Gets the current height of the block chain.
+     * @returns Observable<BlockHeight>
+     */
+    getBlockchainHeight(): Observable<BlockHeight>;
+    /**
+     * Gets the current score of the block chain. The higher the score, the better the chain.
+     * During synchronization, nodes try to get the best block chain in the network.
+     * @returns Observable<BlockChainScore>
+     */
+    getBlockchainScore(): Observable<BlockChainScore>;
+    /**
+     * Gets the current last block of the chain.
+     * @returns Observable<Block>
+     */
+    getBlockchainLastBlock(): Observable<Block>;
+}
+
+
+```
+
+# ChainHttp usage
+
+```typescript
+import {ChainHttp, NEMLibrary, NetworkTypes} from "nem-library";
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const chainHttp = new ChainHttp({domain: "104.128.226.60"});
+chainHttp.getBlockchainLastBlock().subscribe(block => {
+    console.log(block);
+});
+```
+Output
+
+```
+
+```
+
+[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/ChainHttpExample.ts)
+
+
 # Models
 
 ## Block

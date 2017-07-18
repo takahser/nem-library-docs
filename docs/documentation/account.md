@@ -140,18 +140,20 @@ export declare class AccountHttp extends HttpEndpoint {
     getMosaicOwnedByAddress(address: Address): Observable<Mosaic[]>;
 
     /**
-     * Unlocks an account (starts harvesting)
+     * Unlocks an account (starts harvesting).
+     * @param host - string
      * @param privateKey - string
      * @return Observable<boolean>
      */
-    unlockHarvesting(privateKey: string): Observable<boolean>;
+    unlockHarvesting(host: string, privateKey: string): Observable<boolean>;
 
     /**
      * Locks an account (stops harvesting).
+     * @param host - string
      * @param privateKey - string
      * @return Observable<boolean>
      */
-    lockHarvesting(privateKey: string): Observable<boolean>;
+    lockHarvesting(host: string, privateKey: string): Observable<boolean>;
 
     /**
      * Each node can allow users to harvest with their delegated key on that node.
