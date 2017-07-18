@@ -124,7 +124,7 @@
     <li class="toctree-l3"><a href="#how-to-sign-a-transaction">How to sign a Transaction</a></li>
     
 
-    <li class="toctree-l3"><a href="#how-to-send-a-transaction-with-a-message">How to send a Transaction with a Message</a></li>
+    <li class="toctree-l3"><a href="#how-to-create-a-transaction-with-a-message">How to create a Transaction with a Message</a></li>
     
 
     <li class="toctree-l3"><a href="#how-to-create-a-multisig-transaction">How to create a MultiSig Transaction</a></li>
@@ -230,6 +230,7 @@ const transferTransaction: Transaction = TransferTransaction.create(
 );
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction.ts">Source code</a></p>
 <h3 id="how-to-sign-a-transaction">How to sign a Transaction</h3>
 <pre><code class="typescript">import {
     AccountHttp, NEMLibrary, NetworkTypes, Address, Account, TransferTransaction, TimeWindow,
@@ -254,12 +255,13 @@ const transferTransaction = TransferTransaction.create(
     EmptyMessage
 );
 
-const signedTransaction = account.signTransaction(multisigTransaction);
+const signedTransaction = account.signTransaction(transferTransaction);
 
 transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
 </code></pre>
 
-<h3 id="how-to-send-a-transaction-with-a-message">How to send a Transaction with a Message</h3>
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_sign_a_Transaction.ts">Source code</a></p>
+<h3 id="how-to-create-a-transaction-with-a-message">How to create a Transaction with a Message</h3>
 <pre><code class="typescript">import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, Transaction, TimeWindow,
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Message, XEM
@@ -276,11 +278,14 @@ const transferTransaction: Transaction = TransferTransaction.create(
 );
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_send_a_Transaction_with_a_Message.ts">Source code</a></p>
 <h3 id="how-to-create-a-multisig-transaction">How to create a MultiSig Transaction</h3>
 <pre><code class="typescript">import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Transaction, XEM
 } from &quot;nem-library&quot;;
+
+declare let process: any;
 
 // Inicializate NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -302,6 +307,7 @@ const multisigTransaction: MultisigTransaction = MultisigTransaction.create(
 );
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_MultiSig_Transaction.ts">Source code</a></p>
 <h3 id="how-to-filter-transactions-by-type">How to filter Transactions by type</h3>
 <pre><code class="typescript">import {
     AccountHttp, Address, MultisigTransaction, NEMLibrary, NetworkTypes, Transaction,
@@ -323,6 +329,8 @@ accountHttp.allTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN
         console.log(&quot;Just Multisig&quot;, x)
     });
 </code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_filter_Transactions_by_type.ts">Source code</a></p>
               
             </div>
           </div>

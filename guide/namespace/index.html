@@ -211,19 +211,85 @@
             <div class="section">
               
                 <h3 id="how-to-create-a-namespace">How to create a Namespace</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import{
+    NEMLibrary, NetworkTypes, Transaction, TimeWindow, ProvisionNamespaceTransaction, Account, TransactionHttp
+} from &quot;nem-library&quot;;
+
+declare let process: any;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const privateKey: string = process.env.PRIVATE_KEY;
+const account = Account.createWithPrivateKey(privateKey);
+const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+
+const namespace = &quot;new-namespace&quot;;
+
+const provisionNamespaceTransaction: Transaction = ProvisionNamespaceTransaction.create(
+    TimeWindow.createWithDeadline(),
+    namespace
+);
+
+const signedTransaction = account.signTransaction(provisionNamespaceTransaction);
+transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
 </code></pre>
 
 <h3 id="how-to-create-a-sub-namespace">How to create a Sub-Namespace</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import {
+    NEMLibrary, NetworkTypes, Transaction, TimeWindow, ProvisionNamespaceTransaction, Account, TransactionHttp
+} from &quot;nem-library&quot;;
+
+declare let process: any;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const privateKey: string = process.env.PRIVATE_KEY;
+const account = Account.createWithPrivateKey(privateKey);
+const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+
+const namespace = &quot;new-namespace&quot;;
+const subnamespace = &quot;subnamespace&quot;;
+
+const provisionNamespaceTransaction: Transaction = ProvisionNamespaceTransaction.create(
+    TimeWindow.createWithDeadline(),
+    subnamespace,
+    namespace
+);
+
+const signedTransaction = account.signTransaction(provisionNamespaceTransaction);
+transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
+
 </code></pre>
 
 <h3 id="how-to-know-if-a-namespace-exists">How to know if a Namespace exists</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import {
+    NEMLibrary, NetworkTypes, NamespaceHttp
+} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const namespaceHttp = new NamespaceHttp({domain: &quot;104.128.226.60&quot;});
+const namespace = &quot;new-namespace&quot;;
+
+namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
 </code></pre>
 
 <h3 id="how-to-know-the-owner-of-a-namespace">How to know the owner of a Namespace</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import {
+    NEMLibrary, NetworkTypes, NamespaceHttp
+} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const namespaceHttp = new NamespaceHttp({domain: &quot;104.128.226.60&quot;});
+const namespace = &quot;new-namespace&quot;;
+
+namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
+
 </code></pre>
               
             </div>

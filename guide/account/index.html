@@ -229,6 +229,7 @@ accountHttp.allTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN
     });
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_the_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-receive-incoming-transactions-for-an-account">How to receive incoming transactions for an account</h3>
 <pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
@@ -242,6 +243,7 @@ accountHttp.incomingTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-T
     });
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_incoming_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-receive-outgoing-transactions-for-an-account">How to receive outgoing transactions for an account</h3>
 <pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
@@ -255,6 +257,7 @@ accountHttp.outgoingTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-T
     });
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_outgoing_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-get-the-unconfirmed-transactions-for-an-account">How to get the unconfirmed transactions for an account</h3>
 <pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
@@ -268,6 +271,7 @@ accountHttp.unconfirmedTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43
     });
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_the_unconfirmed_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-get-account-importances">How to get Account Importances</h3>
 <pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
@@ -281,6 +285,7 @@ accountHttp.getAccountImportances()
     });
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_Account_Importances.ts">Source code</a></p>
 <h3 id="how-to-convert-a-normal-account-into-multisig-account">How to convert a Normal Account into Multisig Account</h3>
 <pre><code class="typescript">import {
     AccountHttp, NEMLibrary, NetworkTypes, Address, Account, TransferTransaction, TimeWindow,
@@ -317,6 +322,8 @@ const signedTransaction = account.signTransaction(convertIntoMultisigTransaction
 
 transactionHttp.announceTransaction(signedTransaction).subscribe(x =&gt; console.log(x));
 </code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_convert_a_Normal_Account_into_Multisig_Account.ts">Source code</a></p>
               
             </div>
           </div>

@@ -136,6 +136,9 @@
     <li class="toctree-l3"><a href="#how-to-get-extended-information-about-a-nem-node">How to get extended information about a NEM Node</a></li>
     
 
+    <li class="toctree-l3"><a href="#how-to-get-all-active-nodes">How to get all active nodes</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -205,11 +208,34 @@
             <div class="section">
               
                 <h3 id="how-to-get-nem-node-information">How to get NEM Node information</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
+nodeHttp.getNodeInfo().subscribe(node =&gt; console.log(node));
+
 </code></pre>
 
 <h3 id="how-to-get-extended-information-about-a-nem-node">How to get extended information about a NEM Node</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
+nodeHttp.getNisNodeInfo().subscribe(nisNodeInfo =&gt; console.log(nisNodeInfo));
+</code></pre>
+
+<h3 id="how-to-get-all-active-nodes">How to get all active nodes</h3>
+<pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
+nodeHttp.getActiveNodes().subscribe(nodes =&gt; console.log(nodes));
 </code></pre>
               
             </div>

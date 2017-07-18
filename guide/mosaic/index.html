@@ -129,7 +129,7 @@
     <li class="toctree-l3"><a href="#how-to-create-a-mosaic">How to create a Mosaic</a></li>
     
 
-    <li class="toctree-l3"><a href="#how-to-get-mosaic-definitions">How to get Mosaic Definitions</a></li>
+    <li class="toctree-l3"><a href="#how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</a></li>
     
 
     </ul>
@@ -205,11 +205,55 @@
             <div class="section">
               
                 <h3 id="how-to-create-a-mosaic">How to create a Mosaic</h3>
-<pre><code class="typescript">
+<pre><code class="typescript">import {
+    NEMLibrary, NetworkTypes, TimeWindow, Account, TransactionHttp,
+    MosaicDefinitionCreationTransaction, MosaicDefinition, PublicAccount, MosaicId, MosaicProperties, MosaicLevy,
+    MosaicLevyType
+} from &quot;nem-library&quot;;
+
+declare let process: any;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const privateKey: string = process.env.PRIVATE_KEY;
+const account = Account.createWithPrivateKey(privateKey);
+const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+
+const mosaicDefinitionTransaction = MosaicDefinitionCreationTransaction.create(
+    TimeWindow.createWithDeadline(),
+    new MosaicDefinition(
+        PublicAccount.createWithPublicKey(account.publicKey),
+        new MosaicId(&quot;new-namespace&quot;, &quot;new-mosaic&quot;),
+        &quot;mosaic description&quot;,
+        new MosaicProperties(0, 9000000, true, true),
+        new MosaicLevy(
+            MosaicLevyType.Percentil,
+            account.address,
+            new MosaicId(&quot;nem&quot;, &quot;xem&quot;),
+            2
+        )
+    )
+);
+
+const signedTransaction = account.signTransaction(mosaicDefinitionTransaction);
+transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
+
 </code></pre>
 
-<h3 id="how-to-get-mosaic-definitions">How to get Mosaic Definitions</h3>
-<pre><code class="typescript">
+<h3 id="how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</h3>
+<pre><code class="typescript">import {
+    NEMLibrary, NetworkTypes, MosaicHttp, TransactionTypes
+} from &quot;nem-library&quot;;
+
+// Inicializate NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
+const namespace = &quot;new-namespace&quot;;
+
+mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; console.log(mosaicDefinitions));
+
 </code></pre>
               
             </div>
