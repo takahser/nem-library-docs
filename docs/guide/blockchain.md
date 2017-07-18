@@ -13,7 +13,7 @@ blockHttp.getBlockByHeight(1033023).subscribe(block => {
     console.log(block);
 });
 ```
-[Source code]()
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/blockchain/How_to_get_a_Block_by_Height.ts)
 
 
 ### How to get Last block of the blockchain
@@ -29,6 +29,9 @@ chainHttp.getBlockchainLastBlock().subscribe(block => {
     console.log(block);
 });
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/blockchain/How_to_get_Last_block_of_the_blockchain.ts)
+
 
 
 

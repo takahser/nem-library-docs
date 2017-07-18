@@ -37,6 +37,9 @@ transactionHttp.announceTransaction(signedTransaction).subscribe( x => console.l
 
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_create_a_Mosaic.ts)
+
+
 ### How to get Namespace Mosaic Definitions
 ```typescript
 import {
@@ -52,3 +55,6 @@ const namespace = "new-namespace";
 mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions => console.log(mosaicDefinitions));
 
 ```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_get_Namespace_Mosaic_Definitions.ts)
+
