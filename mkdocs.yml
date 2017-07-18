@@ -19,7 +19,7 @@ pages:
     - 'guide/node.md'
     - 'guide/blockchain.md'
   - Support: 'support.md'
-  - Development process: 'development_process.md'
+  - Internal Development Process: 'internal_development_process.md'
   - Roadmap: 'roadmap.md'
   - About: 'about.md'
 theme: readthedocs
