@@ -7,6 +7,8 @@ for creating Blockchain applications.
 
 ### "Learn once, code everything"
 
+#### stable version 0.2.34
+
 ## Installation
 
 ```sh

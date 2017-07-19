@@ -7,7 +7,7 @@
 - [X] Immutable data interfaces 
 - [X] Client side signature
 
-## 0.2
+## 0.2 Stable
 
 **WARNING!** This version has not compatibility with 0.1
 
@@ -17,10 +17,10 @@
 - [X] NodeHttp
 - [X] NamespaceHttp
 - [X] MosaicHttp
-- [ ] Documentation
+- [X] Documentation
 - [X] TransactionFees
 
-## 0.3
+## 0.3 Under development
 
 - [ ] WebSocket support
 - [ ] Listeners

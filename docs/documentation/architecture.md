@@ -6,7 +6,7 @@ NEM Blockchain specific API details due its higher abstraction.
 
 ![Tiers](../img/nem-library-architecture.png)
 
-- **NEM Blockchain**: Where the truth resides.
+- **NEM Blockchain**: Persistent layer.
 - **NEM Library**: Abstraction layer.
 - **Your Application**: Where the business logic resides.
 - **Final Users**: People who benefit the NEM Blockchain Technology.
