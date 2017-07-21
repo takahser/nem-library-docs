@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,129 +12,129 @@
     
         
     <url>
-     <loc>/documentation/architecture/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/architecture/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/overview/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/overview/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/account/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/account/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/transaction/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/transaction/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/namespace/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/namespace/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/mosaic/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/mosaic/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/node/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/node/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/documentation/blockchain/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/guide/overview/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/account/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/transaction/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/namespace/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/mosaic/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/node/</loc>
-     <lastmod>2017-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/blockchain/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/documentation/blockchain/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     
 
     
+        
     <url>
-     <loc>/support/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/guide/overview/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/guide/account/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/guide/transaction/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/guide/namespace/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/guide/mosaic/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/guide/node/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/guide/blockchain/</loc>
+     <lastmod>2017-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://nemlibrary.com/support/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/internal_development_process/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/internal_development_process/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/roadmap/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/roadmap/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/about/</loc>
-     <lastmod>2017-07-20</lastmod>
+     <loc>https://nemlibrary.com/about/</loc>
+     <lastmod>2017-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
