@@ -93,7 +93,7 @@ import {
 } from "nem-library";
 declare let process: any;
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
@@ -133,7 +133,7 @@ import {
 } from "nem-library";
 declare let process: any;
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const privateKey: string = process.env.PRIVATE_KEY;

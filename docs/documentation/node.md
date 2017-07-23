@@ -59,7 +59,7 @@ export declare class NodeHttp extends HttpEndpoint {
 ```typescript
 import {NodeHttp, NEMLibrary, NetworkTypes} from "nem-library";
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const nodeHttp = new NodeHttp({domain: "104.128.226.60"});
