@@ -248,7 +248,7 @@ export declare class BlockHttp extends HttpEndpoint {
 <h1 id="blockhttp-usage">BlockHttp usage</h1>
 <pre><code class="typescript">import {BlockHttp, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const blockHttp = new BlockHttp({domain: &quot;104.128.226.60&quot;});
@@ -297,7 +297,7 @@ blockHttp.getBlockByHeight(1033023).subscribe(block =&gt; {
 <h1 id="chainhttp-usage">ChainHttp usage</h1>
 <pre><code class="typescript">import {ChainHttp, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const chainHttp = new ChainHttp({domain: &quot;104.128.226.60&quot;});
