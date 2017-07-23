@@ -74,6 +74,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.3.0-RC1
+
+- Pagination
+- Listeners
+- Wallets
+
 ### 0.2.34
 
 Stable version
