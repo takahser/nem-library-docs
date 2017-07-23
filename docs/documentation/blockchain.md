@@ -33,7 +33,7 @@ export declare class BlockHttp extends HttpEndpoint {
 ```typescript
 import {BlockHttp, NEMLibrary, NetworkTypes} from "nem-library";
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const blockHttp = new BlockHttp({domain: "104.128.226.60"});
@@ -90,7 +90,7 @@ export declare class ChainHttp extends HttpEndpoint {
 ```typescript
 import {ChainHttp, NEMLibrary, NetworkTypes} from "nem-library";
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const chainHttp = new ChainHttp({domain: "104.128.226.60"});
