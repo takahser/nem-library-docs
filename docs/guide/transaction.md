@@ -6,7 +6,7 @@ import {
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, XEM
 } from "nem-library";
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const transferTransaction: Transaction = TransferTransaction.create(
@@ -28,7 +28,7 @@ import {
 } from "nem-library";
 declare let process: any;
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
@@ -60,7 +60,7 @@ import {
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Message, XEM
 } from "nem-library";
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const transferTransaction: Transaction = TransferTransaction.create(
@@ -83,7 +83,7 @@ import {
 
 declare let process: any;
 
-// Inicializate NEMLibrary for TEST_NET Network
+// Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 // Replace with the multisig account
