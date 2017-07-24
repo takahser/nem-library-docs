@@ -15,6 +15,32 @@ accountHttp.allTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTC
 
 [Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_the_transactions_for_an_account.ts)
 
+### How to receive all transactions for an account paginated
+
+```typescript
+/**
+ * nem-library 0.3.0
+ */
+
+import { AccountHttp, Address, NEMLibrary, NetworkTypes } from "nem-library";
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+let address = new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J");
+let accountHttp = new AccountHttp();
+
+let pageable = accountHttp.allTransactionsPaginated(address);
+
+pageable.subscribe(transactions => {
+    // do something with the info
+});
+
+pageable.nextPage(); // Fetch the nexts 25 transactions
+```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_do_pagination_in_transactions_methods.ts)
+
+
+
 ### How to receive incoming transactions for an account 
 
 ```typescript
@@ -65,6 +91,23 @@ accountHttp.unconfirmedTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV
 ```
 
 [Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_the_unconfirmed_transactions_for_an_account.ts)
+
+### How to get Account harvested blocks info paginated
+
+```typescript
+import {AccountHttp, Address, NEMLibrary, NetworkTypes} from "nem-library";
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const accountHttp = new AccountHttp();
+
+accountHttp.getAccountImportances()
+    .subscribe(x => {
+        console.log(x);
+    });
+```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_do_pagination_in_account_harvests.ts)
 
 ### How to get Account Importances
 
