@@ -15,7 +15,7 @@ accountHttp.allTransactions(new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTC
 
 [Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_the_transactions_for_an_account.ts)
 
-### How to receive all transactions for an account paginated
+### <a name='alltransactionspaginated'></a> How to receive all transactions for an account paginated
 
 ```typescript
 /**
