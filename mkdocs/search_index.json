@@ -807,7 +807,7 @@
         }, 
         {
             "location": "/roadmap/", 
-            "text": "Roadmap\n\n\n0.1\n\n\n\n\n[X] AccountHttp\n\n\n[X] TransactionHttp\n\n\n[X] Immutable data interfaces \n\n\n[X] Client side signature\n\n\n\n\n0.2 Stable\n\n\nWARNING!\n This version has not compatibility with 0.1\n\n\n\n\n[X] Model transactions\n\n\n[X] Endpoints return immutable models instead of immutable interfaces\n\n\n[X] BlockchainHttp\n\n\n[X] NodeHttp\n\n\n[X] NamespaceHttp\n\n\n[X] MosaicHttp\n\n\n[X] Documentation\n\n\n[X] TransactionFees\n\n\n\n\n0.3 Under development\n\n\n\n\n[ ] WebSocket support\n\n\n[ ] Listeners\n\n\n[ ] Wallet\n\n\n[ ] Persistent Wallet\n\n\n\n\n0.4\n\n\n\n\n[ ] Error handling\n\n\n[ ] Connection pool\n\n\n[ ] Node Type Connection\n\n\n\n\n0.5\n\n\n\n\n[ ] High Order Filter Functions\n\n\n[ ] High Order Data Transformation Functions\n\n\n\n\n0.6\n\n\n\n\n[ ] Concurrent data fetching\n\n\n[ ] Error handling strategies", 
+            "text": "Roadmap\n\n\n0.1\n\n\n\n\n[X] AccountHttp\n\n\n[X] TransactionHttp\n\n\n[X] Immutable data interfaces \n\n\n[X] Client side signature\n\n\n\n\n0.2\n\n\nWARNING!\n This version has not compatibility with 0.1\n\n\n\n\n[X] Model transactions\n\n\n[X] Endpoints return immutable models instead of immutable interfaces\n\n\n[X] BlockchainHttp\n\n\n[X] NodeHttp\n\n\n[X] NamespaceHttp\n\n\n[X] MosaicHttp\n\n\n[X] Documentation\n\n\n[X] TransactionFees\n\n\n\n\n0.3 Stable | Under development\n\n\nThis version \nis\n compatible with 0.2.34\n\n\n\n\n[X] WebSocket support\n\n\n[X] Listeners\n\n\n[X] Wallet\n\n\n[X] Encrypted Message\n\n\n[X] Pagination\n\n\n[ ] Persistent Wallet\n\n\n\n\n0.4\n\n\n\n\n[ ] Error handling\n\n\n[ ] Connection pool\n\n\n[ ] Node Type Connection\n\n\n\n\n0.5\n\n\n\n\n[ ] High Order Filter Functions\n\n\n[ ] High Order Data Transformation Functions\n\n\n\n\n0.6\n\n\n\n\n[ ] Concurrent data fetching\n\n\n[ ] Error handling strategies", 
             "title": "Roadmap"
         }, 
         {
@@ -821,14 +821,14 @@
             "title": "0.1"
         }, 
         {
-            "location": "/roadmap/#02-stable", 
+            "location": "/roadmap/#02", 
             "text": "WARNING!  This version has not compatibility with 0.1   [X] Model transactions  [X] Endpoints return immutable models instead of immutable interfaces  [X] BlockchainHttp  [X] NodeHttp  [X] NamespaceHttp  [X] MosaicHttp  [X] Documentation  [X] TransactionFees", 
-            "title": "0.2 Stable"
+            "title": "0.2"
         }, 
         {
-            "location": "/roadmap/#03-under-development", 
-            "text": "[ ] WebSocket support  [ ] Listeners  [ ] Wallet  [ ] Persistent Wallet", 
-            "title": "0.3 Under development"
+            "location": "/roadmap/#03-stable-under-development", 
+            "text": "This version  is  compatible with 0.2.34   [X] WebSocket support  [X] Listeners  [X] Wallet  [X] Encrypted Message  [X] Pagination  [ ] Persistent Wallet", 
+            "title": "0.3 Stable | Under development"
         }, 
         {
             "location": "/roadmap/#04", 
