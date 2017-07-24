@@ -64,6 +64,21 @@ console.log(simpleWallet);
 Output
 
 ```
+SimpleWallet {
+  name: 'simple wallet',
+  network: 152,
+  address: 
+   Address {
+     value: 'TBSICCK3PJZDWQ4JCPWT55IRBWEQMRSABQ3QJHE4',
+     networkType: 152 },
+  creationDate: 
+   LocalDateTime {
+     _date: LocalDate { _year: 2017, _month: 7, _day: 24 },
+     _time: LocalTime { _hour: 16, _minute: 44, _second: 14, _nano: 870000000 } },
+  encryptedPrivateKey: 
+   EncryptedPrivateKey {
+     encryptedKey: '2cb583e61208964d465955cc35c86c9e83733a10adc40cee6b8c650478ffe3667ccb70328a0dc2c67de9770806040580',
+     iv: 'c192d9a501c7dde5c7e05186c93b63da' } }
 
 ```
 
@@ -116,7 +131,17 @@ console.log(brainWallet);
 Output
 
 ```
-
+BrainWallet {
+  name: 'brain wallet',
+  network: 152,
+  address: 
+   Address {
+     value: 'TBUWTIIYM2BFFAE3JOEW3LGG5X3QTO7L2RWGZ6XV',
+     networkType: 152 },
+  creationDate: 
+   LocalDateTime {
+     _date: LocalDate { _year: 2017, _month: 7, _day: 24 },
+     _time: LocalTime { _hour: 16, _minute: 44, _second: 42, _nano: 402000000 } } }
 
 ```
 
