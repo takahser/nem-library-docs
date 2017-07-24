@@ -67,7 +67,15 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<Transaction[]>
      */
     incomingTransactions(address: Address, hash?: string, id?: string): Observable<Transaction[]>;
-
+    
+    /**
+     * Paginaged version of incomingTransactions request
+     * @param address
+     * @param hash
+     * @returns {IncomingTransactionsPageable}
+     */
+    incomingTransactionsPaginated(address: Address, hash?: string): Pageable<Transaction[]>;
+    
     /**
      * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
      * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
@@ -77,7 +85,15 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<Transaction[]>
      */
     outgoingTransactions(address: Address, hash?: string, id?: string): Observable<Transaction[]>;
-
+    
+    /**
+     * Paginaged version of outgoingTransactions request
+     * @param address
+     * @param hash
+     * @returns {OutgoingTransactionsPageable}
+     */
+    outgoingTransactionsPaginated(address: Address, hash?: string): Pageable<Transaction[]>;
+    
     /**
      * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
      * A maximum of 25 transaction meta data pairs is returned.
@@ -88,22 +104,38 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<Transaction[]>
      */
     allTransactions(address: Address, hash?: string, id?: string): Observable<Transaction[]>;
-
+    
+    /**
+     * Paginaged version of allTransactions request
+     * @param address
+     * @param hash
+     * @returns {AllTransactionsPageable}
+     */
+    allTransactionsPaginated(address: Address, hash?: string): Pageable<Transaction[]>;
+    
     /**
      * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
      * @param address - NEM Address
      * @return Observable<Transaction[]>
      */
     unconfirmedTransactions(address: Address): Observable<Transaction[]>;
-
+    
     /**
      * Gets an array of harvest info objects for an account.
      * @param address - Address
-     * @param hash - string
+     * @param id - string (optional)
      * @return Observable<AccountHarvestInfo[]>
      */
-    getHarvestInfoDataForAnAccount(address: Address, hash: string): Observable<AccountHarvestInfo[]>;
-
+    getHarvestInfoDataForAnAccount(address: Address, id?: string): Observable<AccountHarvestInfo[]>;
+   
+    /**
+     * Paginaged version of allTransactions request
+     * @param address
+     * @param id
+     * @returns {HarvestInfoPageable}
+     */
+    getHarvestInfoDataForAnAccountPaginated(address: Address, id?: string): Pageable<AccountHarvestInfo[]>;
+    
     /**
      * Gets an array of account importance view model objects.
      * @return Observable<AccountImportanceInfo[]>
