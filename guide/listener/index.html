@@ -240,14 +240,13 @@ import {AccountListener, Address, NEMLibrary, NetworkTypes} from &quot;nem-libra
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA&quot;);
-let accountListener = new AccountListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+let listener = new AccountListener({domain: &quot;23.228.67.85&quot;}).given(address);
+
+listener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
     console.log(err);
 });
-
-
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_account_information.ts">Source code</a></p>
@@ -255,13 +254,14 @@ let accountListener = new AccountListener({domain: &quot;23.228.67.85&quot;}).gi
 <pre><code class="typescript">/**
  * nem-library 0.3.0
  */
-
 import {BlockchainListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newBlock().subscribe(x =&gt; {
+let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newBlock();
+
+blockchainListener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
     console.log(err);
@@ -275,19 +275,18 @@ let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot
 <pre><code class="typescript">/**
  * nem-library 0.3.0
  */
-
 import {BlockchainListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newHeight().subscribe(x =&gt; {
+let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newHeight();
+
+blockchainListener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
     console.log(err);
 });
-
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_new_blockchain_height_information.ts">Source code</a></p>
@@ -303,7 +302,8 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K&quot;);
 
-let unconfirmedTransactionListener = new UnconfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+let unconfirmedTransactionListener = new UnconfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address);
+unconfirmedTransactionListener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
     console.log(err);
@@ -322,7 +322,8 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K&quot;);
 
-let confirmedTransactionListener = new ConfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+let confirmedTransactionListener = new ConfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address);
+confirmedTransactionListener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
     console.log(err);
