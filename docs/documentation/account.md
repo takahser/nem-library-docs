@@ -16,7 +16,7 @@ Multisig accounts can be created by converting a normal account to a multisig ac
 
 ## Keypair concept
 
-
+NEM Library replaces the Keypair model, which usually holds the public and private key, with the [Account](#account) model. The reason is that we aim to keep the private key as secret as possible, just providing a set of methods where the private key is involved.
 
 # AccountHttp definition
 
@@ -226,7 +226,7 @@ AccountInfoWithMetaData {
 
 # Models
 
-## Account
+## <a name="account"></a> Account
 
 ```typescript
 /**
