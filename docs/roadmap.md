@@ -22,9 +22,11 @@
 
 ## 0.3 Under development
 
-- [ ] WebSocket support
-- [ ] Listeners
-- [ ] Wallet
+- [X] WebSocket support
+- [X] Listeners
+- [X] Wallet
+- [X] Encrypted Message
+- [X] Pagination
 - [ ] Persistent Wallet
 
 ## 0.4
