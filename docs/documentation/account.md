@@ -14,6 +14,10 @@ Multisig accounts can be created by converting a normal account to a multisig ac
 
 [Official Source](https://bob.nem.ninja/docs/#account-related-requests)
 
+## Keypair concept
+
+
+
 # AccountHttp definition
 
 ```typescript
