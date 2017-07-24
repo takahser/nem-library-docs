@@ -7,7 +7,7 @@
 - [X] Immutable data interfaces 
 - [X] Client side signature
 
-## 0.2 Stable
+## 0.2
 
 **WARNING!** This version has not compatibility with 0.1
 
@@ -20,7 +20,9 @@
 - [X] Documentation
 - [X] TransactionFees
 
-## 0.3 Under development
+## 0.3 Stable | Under development
+
+This version **is** compatible with 0.2.34
 
 - [X] WebSocket support
 - [X] Listeners
