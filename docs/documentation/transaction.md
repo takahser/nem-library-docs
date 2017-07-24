@@ -337,13 +337,13 @@ export declare class TransferTransaction extends Transaction {
     /**
      * Optionally a transaction can contain a message. In this case the transaction contains a message substructure. If not the field is null.
      */
-    readonly message: Message;
+    readonly message: PlainMessage | EncryptedMessage;
     
     /**
      * The array of Mosaic objects.
      */
     readonly mosaics?: Mosaic[];
-    
+   
     /**
      * Create a TransferTransaction object
      * @param timeWindow
@@ -353,7 +353,7 @@ export declare class TransferTransaction extends Transaction {
      * @param mosaics
      * @returns {TransferTransaction}
      */
-    static create(timeWindow: TimeWindow, recipient: string, amount: number, message: Message): TransferTransaction;
+    static create(timeWindow: TimeWindow, recipient: Address, amount: number, message: PlainMessage | EncryptedMessage): TransferTransaction;
     
     /**
      * Create a TransferTransaction object
@@ -363,7 +363,7 @@ export declare class TransferTransaction extends Transaction {
      * @param message
      * @returns {TransferTransaction}
      */
-    static createWithMosaics(timeWindow: TimeWindow, recipient: string, mosaics: Mosaic[], message: Message): TransferTransaction;
+    static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: Mosaic[], message: PlainMessage | EncryptedMessage): TransferTransaction;
 }
 
 ```
@@ -371,38 +371,60 @@ export declare class TransferTransaction extends Transaction {
 ## Message
 
 ```typescript
-
-export declare enum MessageType {
-    Plain = 1,
-    Encrypted = 2,
-}
-
 /**
  * Message model
  */
-export declare class Message {
+export declare abstract class Message {
     
     /**
-     * Validate if message is encrypted
-     * @returns {boolean}
+     * Message payload
      */
-    isEncrypted(): boolean;
+    readonly payload: string;
+    
+}
+
+```
+
+## PlainMessage
+
+```typescript
+/**
+ * Plain Message model
+ */
+export declare class PlainMessage extends Message {
+    
+    constructor(payload: string);
     
     /**
      * Create new constructor
      * @returns {boolean}
      */
-    static create(message: string): Message;
+    static create(message: string): PlainMessage;
     
     /**
      * Message string
      * @returns {string}
      */
     plain(): string;
+    
 }
-export declare const EmptyMessage: Message;
+export declare const EmptyMessage: PlainMessage;
 
 ```
+
+## EncryptedMessage
+
+```typescript
+/**
+ * Encrypted Message model
+ */
+export declare class EncryptedMessage extends Message {
+    readonly recipientPublicAccount?: PublicAccount;
+}
+
+
+```
+
 
 ## ImportanceTransferTransaction
 
