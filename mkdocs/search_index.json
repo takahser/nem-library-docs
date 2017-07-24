@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Introduction\n\n\nNEM Library is an abstraction for \nNEM Blockchain\n using a \nReactive\n approach\nfor creating Blockchain applications.\n\n\n\n\nstable version 0.3.0\n\n\nCheck the \nnpm repostory\n for the latest updates\n\n\nInstallation\n\n\nnpm install nem-library --save\n\n\n\n\nNEM Library is build with \nTypeScript Language\n, so be sure that you have \nthe latest version installed.\n\n\nWe recommend to use TypeScript instead of JavaScript for building applications for \n\nNEM Blockchain\n due the type  system and how the nem-library is meant \nto be used, without counting other great benefits that TypeScript provides.\n\n\nnpm install -g typescript\n\n\n\n\n\n\nPlatforms supported\n\n\n\n\n\n\n\n\nPlatform\n\n\nVersion\n\n\n\n\n\n\n\n\n\n\nTypeScript\n\n\n>= 2.4.0\n\n\n\n\n\n\nNodeJS\n\n\n>= 6.11.1 (but 8.x.x is recommended)\n\n\n\n\n\n\nAngular\n\n\n>= 4.2\n\n\n\n\n\n\nIonic\n\n\n>= 4.0\n\n\n\n\n\n\nFirefox\n\n\n>= 53.0\n\n\n\n\n\n\nChrome\n\n\n>= 58.0.3029.81\n\n\n\n\n\n\nChromium\n\n\n>= 59.0.3071.86\n\n\n\n\n\n\nOpera\n\n\n>= 46.0.2597.46\n\n\n\n\n\n\nEdge\n\n\n>= 40.15063.0.0\n\n\n\n\n\n\nSafari\n\n\n>= 10.0\n\n\n\n\n\n\nAndroid\n\n\n>= 5.0.0\n\n\n\n\n\n\niOS\n\n\n>= 9.3.5\n\n\n\n\n\n\n\n\nBecause of Ionic generates mobile applications, Android and iOS, the support is provided.\n\nRemark that \nWindows Phone\n is not supported yet.\n\n\n\n\nTypeScript compiler options\n\n\nUntil nem-library upgrade into \nRxJS 6.0\n, \n\"noStrictGenericChecks\"\n has to be set to true in \ntsconfig.json\n file.\n\n\n{\n  \ncompilerOptions\n: {\n    // ...\n    \nnoStrictGenericChecks\n: true\n  }\n}\n\n\n\n\nUsage\n\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n\nChangelog\n\n\n0.3.0\n\n\nReleased 24 July 2017\n\n\n0.3.0-RC4\n\n\n\n\nEncrypted Message\n\n\n\n\n0.3.0-RC1\n\n\n\n\nPagination\n\n\nListeners\n\n\nWallets\n\n\n\n\n0.2.34\n\n\nStable version", 
+            "text": "Introduction\n\n\nNEM Library is an abstraction for \nNEM Blockchain\n using a \nReactive\n approach\nfor creating Blockchain applications.\n\n\n\n\nstable version 0.3.1\n\n\nCheck the \nnpm repostory\n for the latest updates\n\n\nInstallation\n\n\nnpm install nem-library --save\n\n\n\n\nNEM Library is build with \nTypeScript Language\n, so be sure that you have \nthe latest version installed.\n\n\nWe recommend to use TypeScript instead of JavaScript for building applications for \n\nNEM Blockchain\n due the type  system and how the nem-library is meant \nto be used, without counting other great benefits that TypeScript provides.\n\n\nnpm install -g typescript\n\n\n\n\n\n\nPlatforms supported\n\n\n\n\n\n\n\n\nPlatform\n\n\nVersion\n\n\n\n\n\n\n\n\n\n\nTypeScript\n\n\n>= 2.4.0\n\n\n\n\n\n\nNodeJS\n\n\n>= 6.11.1 (but 8.x.x is recommended)\n\n\n\n\n\n\nAngular\n\n\n>= 4.2\n\n\n\n\n\n\nIonic\n\n\n>= 4.0\n\n\n\n\n\n\nFirefox\n\n\n>= 53.0\n\n\n\n\n\n\nChrome\n\n\n>= 58.0.3029.81\n\n\n\n\n\n\nChromium\n\n\n>= 59.0.3071.86\n\n\n\n\n\n\nOpera\n\n\n>= 46.0.2597.46\n\n\n\n\n\n\nEdge\n\n\n>= 40.15063.0.0\n\n\n\n\n\n\nSafari\n\n\n>= 10.0\n\n\n\n\n\n\nAndroid\n\n\n>= 5.0.0\n\n\n\n\n\n\niOS\n\n\n>= 9.3.5\n\n\n\n\n\n\n\n\nBecause of Ionic generates mobile applications, Android and iOS, the support is provided.\n\nRemark that \nWindows Phone\n is not supported yet.\n\n\n\n\nTypeScript compiler options\n\n\nUntil nem-library upgrade into \nRxJS 6.0\n, \n\"noStrictGenericChecks\"\n has to be set to true in \ntsconfig.json\n file.\n\n\n{\n  \ncompilerOptions\n: {\n    // ...\n    \nnoStrictGenericChecks\n: true\n  }\n}\n\n\n\n\nUsage\n\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n\nChangelog\n\n\n0.3.1\n\n\nReleased 24 July 2017\n\n\n0.3.0-RC4\n\n\n\n\nEncrypted Message\n\n\n\n\n0.3.0-RC1\n\n\n\n\nPagination\n\n\nListeners\n\n\nWallets\n\n\n\n\n0.2.34\n\n\nStable version", 
             "title": "Home"
         }, 
         {
@@ -11,9 +11,9 @@
             "title": "Introduction"
         }, 
         {
-            "location": "/#stable-version-030", 
+            "location": "/#stable-version-031", 
             "text": "Check the  npm repostory  for the latest updates", 
-            "title": "stable version 0.3.0"
+            "title": "stable version 0.3.1"
         }, 
         {
             "location": "/#installation", 
@@ -41,9 +41,9 @@
             "title": "Changelog"
         }, 
         {
-            "location": "/#030", 
+            "location": "/#031", 
             "text": "Released 24 July 2017", 
-            "title": "0.3.0"
+            "title": "0.3.1"
         }, 
         {
             "location": "/#030-rc4", 
