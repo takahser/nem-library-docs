@@ -5,9 +5,9 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-### "Learn once, code everything"
-
 #### stable version 0.2.34
+
+Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
 ## Installation
 
@@ -73,6 +73,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
+
+### 0.3.0-RC4
+
+- Encrypted Message
 
 ### 0.3.0-RC1
 
