@@ -72,6 +72,8 @@ NemAnnounceResult {
   
 ```
 
+[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/transaction/TrasactionHttpExample.ts)
+
 
 # Models
 
