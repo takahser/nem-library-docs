@@ -33,7 +33,10 @@ export declare class AccountListener extends Listener {
  * nem-library 0.3.0
  */
 
-import {AccountListener, Address} from "nem-library";
+import {AccountListener, Address, NEMLibrary, NetworkTypes} from "nem-library";
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA");
 let accountListener = new AccountListener({domain: "23.228.67.85"}).given(address).subscribe(x => {
@@ -42,11 +45,47 @@ let accountListener = new AccountListener({domain: "23.228.67.85"}).given(addres
     console.log(err);
 });
 
+
 ```
 
 Output
 
 ```
+AccountInfoWithMetaData {
+  balance: 
+   Balance {
+     balance: 10246300001,
+     vestedBalance: 5507591402,
+     unvestedBalance: 4738708599 },
+  importance: 0,
+  publicAccount: 
+   PublicAccount {
+     address: 
+      Address {
+        value: 'TCJZJHAV63RE2JSKN27DFIHZRXIHAI736WXEOJGA',
+        networkType: 152 },
+     publicKey: 'a4f9d42cf8e1f7c6c3216ede81896c4fa9f49071ee4aee2a4843e2711899b23a' },
+  harvestedBlocks: 0,
+  cosignatoriesCount: undefined,
+  minCosignatories: undefined,
+  status: 'LOCKED',
+  remoteStatus: 'ACTIVE',
+  cosignatoryOf: 
+   [ AccountInfo {
+       balance: [Object],
+       importance: 0,
+       publicAccount: [Object],
+       harvestedBlocks: 0,
+       cosignatoriesCount: undefined,
+       minCosignatories: undefined },
+     AccountInfo {
+       balance: [Object],
+       importance: 0,
+       publicAccount: [Object],
+       harvestedBlocks: 0,
+       cosignatoriesCount: undefined,
+       minCosignatories: undefined } ],
+  cosignatories: [] }
 
 ```
 

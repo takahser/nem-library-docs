@@ -5,15 +5,18 @@
  * nem-library 0.3.0
  */
 
-import {AccountListener, Address} from "nem-library";
+import {AccountListener, Address, NEMLibrary, NetworkTypes} from "nem-library";
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA");
 let accountListener = new AccountListener({domain: "23.228.67.85"}).given(address).subscribe(x => {
     console.log(x);
-    done();
 }, err => {
     console.log(err);
 });
+
 
 
 ```
@@ -28,13 +31,17 @@ let accountListener = new AccountListener({domain: "23.228.67.85"}).given(addres
  * nem-library 0.3.0
  */
 
-import {BlockchainListener} from "nem-library";
+import {BlockchainListener, NEMLibrary, NetworkTypes} from "nem-library";
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 let blockchainListener = new BlockchainListener({domain: "23.228.67.85"}).newBlock().subscribe(x => {
     console.log(x);
 }, err => {
     console.log(err);
 });
+
 
 ```
 
@@ -48,13 +55,17 @@ let blockchainListener = new BlockchainListener({domain: "23.228.67.85"}).newBlo
  * nem-library 0.3.0
  */
 
-import {BlockchainListener} from "nem-library";
+import {BlockchainListener, NEMLibrary, NetworkTypes} from "nem-library";
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 let blockchainListener = new BlockchainListener({domain: "23.228.67.85"}).newHeight().subscribe(x => {
     console.log(x);
 }, err => {
     console.log(err);
 });
+
 
 ```
 
@@ -68,7 +79,10 @@ let blockchainListener = new BlockchainListener({domain: "23.228.67.85"}).newHei
  * nem-library 0.3.0
  */
 
-import {Address, UnconfirmedTransactionListener} from "nem-library";
+import {Address, NEMLibrary, NetworkTypes, UnconfirmedTransactionListener} from "nem-library";
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K");
 
@@ -88,7 +102,9 @@ let unconfirmedTransactionListener = new UnconfirmedTransactionListener({domain:
  * nem-library 0.3.0
  */
 
-import {Address, ConfirmedTransactionListener} from "nem-library";
+import {Address, ConfirmedTransactionListener, NEMLibrary, NetworkTypes} from "nem-library";
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K");
 
