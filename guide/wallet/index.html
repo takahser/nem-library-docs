@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Mosaic - NEM Library</title>
+  <title>Wallet - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mosaic";
-    var mkdocs_page_input_path = "guide/mosaic.md";
-    var mkdocs_page_url = "/guide/mosaic/";
+    var mkdocs_page_name = "Wallet";
+    var mkdocs_page_input_path = "guide/wallet.md";
+    var mkdocs_page_url = "/guide/wallet/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -129,18 +129,9 @@
                     
     <a class="" href="../namespace/">Namespace</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Mosaic</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#how-to-create-a-mosaic">How to create a Mosaic</a></li>
-    
-
-    <li class="toctree-l3"><a href="#how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</a></li>
-    
-
-    </ul>
+    <a class="" href="../mosaic/">Mosaic</a>
                 </li>
                 <li class="">
                     
@@ -154,9 +145,24 @@
                     
     <a class="" href="../listener/">Listener</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../wallet/">Wallet</a>
+    <a class="current" href="./">Wallet</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#how-to-create-a-simple-wallet">How to create a Simple Wallet</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-brain-wallet">How to create a Brain Wallet</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-simple-wallet-from-a-private-key">How to create a Simple Wallet from a private key</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-open-a-wallet">How to open a Wallet</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -207,10 +213,10 @@
         
       
     
-    <li>Mosaic</li>
+    <li>Wallet</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/mosaic.md"
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/wallet.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -220,60 +226,75 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="how-to-create-a-mosaic">How to create a Mosaic</h3>
-<pre><code class="typescript">import {
-    NEMLibrary, NetworkTypes, TimeWindow, Account, TransactionHttp,
-    MosaicDefinitionCreationTransaction, MosaicDefinition, PublicAccount, MosaicId, MosaicProperties, MosaicLevy,
-    MosaicLevyType
-} from &quot;nem-library&quot;;
+                <h3 id="how-to-create-a-simple-wallet">How to create a Simple Wallet</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
 
+import {SimpleWallet, Password, NetworkTypes, NEMLibrary} from &quot;nem-library&quot;;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const password = new Password(&quot;password&quot;);
+const simpleWallet = SimpleWallet.create(&quot;simple wallet&quot;, password);
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/wallet/How_to_create_a_Simple_Wallet.ts">Source code</a></p>
+<h3 id="how-to-create-a-brain-wallet">How to create a Brain Wallet</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {BrainWallet, BrainPassword, NetworkTypes, NEMLibrary} from &quot;nem-library&quot;;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const brainPassword =  new BrainPassword(&quot;entertain destruction sassy impartial morning electric limit glib bait grape icy measure&quot;)
+const brainWallet = BrainWallet.create(&quot;brain wallet&quot;, brainPassword);
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/wallet/How_to_create_a_Brain_Wallet.ts">Source code</a></p>
+<h3 id="how-to-create-a-simple-wallet-from-a-private-key">How to create a Simple Wallet from a private key</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {SimpleWallet, Password, NetworkTypes, NEMLibrary} from &quot;nem-library&quot;;
 declare let process: any;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const privateKey: string = process.env.PRIVATE_KEY;
-const account = Account.createWithPrivateKey(privateKey);
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
 
-const mosaicDefinitionTransaction = MosaicDefinitionCreationTransaction.create(
-    TimeWindow.createWithDeadline(),
-    new MosaicDefinition(
-        PublicAccount.createWithPublicKey(account.publicKey),
-        new MosaicId(&quot;new-namespace&quot;, &quot;new-mosaic&quot;),
-        &quot;mosaic description&quot;,
-        new MosaicProperties(0, 9000000, true, true),
-        new MosaicLevy(
-            MosaicLevyType.Percentil,
-            account.address,
-            new MosaicId(&quot;nem&quot;, &quot;xem&quot;),
-            2
-        )
-    )
-);
 
-const signedTransaction = account.signTransaction(mosaicDefinitionTransaction);
-transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
-
+const password = new Password(&quot;password&quot;);
+const simpleWallet = SimpleWallet.createWithPrivateKey(&quot;simple wallet&quot;, password, privateKey);
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_create_a_Mosaic.ts">Source code</a></p>
-<h3 id="how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</h3>
-<pre><code class="typescript">import {
-    NEMLibrary, NetworkTypes, MosaicHttp, TransactionTypes
-} from &quot;nem-library&quot;;
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/wallet/How_to_create_a_Simple_Wallet_from_a_private_key.ts">Source code</a></p>
+<h3 id="how-to-open-a-wallet">How to open a Wallet</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {SimpleWallet, Password, NetworkTypes, NEMLibrary} from &quot;nem-library&quot;;
+declare let process: any;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
-const namespace = &quot;new-namespace&quot;;
+const privateKey: string = process.env.PRIVATE_KEY;
 
-mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; console.log(mosaicDefinitions));
 
+const password = new Password(&quot;password&quot;);
+const simpleWallet = SimpleWallet.createWithPrivateKey(&quot;simple wallet&quot;, password, privateKey);
+const account = simpleWallet.open(password);
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_get_Namespace_Mosaic_Definitions.ts">Source code</a></p>
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/wallet/How_to_open_a_Wallet.ts">Source code</a></p>
               
             </div>
           </div>
@@ -281,10 +302,10 @@ mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; con
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../node/" class="btn btn-neutral float-right" title="Node">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../support/" class="btn btn-neutral float-right" title="Support">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../namespace/" class="btn btn-neutral" title="Namespace"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../listener/" class="btn btn-neutral" title="Listener"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -312,10 +333,10 @@ mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; con
           <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../namespace/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../listener/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../support/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

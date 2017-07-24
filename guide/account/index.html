@@ -98,6 +98,14 @@
                     
     <a class="" href="../../documentation/blockchain/">Blockchain</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../documentation/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../documentation/wallet/">Wallet</a>
+                </li>
     </ul>
 	    </li>
           
@@ -117,6 +125,9 @@
     <li class="toctree-l3"><a href="#how-to-receive-all-transactions-for-an-account">How to receive all transactions for an account</a></li>
     
 
+    <li class="toctree-l3"><a href="#how-to-receive-all-transactions-for-an-account-paginated">How to receive all transactions for an account paginated</a></li>
+    
+
     <li class="toctree-l3"><a href="#how-to-receive-incoming-transactions-for-an-account">How to receive incoming transactions for an account</a></li>
     
 
@@ -124,6 +135,9 @@
     
 
     <li class="toctree-l3"><a href="#how-to-get-the-unconfirmed-transactions-for-an-account">How to get the unconfirmed transactions for an account</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-get-account-harvested-blocks-info-paginated">How to get Account harvested blocks info paginated</a></li>
     
 
     <li class="toctree-l3"><a href="#how-to-get-account-importances">How to get Account Importances</a></li>
@@ -156,6 +170,14 @@
                 <li class="">
                     
     <a class="" href="../blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet/">Wallet</a>
                 </li>
     </ul>
 	    </li>
@@ -233,6 +255,27 @@ accountHttp.allTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_the_transactions_for_an_account.ts">Source code</a></p>
+<h3 id="how-to-receive-all-transactions-for-an-account-paginated">How to receive all transactions for an account paginated</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import { AccountHttp, Address, NEMLibrary, NetworkTypes } from &quot;nem-library&quot;;
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+let address = new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;);
+let accountHttp = new AccountHttp();
+
+let pageable = accountHttp.allTransactionsPaginated(address);
+
+pageable.subscribe(transactions =&gt; {
+    // do something with the info
+});
+
+pageable.nextPage(); // Fetch the nexts 25 transactions
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_do_pagination_in_transactions_methods.ts">Source code</a></p>
 <h3 id="how-to-receive-incoming-transactions-for-an-account">How to receive incoming transactions for an account</h3>
 <pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
@@ -275,6 +318,20 @@ accountHttp.unconfirmedTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_the_unconfirmed_transactions_for_an_account.ts">Source code</a></p>
+<h3 id="how-to-get-account-harvested-blocks-info-paginated">How to get Account harvested blocks info paginated</h3>
+<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const accountHttp = new AccountHttp();
+
+accountHttp.getAccountImportances()
+    .subscribe(x =&gt; {
+        console.log(x);
+    });
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_do_pagination_in_account_harvests.ts">Source code</a></p>
 <h3 id="how-to-get-account-importances">How to get Account Importances</h3>
 <pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 

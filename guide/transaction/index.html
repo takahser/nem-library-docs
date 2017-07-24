@@ -98,6 +98,14 @@
                     
     <a class="" href="../../documentation/blockchain/">Blockchain</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../documentation/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../documentation/wallet/">Wallet</a>
+                </li>
     </ul>
 	    </li>
           
@@ -124,7 +132,10 @@
     <li class="toctree-l3"><a href="#how-to-sign-a-transaction">How to sign a Transaction</a></li>
     
 
-    <li class="toctree-l3"><a href="#how-to-create-a-transaction-with-a-message">How to create a Transaction with a Message</a></li>
+    <li class="toctree-l3"><a href="#how-to-create-a-transfer-transaction-with-a-message">How to create a Transfer Transaction with a Message</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-transfer-transaction-with-an-encrypted-message">How to create a Transfer Transaction with an Encrypted Message</a></li>
     
 
     <li class="toctree-l3"><a href="#how-to-create-a-multisig-transaction">How to create a MultiSig Transaction</a></li>
@@ -150,6 +161,14 @@
                 <li class="">
                     
     <a class="" href="../blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet/">Wallet</a>
                 </li>
     </ul>
 	    </li>
@@ -261,10 +280,13 @@ transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; consol
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_sign_a_Transaction.ts">Source code</a></p>
-<h3 id="how-to-create-a-transaction-with-a-message">How to create a Transaction with a Message</h3>
-<pre><code class="typescript">import {
+<h3 id="how-to-create-a-transfer-transaction-with-a-message">How to create a Transfer Transaction with a Message</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, Transaction, TimeWindow,
-    EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, Message, XEM
+    XEM, PlainMessage
 } from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
@@ -274,8 +296,41 @@ const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;),
     XEM(0),
-    Message.create(&quot;a transaction&quot;)
+    PlainMessage.create(&quot;a transaction&quot;)
 );
+
+</code></pre>
+
+<h3 id="how-to-create-a-transfer-transaction-with-an-encrypted-message">How to create a Transfer Transaction with an Encrypted Message</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+import {
+    NEMLibrary, NetworkTypes, Account, TransferTransaction, TimeWindow,
+    TransactionHttp, XEM, PublicAccount
+} from &quot;nem-library&quot;;
+declare let process: any;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+
+// Replace with a cosignatory private key
+const privateKey: string = process.env.PRIVATE_KEY;
+const recipientPublicAccount = PublicAccount.createWithPublicKey(&quot;b254d8b2b00e1b1266eb54a6931cd7c1b0f307e41d9ebb01f025f4933758f0be&quot;);
+
+const account = Account.createWithPrivateKey(privateKey);
+
+const encryptedMessage = account.encryptMessage(&quot;a transaction&quot;, recipientPublicAccount);
+const transferTransaction = TransferTransaction.create(
+    TimeWindow.createWithDeadline(),
+    recipientPublicAccount.address,
+    XEM(2),
+    encryptedMessage
+);
+
+
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_send_a_Transaction_with_a_Message.ts">Source code</a></p>

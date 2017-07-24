@@ -81,6 +81,12 @@
             
     <li class="toctree-l3"><a href="#account-related-requests">Account related requests</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l4" href="#keypair-concept">Keypair concept</a></li>
+        
+        </ul>
+    
 
     <li class="toctree-l3"><a href="#accounthttp-definition">AccountHttp definition</a></li>
     
@@ -91,8 +97,6 @@
     <li class="toctree-l3"><a href="#models">Models</a></li>
     
         <ul>
-        
-            <li><a class="toctree-l4" href="#account">Account</a></li>
         
             <li><a class="toctree-l4" href="#publicaccount">PublicAccount</a></li>
         
@@ -135,6 +139,14 @@
                     
     <a class="" href="../blockchain/">Blockchain</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet/">Wallet</a>
+                </li>
     </ul>
 	    </li>
           
@@ -169,6 +181,14 @@
                 <li class="">
                     
     <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
 	    </li>
@@ -240,6 +260,8 @@
 <p><strong>Multisig accounts:</strong></p>
 <p>Multisig accounts can be created by converting a normal account to a multisig account via a aggregate modification transaction. This adds cosignatories to the account. After that modification, only the cosignatories can initiate an action for the account. Any action must be signed by all cosignatories. This makes a multisig account significantly more secure than a normal account. When a single cosignatory private key is gained by an attacker, the attacker still can`t initiate any action on the account since all cosignatories must sign. It is strongly recommended to convert any account holding a significantly high amount of NEM into a multisig account with at least 3 cosignatories. Once converted to a multisig account, the original private key for the account plays no role any more.</p>
 <p><a href="https://bob.nem.ninja/docs/#account-related-requests">Official Source</a></p>
+<h2 id="keypair-concept">Keypair concept</h2>
+<p>NEM Library replaces the Keypair model, which usually holds the public and private key, with the <a href="#account">Account</a> model. The reason is that we aim to keep the private key as secret as possible, just providing a set of methods where the private key is involved.</p>
 <h1 id="accounthttp-definition">AccountHttp definition</h1>
 <pre><code class="typescript">export declare class AccountHttp extends HttpEndpoint {
     constructor(serverConfig?: ServerConfig);
@@ -293,6 +315,14 @@
     incomingTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
 
     /**
+     * Paginaged version of incomingTransactions request
+     * @param address
+     * @param hash
+     * @returns {IncomingTransactionsPageable}
+     */
+    incomingTransactionsPaginated(address: Address, hash?: string): Pageable&lt;Transaction[]&gt;;
+
+    /**
      * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
      * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
      * @param address - The address of the account.
@@ -301,6 +331,14 @@
      * @return Observable&lt;Transaction[]&gt;
      */
     outgoingTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
+
+    /**
+     * Paginaged version of outgoingTransactions request
+     * @param address
+     * @param hash
+     * @returns {OutgoingTransactionsPageable}
+     */
+    outgoingTransactionsPaginated(address: Address, hash?: string): Pageable&lt;Transaction[]&gt;;
 
     /**
      * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
@@ -314,6 +352,14 @@
     allTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
 
     /**
+     * Paginaged version of allTransactions request
+     * @param address
+     * @param hash
+     * @returns {AllTransactionsPageable}
+     */
+    allTransactionsPaginated(address: Address, hash?: string): Pageable&lt;Transaction[]&gt;;
+
+    /**
      * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
      * @param address - NEM Address
      * @return Observable&lt;Transaction[]&gt;
@@ -323,10 +369,18 @@
     /**
      * Gets an array of harvest info objects for an account.
      * @param address - Address
-     * @param hash - string
+     * @param id - string (optional)
      * @return Observable&lt;AccountHarvestInfo[]&gt;
      */
-    getHarvestInfoDataForAnAccount(address: Address, hash: string): Observable&lt;AccountHarvestInfo[]&gt;;
+    getHarvestInfoDataForAnAccount(address: Address, id?: string): Observable&lt;AccountHarvestInfo[]&gt;;
+
+    /**
+     * Paginaged version of allTransactions request
+     * @param address
+     * @param id
+     * @returns {HarvestInfoPageable}
+     */
+    getHarvestInfoDataForAnAccountPaginated(address: Address, id?: string): Pageable&lt;AccountHarvestInfo[]&gt;;
 
     /**
      * Gets an array of account importance view model objects.
@@ -439,7 +493,7 @@ accountHttp.getFromAddress(address).subscribe(accountInfoWithMetaData =&gt; {
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/account/AccountHttpExample.ts">Run the code</a></p>
 <h1 id="models">Models</h1>
-<h2 id="account">Account</h2>
+<h2 id="account"><a name="account"></a> Account</h2>
 <pre><code class="typescript">/**
  * Account model
  */
@@ -459,6 +513,22 @@ export declare class Account extends PublicAccount {
      * @returns {Account}
      */
     static createWithPrivateKey(privateKey: string): Account;
+
+    /**
+     * Create a new encrypted Message
+     * @param message
+     * @param recipientPublicAccount
+     * @returns {EncryptedMessage}
+     */
+    encryptMessage(message: string, recipientPublicAccount: PublicAccount): EncryptedMessage;
+
+    /**
+     * Decrypts an encrypted message
+     * @param encryptedMessage
+     * @param recipientPublicAccount
+     * @returns {EncryptedMessage}
+     */
+    decryptMessage(encryptedMessage: EncryptedMessage, recipientPublicAccount: PublicAccount): EncryptedMessage;
 }
 </code></pre>
 

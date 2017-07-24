@@ -108,6 +108,10 @@
         
             <li><a class="toctree-l4" href="#message">Message</a></li>
         
+            <li><a class="toctree-l4" href="#plainmessage">PlainMessage</a></li>
+        
+            <li><a class="toctree-l4" href="#encryptedmessage">EncryptedMessage</a></li>
+        
             <li><a class="toctree-l4" href="#importancetransfertransaction">ImportanceTransferTransaction</a></li>
         
             <li><a class="toctree-l4" href="#provisionnamespacetransaction">ProvisionNamespaceTransaction</a></li>
@@ -147,6 +151,14 @@
                     
     <a class="" href="../blockchain/">Blockchain</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet/">Wallet</a>
+                </li>
     </ul>
 	    </li>
           
@@ -181,6 +193,14 @@
                 <li class="">
                     
     <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
 	    </li>
@@ -308,6 +328,7 @@ NemAnnounceResult {
 
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/transaction/TrasactionHttpExample.ts">Run the code</a></p>
 <h1 id="models">Models</h1>
 <h2 id="timewindow">TimeWindow</h2>
 <pre><code class="typescript">export declare class TimeWindow {
@@ -557,7 +578,7 @@ export declare class TransferTransaction extends Transaction {
     /**
      * Optionally a transaction can contain a message. In this case the transaction contains a message substructure. If not the field is null.
      */
-    readonly message: Message;
+    readonly message: PlainMessage | EncryptedMessage;
 
     /**
      * The array of Mosaic objects.
@@ -573,7 +594,7 @@ export declare class TransferTransaction extends Transaction {
      * @param mosaics
      * @returns {TransferTransaction}
      */
-    static create(timeWindow: TimeWindow, recipient: string, amount: number, message: Message): TransferTransaction;
+    static create(timeWindow: TimeWindow, recipient: Address, amount: number, message: PlainMessage | EncryptedMessage): TransferTransaction;
 
     /**
      * Create a TransferTransaction object
@@ -583,42 +604,59 @@ export declare class TransferTransaction extends Transaction {
      * @param message
      * @returns {TransferTransaction}
      */
-    static createWithMosaics(timeWindow: TimeWindow, recipient: string, mosaics: Mosaic[], message: Message): TransferTransaction;
+    static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: Mosaic[], message: PlainMessage | EncryptedMessage): TransferTransaction;
 }
 
 </code></pre>
 
 <h2 id="message">Message</h2>
-<pre><code class="typescript">
-export declare enum MessageType {
-    Plain = 1,
-    Encrypted = 2,
-}
-
-/**
+<pre><code class="typescript">/**
  * Message model
  */
-export declare class Message {
+export declare abstract class Message {
 
     /**
-     * Validate if message is encrypted
-     * @returns {boolean}
+     * Message payload
      */
-    isEncrypted(): boolean;
+    readonly payload: string;
+
+}
+
+</code></pre>
+
+<h2 id="plainmessage">PlainMessage</h2>
+<pre><code class="typescript">/**
+ * Plain Message model
+ */
+export declare class PlainMessage extends Message {
+
+    constructor(payload: string);
 
     /**
      * Create new constructor
      * @returns {boolean}
      */
-    static create(message: string): Message;
+    static create(message: string): PlainMessage;
 
     /**
      * Message string
      * @returns {string}
      */
     plain(): string;
+
 }
-export declare const EmptyMessage: Message;
+export declare const EmptyMessage: PlainMessage;
+
+</code></pre>
+
+<h2 id="encryptedmessage">EncryptedMessage</h2>
+<pre><code class="typescript">/**
+ * Encrypted Message model
+ */
+export declare class EncryptedMessage extends Message {
+    readonly recipientPublicAccount?: PublicAccount;
+}
+
 
 </code></pre>
 

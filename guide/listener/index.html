@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Mosaic - NEM Library</title>
+  <title>Listener - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mosaic";
-    var mkdocs_page_input_path = "guide/mosaic.md";
-    var mkdocs_page_url = "/guide/mosaic/";
+    var mkdocs_page_name = "Listener";
+    var mkdocs_page_input_path = "guide/listener.md";
+    var mkdocs_page_url = "/guide/listener/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -129,18 +129,9 @@
                     
     <a class="" href="../namespace/">Namespace</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Mosaic</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#how-to-create-a-mosaic">How to create a Mosaic</a></li>
-    
-
-    <li class="toctree-l3"><a href="#how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</a></li>
-    
-
-    </ul>
+    <a class="" href="../mosaic/">Mosaic</a>
                 </li>
                 <li class="">
                     
@@ -150,9 +141,27 @@
                     
     <a class="" href="../blockchain/">Blockchain</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../listener/">Listener</a>
+    <a class="current" href="./">Listener</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#how-to-create-a-listener-for-account-information">How to create a listener for account information</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-listener-for-new-blocks-information">How to create a listener for new blocks information</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-listener-for-new-blockchain-height-information">How to create a listener for new blockchain height information</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-listener-for-unconfirmed-transactions-information">How to create a listener for unconfirmed transactions information</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-listener-for-confirmed-transactions-information">How to create a listener for confirmed transactions information</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -207,10 +216,10 @@
         
       
     
-    <li>Mosaic</li>
+    <li>Listener</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/mosaic.md"
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/listener.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -220,60 +229,107 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="how-to-create-a-mosaic">How to create a Mosaic</h3>
-<pre><code class="typescript">import {
-    NEMLibrary, NetworkTypes, TimeWindow, Account, TransactionHttp,
-    MosaicDefinitionCreationTransaction, MosaicDefinition, PublicAccount, MosaicId, MosaicProperties, MosaicLevy,
-    MosaicLevyType
-} from &quot;nem-library&quot;;
+                <h3 id="how-to-create-a-listener-for-account-information">How to create a listener for account information</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
 
-declare let process: any;
+import {AccountListener, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const privateKey: string = process.env.PRIVATE_KEY;
-const account = Account.createWithPrivateKey(privateKey);
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const address = new Address(&quot;TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA&quot;);
+let accountListener = new AccountListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+    console.log(x);
+}, err =&gt; {
+    console.log(err);
+});
 
-const mosaicDefinitionTransaction = MosaicDefinitionCreationTransaction.create(
-    TimeWindow.createWithDeadline(),
-    new MosaicDefinition(
-        PublicAccount.createWithPublicKey(account.publicKey),
-        new MosaicId(&quot;new-namespace&quot;, &quot;new-mosaic&quot;),
-        &quot;mosaic description&quot;,
-        new MosaicProperties(0, 9000000, true, true),
-        new MosaicLevy(
-            MosaicLevyType.Percentil,
-            account.address,
-            new MosaicId(&quot;nem&quot;, &quot;xem&quot;),
-            2
-        )
-    )
-);
 
-const signedTransaction = account.signTransaction(mosaicDefinitionTransaction);
-transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
 
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_create_a_Mosaic.ts">Source code</a></p>
-<h3 id="how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</h3>
-<pre><code class="typescript">import {
-    NEMLibrary, NetworkTypes, MosaicHttp, TransactionTypes
-} from &quot;nem-library&quot;;
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_account_information.ts">Source code</a></p>
+<h3 id="how-to-create-a-listener-for-new-blocks-information">How to create a listener for new blocks information</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {BlockchainListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
-const namespace = &quot;new-namespace&quot;;
+let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newBlock().subscribe(x =&gt; {
+    console.log(x);
+}, err =&gt; {
+    console.log(err);
+});
 
-mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; console.log(mosaicDefinitions));
 
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_get_Namespace_Mosaic_Definitions.ts">Source code</a></p>
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_new_blocks_information.ts">Source code</a></p>
+<h3 id="how-to-create-a-listener-for-new-blockchain-height-information">How to create a listener for new blockchain height information</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {BlockchainListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newHeight().subscribe(x =&gt; {
+    console.log(x);
+}, err =&gt; {
+    console.log(err);
+});
+
+
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_new_blockchain_height_information.ts">Source code</a></p>
+<h3 id="how-to-create-a-listener-for-unconfirmed-transactions-information">How to create a listener for unconfirmed transactions information</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {Address, NEMLibrary, NetworkTypes, UnconfirmedTransactionListener} from &quot;nem-library&quot;;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const address = new Address(&quot;TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K&quot;);
+
+let unconfirmedTransactionListener = new UnconfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+    console.log(x);
+}, err =&gt; {
+    console.log(err);
+});
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_unconfirmed_transactions_information.ts">Source code</a></p>
+<h3 id="how-to-create-a-listener-for-confirmed-transactions-information">How to create a listener for confirmed transactions information</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.0
+ */
+
+import {Address, ConfirmedTransactionListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+const address = new Address(&quot;TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K&quot;);
+
+let confirmedTransactionListener = new ConfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+    console.log(x);
+}, err =&gt; {
+    console.log(err);
+});
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/listener/How_to_create_a_listener_for_confirmed_transactions_information.ts">Source code</a></p>
               
             </div>
           </div>
@@ -281,10 +337,10 @@ mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; con
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../node/" class="btn btn-neutral float-right" title="Node">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../wallet/" class="btn btn-neutral float-right" title="Wallet">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../namespace/" class="btn btn-neutral" title="Namespace"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../blockchain/" class="btn btn-neutral" title="Blockchain"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -312,10 +368,10 @@ mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; con
           <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../namespace/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../blockchain/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../wallet/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
