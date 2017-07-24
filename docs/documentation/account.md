@@ -248,6 +248,22 @@ export declare class Account extends PublicAccount {
      * @returns {Account}
      */
     static createWithPrivateKey(privateKey: string): Account;
+    
+    /**
+     * Create a new encrypted Message
+     * @param message
+     * @param recipientPublicAccount
+     * @returns {EncryptedMessage}
+     */
+    encryptMessage(message: string, recipientPublicAccount: PublicAccount): EncryptedMessage;
+    
+    /**
+     * Decrypts an encrypted message
+     * @param encryptedMessage
+     * @param recipientPublicAccount
+     * @returns {EncryptedMessage}
+     */
+    decryptMessage(encryptedMessage: EncryptedMessage, recipientPublicAccount: PublicAccount): EncryptedMessage;
 }
 ```
 

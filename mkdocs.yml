@@ -10,6 +10,9 @@ pages:
     - 'documentation/mosaic.md'
     - 'documentation/node.md'
     - 'documentation/blockchain.md'
+    - 'documentation/listener.md'
+    - 'documentation/wallet.md'
+
   - Guide:
     - 'guide/overview.md'
     - 'guide/account.md'
@@ -18,6 +21,9 @@ pages:
     - 'guide/mosaic.md'
     - 'guide/node.md'
     - 'guide/blockchain.md'
+    - 'guide/listener.md'
+    - 'guide/wallet.md'
+
   - Support: 'support.md'
   - Internal Development Process: 'internal_development_process.md'
   - Roadmap: 'roadmap.md'
