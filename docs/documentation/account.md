@@ -23,43 +23,37 @@ NEM Library replaces the Keypair model, which usually holds the public and priva
 ```typescript
 export declare class AccountHttp extends HttpEndpoint {
     constructor(serverConfig?: ServerConfig);
-
     /**
      * Gets an AccountInfoWithMetaData for an account.
      * @param address - Address
      * @return Observable<AccountInfoWithMetaData>
      */
     getFromAddress(address: Address): Observable<AccountInfoWithMetaData>;
-
     /**
      * Gets an AccountInfoWithMetaData for an account with publicKey
      * @param publicKey - NEM
      * @return Observable<AccountInfoWithMetaData>
      */
     getFromPublicKey(publicKey: string): Observable<AccountInfoWithMetaData>;
-
     /**
-     * Given a delegate (formerly known as remote) account`s address, gets the AccountMetaDataPair for the account for which the given account is the delegate account.
+     * Given a delegate (formerly known as remote) account's address, gets the AccountMetaDataPair for the account for which the given account is the delegate account.
      * If the given account address is not a delegate account for any account, the request returns the AccountMetaDataPair for the given address.
      * @param address - Address
      * @return Observable<AccountInfoWithMetaData>
      */
     getOriginalAccountDataFromDelegatedAccountAddress(address: Address): Observable<AccountInfoWithMetaData>;
-
     /**
      * retrieve the original account data by providing the public key of the delegate account.
      * @param publicKey - string
      * @return Observable<AccountInfoWithMetaData>
      */
     getOriginalAccountDataFromDelegatedAccountPublicKey(publicKey: string): Observable<AccountInfoWithMetaData>;
-
     /**
      * Gets the AccountMetaData from an account.
      * @param address - NEM Address
      * @return Observable<AccountStatus>
      */
     status(address: Address): Observable<AccountStatus>;
-
     /**
      * A transaction is said to be incoming with respect to an account if the account is the recipient of the transaction.
      * In the same way outgoing transaction are the transactions where the account is the sender of the transaction.
@@ -68,36 +62,36 @@ export declare class AccountHttp extends HttpEndpoint {
      * @param address - The address of the account.
      * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
      * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
      * @return Observable<Transaction[]>
      */
-    incomingTransactions(address: Address, hash?: string, id?: string): Observable<Transaction[]>;
-    
+    incomingTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable<Transaction[]>;
     /**
      * Paginaged version of incomingTransactions request
      * @param address
      * @param hash
+     * @param pageSize - between 5 and 100, otherwise 10
      * @returns {IncomingTransactionsPageable}
      */
-    incomingTransactionsPaginated(address: Address, hash?: string): Pageable<Transaction[]>;
-    
+    incomingTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable<Transaction[]>;
     /**
      * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
      * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
      * @param address - The address of the account.
      * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
      * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
      * @return Observable<Transaction[]>
      */
-    outgoingTransactions(address: Address, hash?: string, id?: string): Observable<Transaction[]>;
-    
+    outgoingTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable<Transaction[]>;
     /**
      * Paginaged version of outgoingTransactions request
      * @param address
      * @param hash
+     * @param pageSize - between 5 and 100, otherwise 10
      * @returns {OutgoingTransactionsPageable}
      */
-    outgoingTransactionsPaginated(address: Address, hash?: string): Pageable<Transaction[]>;
-    
+    outgoingTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable<Transaction[]>;
     /**
      * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
      * A maximum of 25 transaction meta data pairs is returned.
@@ -105,25 +99,24 @@ export declare class AccountHttp extends HttpEndpoint {
      * @param address - The address of the account.
      * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
      * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
      * @return Observable<Transaction[]>
      */
-    allTransactions(address: Address, hash?: string, id?: string): Observable<Transaction[]>;
-    
+    allTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable<Transaction[]>;
     /**
      * Paginaged version of allTransactions request
      * @param address
      * @param hash
+     * @param pageSize - between 5 and 100, otherwise 10
      * @returns {AllTransactionsPageable}
      */
-    allTransactionsPaginated(address: Address, hash?: string): Pageable<Transaction[]>;
-    
+    allTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable<Transaction[]>;
     /**
      * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
      * @param address - NEM Address
      * @return Observable<Transaction[]>
      */
     unconfirmedTransactions(address: Address): Observable<Transaction[]>;
-    
     /**
      * Gets an array of harvest info objects for an account.
      * @param address - Address
@@ -131,7 +124,6 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<AccountHarvestInfo[]>
      */
     getHarvestInfoDataForAnAccount(address: Address, id?: string): Observable<AccountHarvestInfo[]>;
-   
     /**
      * Paginaged version of allTransactions request
      * @param address
@@ -139,13 +131,11 @@ export declare class AccountHttp extends HttpEndpoint {
      * @returns {HarvestInfoPageable}
      */
     getHarvestInfoDataForAnAccountPaginated(address: Address, id?: string): Pageable<AccountHarvestInfo[]>;
-    
     /**
      * Gets an array of account importance view model objects.
      * @return Observable<AccountImportanceInfo[]>
      */
     getAccountImportances(): Observable<AccountImportanceInfo[]>;
-
     /**
      * Gets an array of namespace objects for a given account address.
      * The parent parameter is optional. If supplied, only sub-namespaces of the parent namespace are returned.
@@ -156,7 +146,6 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<Namespace[]>
      */
     getNamespaceOwnedByAddress(address: Address, parent?: string, id?: string, pageSize?: number): Observable<Namespace[]>;
-
     /**
      * Gets an array of mosaic definition objects for a given account address. The parent parameter is optional.
      * If supplied, only mosaic definitions for the given parent namespace are returned.
@@ -167,14 +156,12 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<MosaicDefinition[]>
      */
     getMosaicCreatedByAddress(address: Address, parent?: string, id?: string): Observable<MosaicDefinition[]>;
-
     /**
      * Gets an array of mosaic objects for a given account address.
      * @param address - Address
      * @return Observable<Mosaic[]>
      */
     getMosaicOwnedByAddress(address: Address): Observable<Mosaic[]>;
-
     /**
      * Unlocks an account (starts harvesting).
      * @param host - string
@@ -182,7 +169,6 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<boolean>
      */
     unlockHarvesting(host: string, privateKey: string): Observable<boolean>;
-
     /**
      * Locks an account (stops harvesting).
      * @param host - string
@@ -190,7 +176,6 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<boolean>
      */
     lockHarvesting(host: string, privateKey: string): Observable<boolean>;
-
     /**
      * Each node can allow users to harvest with their delegated key on that node.
      * The NIS configuration has entries for configuring the maximum number of allowed harvesters and optionally allow harvesting only for certain account addresses.
@@ -198,7 +183,6 @@ export declare class AccountHttp extends HttpEndpoint {
      * @return Observable<NodeHarvestInfo>
      */
     unlockInfo(): Observable<NodeHarvestInfo>;
-
     /**
      * Gets historical information for an account.
      * @param address - The address of the account.
@@ -209,6 +193,7 @@ export declare class AccountHttp extends HttpEndpoint {
      */
     getHistoricalAccountData(address: Address, startHeight: number, endHeight: number, increment: number): Observable<AccountHistoricalInfo[]>;
 }
+
 ```
 
 # AccountHttp usage

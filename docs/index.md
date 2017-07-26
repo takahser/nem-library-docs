@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.3.3
+#### stable version 0.3.4
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -74,7 +74,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.3.4
+
+Released 26 July 2017
+
+- [AccountHttp.allTransactions](https://nemlibrary.com/documentation/account/#accounthttp-definition): Accepts pageSize as optional parameter. Between 5 and 100, default 10
+- [AccountHttp.allTransactionsPaginated](https://nemlibrary.com/documentation/account/#accounthttp-definition): Accepts pageSize as optional parameter. Between 5 and 100, default 10
+- [AccountHttp.incomingTransactions](https://nemlibrary.com/documentation/account/#accounthttp-definition): Accepts pageSize as optional parameter. Between 5 and 100, default 10
+- [AccountHttp.incomingTransactionsPaginated](https://nemlibrary.com/documentation/account/#accounthttp-definition): Accepts pageSize as optional parameter. Between 5 and 100, default 10
+- [AccountHttp.outgoingTransactions](https://nemlibrary.com/documentation/account/#accounthttp-definition): Accepts pageSize as optional parameter. Between 5 and 100, default 10
+- [AccountHttp.outgoingTransactionsPaginated](https://nemlibrary.com/documentation/account/#accounthttp-definition): Accepts pageSize as optional parameter. Between 5 and 100, default 10
+
 ### 0.3.3
+
+Released 26 July 2017
 
 - Exported interface `Pageable`
 
