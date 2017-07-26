@@ -51,7 +51,13 @@ Block {
   timeStamp: 72650707,
   prevBlockHash: { data: 'ec766003b1f7ed462ddb5e3bd71d7def7f52cf34aa2ed3f0887bfbeaf59bb77c' },
   signature: '1e58ab2147db1edf746e899569e2c371c3b532fdf29ed77f3ddf54723b1ccc9ce745fc01ccb97b445e90e509035b1909950c4ba3428c20f31056bab4feff2e00',
-  signer: '45880194fad01fcb55887b73eeffdc263914ed5749bf2f3acb928c843c57bd9a',
+  signer: 
+   PublicAccount {
+     address: 
+      Address {
+        value: 'TDONALICE7O3L63AS3KNDCPT7ZA7HMQTFZGYUCAH',
+        networkType: 152 },
+     publicKey: '45880194fad01fcb55887b73eeffdc263914ed5749bf2f3acb928c843c57bd9a' },
   transactions: [],
   version: -1744830463 }
 ```
@@ -116,6 +122,7 @@ Block {
      publicKey: '45880194fad01fcb55887b73eeffdc263914ed5749bf2f3acb928c843c57bd9a' },
   transactions: [],
   version: -1744830463 }
+
 ```
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/ChainHttpExample.ts)
