@@ -265,43 +265,37 @@
 <h1 id="accounthttp-definition">AccountHttp definition</h1>
 <pre><code class="typescript">export declare class AccountHttp extends HttpEndpoint {
     constructor(serverConfig?: ServerConfig);
-
     /**
      * Gets an AccountInfoWithMetaData for an account.
      * @param address - Address
      * @return Observable&lt;AccountInfoWithMetaData&gt;
      */
     getFromAddress(address: Address): Observable&lt;AccountInfoWithMetaData&gt;;
-
     /**
      * Gets an AccountInfoWithMetaData for an account with publicKey
      * @param publicKey - NEM
      * @return Observable&lt;AccountInfoWithMetaData&gt;
      */
     getFromPublicKey(publicKey: string): Observable&lt;AccountInfoWithMetaData&gt;;
-
     /**
-     * Given a delegate (formerly known as remote) account`s address, gets the AccountMetaDataPair for the account for which the given account is the delegate account.
+     * Given a delegate (formerly known as remote) account's address, gets the AccountMetaDataPair for the account for which the given account is the delegate account.
      * If the given account address is not a delegate account for any account, the request returns the AccountMetaDataPair for the given address.
      * @param address - Address
      * @return Observable&lt;AccountInfoWithMetaData&gt;
      */
     getOriginalAccountDataFromDelegatedAccountAddress(address: Address): Observable&lt;AccountInfoWithMetaData&gt;;
-
     /**
      * retrieve the original account data by providing the public key of the delegate account.
      * @param publicKey - string
      * @return Observable&lt;AccountInfoWithMetaData&gt;
      */
     getOriginalAccountDataFromDelegatedAccountPublicKey(publicKey: string): Observable&lt;AccountInfoWithMetaData&gt;;
-
     /**
      * Gets the AccountMetaData from an account.
      * @param address - NEM Address
      * @return Observable&lt;AccountStatus&gt;
      */
     status(address: Address): Observable&lt;AccountStatus&gt;;
-
     /**
      * A transaction is said to be incoming with respect to an account if the account is the recipient of the transaction.
      * In the same way outgoing transaction are the transactions where the account is the sender of the transaction.
@@ -310,36 +304,36 @@
      * @param address - The address of the account.
      * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
      * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
      * @return Observable&lt;Transaction[]&gt;
      */
-    incomingTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
-
+    incomingTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable&lt;Transaction[]&gt;;
     /**
      * Paginaged version of incomingTransactions request
      * @param address
      * @param hash
+     * @param pageSize - between 5 and 100, otherwise 10
      * @returns {IncomingTransactionsPageable}
      */
-    incomingTransactionsPaginated(address: Address, hash?: string): Pageable&lt;Transaction[]&gt;;
-
+    incomingTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable&lt;Transaction[]&gt;;
     /**
      * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
      * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
      * @param address - The address of the account.
      * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
      * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
      * @return Observable&lt;Transaction[]&gt;
      */
-    outgoingTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
-
+    outgoingTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable&lt;Transaction[]&gt;;
     /**
      * Paginaged version of outgoingTransactions request
      * @param address
      * @param hash
+     * @param pageSize - between 5 and 100, otherwise 10
      * @returns {OutgoingTransactionsPageable}
      */
-    outgoingTransactionsPaginated(address: Address, hash?: string): Pageable&lt;Transaction[]&gt;;
-
+    outgoingTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable&lt;Transaction[]&gt;;
     /**
      * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
      * A maximum of 25 transaction meta data pairs is returned.
@@ -347,25 +341,24 @@
      * @param address - The address of the account.
      * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
      * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
      * @return Observable&lt;Transaction[]&gt;
      */
-    allTransactions(address: Address, hash?: string, id?: string): Observable&lt;Transaction[]&gt;;
-
+    allTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable&lt;Transaction[]&gt;;
     /**
      * Paginaged version of allTransactions request
      * @param address
      * @param hash
+     * @param pageSize - between 5 and 100, otherwise 10
      * @returns {AllTransactionsPageable}
      */
-    allTransactionsPaginated(address: Address, hash?: string): Pageable&lt;Transaction[]&gt;;
-
+    allTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable&lt;Transaction[]&gt;;
     /**
      * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
      * @param address - NEM Address
      * @return Observable&lt;Transaction[]&gt;
      */
     unconfirmedTransactions(address: Address): Observable&lt;Transaction[]&gt;;
-
     /**
      * Gets an array of harvest info objects for an account.
      * @param address - Address
@@ -373,7 +366,6 @@
      * @return Observable&lt;AccountHarvestInfo[]&gt;
      */
     getHarvestInfoDataForAnAccount(address: Address, id?: string): Observable&lt;AccountHarvestInfo[]&gt;;
-
     /**
      * Paginaged version of allTransactions request
      * @param address
@@ -381,13 +373,11 @@
      * @returns {HarvestInfoPageable}
      */
     getHarvestInfoDataForAnAccountPaginated(address: Address, id?: string): Pageable&lt;AccountHarvestInfo[]&gt;;
-
     /**
      * Gets an array of account importance view model objects.
      * @return Observable&lt;AccountImportanceInfo[]&gt;
      */
     getAccountImportances(): Observable&lt;AccountImportanceInfo[]&gt;;
-
     /**
      * Gets an array of namespace objects for a given account address.
      * The parent parameter is optional. If supplied, only sub-namespaces of the parent namespace are returned.
@@ -398,7 +388,6 @@
      * @return Observable&lt;Namespace[]&gt;
      */
     getNamespaceOwnedByAddress(address: Address, parent?: string, id?: string, pageSize?: number): Observable&lt;Namespace[]&gt;;
-
     /**
      * Gets an array of mosaic definition objects for a given account address. The parent parameter is optional.
      * If supplied, only mosaic definitions for the given parent namespace are returned.
@@ -409,14 +398,12 @@
      * @return Observable&lt;MosaicDefinition[]&gt;
      */
     getMosaicCreatedByAddress(address: Address, parent?: string, id?: string): Observable&lt;MosaicDefinition[]&gt;;
-
     /**
      * Gets an array of mosaic objects for a given account address.
      * @param address - Address
      * @return Observable&lt;Mosaic[]&gt;
      */
     getMosaicOwnedByAddress(address: Address): Observable&lt;Mosaic[]&gt;;
-
     /**
      * Unlocks an account (starts harvesting).
      * @param host - string
@@ -424,7 +411,6 @@
      * @return Observable&lt;boolean&gt;
      */
     unlockHarvesting(host: string, privateKey: string): Observable&lt;boolean&gt;;
-
     /**
      * Locks an account (stops harvesting).
      * @param host - string
@@ -432,7 +418,6 @@
      * @return Observable&lt;boolean&gt;
      */
     lockHarvesting(host: string, privateKey: string): Observable&lt;boolean&gt;;
-
     /**
      * Each node can allow users to harvest with their delegated key on that node.
      * The NIS configuration has entries for configuring the maximum number of allowed harvesters and optionally allow harvesting only for certain account addresses.
@@ -440,7 +425,6 @@
      * @return Observable&lt;NodeHarvestInfo&gt;
      */
     unlockInfo(): Observable&lt;NodeHarvestInfo&gt;;
-
     /**
      * Gets historical information for an account.
      * @param address - The address of the account.
@@ -451,6 +435,7 @@
      */
     getHistoricalAccountData(address: Address, startHeight: number, endHeight: number, increment: number): Observable&lt;AccountHistoricalInfo[]&gt;;
 }
+
 </code></pre>
 
 <h1 id="accounthttp-usage">AccountHttp usage</h1>
