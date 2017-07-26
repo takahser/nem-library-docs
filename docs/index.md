@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.3.2
+#### stable version 0.3.3
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -73,6 +73,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
+
+### 0.3.3
+
+- Exported interface `Pageable`
 
 ### 0.3.2
 
