@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.3.1
+#### stable version 0.3.2
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -73,6 +73,15 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
+
+### 0.3.2
+
+Released 26 July 2017
+
+- FIX Listeners on Browsers
+- [Transaction Model](https://nemlibrary.com/documentation/transaction/#transaction): Changed `signer` field type from `string` to `Public Account`
+- [Block Model](https://nemlibrary.com/documentation/blockchain/#block): Changed `signer` field type from `string` to `Public Account`
+- [NodeIdentity Model](https://nemlibrary.com/documentation/node/#node): Replaced `publickey: string` field to `publicAccount: PublicAccount`
 
 ### 0.3.1
 
