@@ -277,9 +277,9 @@ export declare abstract class Transaction {
     readonly signature?: string;
     
     /**
-     * The public key of the account that created the transaction.
-     */
-    signer?: string;
+    * The public account of the transaction creator.
+    */
+    public signer?: PublicAccount;
     
     /**
      * TimeWindow
@@ -809,6 +809,5 @@ export declare class NemAnnounceResult {
      */
     readonly innerTransactionHash: HashData;
 }
-
 
 ```

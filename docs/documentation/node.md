@@ -80,7 +80,7 @@ Node {
      version: '0.6.92-BETA',
      platform: 'Oracle Corporation (1.8.0_40) on Linux' },
   endpoint: NodeEndpoint { protocol: 'http', port: 7890, host: '104.128.226.60' },
-  identity: NodeIdentity { name: 'Hi, I am BigAlice2', publickey: undefined } }
+  identity: NodeIdentity { name: 'Hi, I am BigAlice2', publicAccount: undefined } }
 ```
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/node/NodeHttpExample.ts)
@@ -177,9 +177,9 @@ export declare class NodeIdentity {
     readonly name: string;
     
     /**
-     * The public key used to identify the node.
-     */
-    readonly publickey: string;
+    * The public account used to identify the node.
+    */
+    readonly publicAccount: PublicAccount;
 }
 
 ```
