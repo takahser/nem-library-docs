@@ -66,7 +66,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#stable-version-031">stable version 0.3.1</a></li>
+            <li><a class="toctree-l3" href="#stable-version-032">stable version 0.3.2</a></li>
         
             <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
@@ -238,7 +238,7 @@
 <p>NEM Library is an abstraction for <a href="https://nem.io">NEM Blockchain</a> using a <a href="https://en.wikipedia.org/wiki/Reactive_programming">Reactive</a> approach
 for creating Blockchain applications.</p>
 <p><img alt="NEM Logo" src="./img/Nem-Logomark.png" /></p>
-<h4 id="stable-version-031">stable version 0.3.1</h4>
+<h4 id="stable-version-032">stable version 0.3.2</h4>
 <p>Check the <a href="https://www.npmjs.com/package/nem-library">npm repostory</a> for the latest updates</p>
 <h2 id="installation">Installation</h2>
 <pre><code class="sh">npm install nem-library --save
@@ -333,6 +333,14 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h2 id="changelog">Changelog</h2>
+<h3 id="032">0.3.2</h3>
+<p>Released 26 July 2017</p>
+<ul>
+<li>FIX Listeners on Browsers</li>
+<li><a href="https://nemlibrary.com/documentation/transaction/#transaction">Transaction Model</a>: Changed <code>signer</code> field type from <code>string</code> to <code>Public Account</code></li>
+<li><a href="https://nemlibrary.com/documentation/blockchain/#block">Block Model</a>: Changed <code>signer</code> field type from <code>string</code> to <code>Public Account</code></li>
+<li><a href="https://nemlibrary.com/documentation/node/#node">NodeIdentity Model</a>: Replaced <code>publickey: string</code> field to <code>publicAccount: PublicAccount</code></li>
+</ul>
 <h3 id="031">0.3.1</h3>
 <p>Released 24 July 2017</p>
 <h3 id="030-rc4">0.3.0-RC4</h3>
@@ -395,5 +403,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-07-24 16:39:33
+Build Date UTC : 2017-07-26 13:18:08
 -->
