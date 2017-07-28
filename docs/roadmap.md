@@ -20,7 +20,7 @@
 - [X] Documentation
 - [X] TransactionFees
 
-## 0.3 Stable | Under development
+## 0.3 Stable
 
 This version **is** compatible with 0.2.34
 
@@ -29,22 +29,17 @@ This version **is** compatible with 0.2.34
 - [X] Wallet
 - [X] Encrypted Message
 - [X] Pagination
-- [ ] Persistent Wallet
 
-## 0.4
+## 0.4 Under development
 
 - [ ] Error handling
 - [ ] Connection pool
-- [ ] Node Type Connection
+- [ ] Persistent Wallet
 
-
-## 0.5
+## Future
 
 - [ ] High Order Filter Functions
 - [ ] High Order Data Transformation Functions
- 
-## 0.6
-
 - [ ] Concurrent data fetching
 - [ ] Error handling strategies
-
+- [ ] Node Type Connection
