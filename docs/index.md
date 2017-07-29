@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.3.6
+#### stable version 0.3.7
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -76,6 +76,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### 0.3.7
 
+- Compiled JS is es5
 - Address trims the input
 
 ### 0.3.6
