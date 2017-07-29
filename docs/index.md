@@ -74,6 +74,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.3.7
+
+- Address trims the input
+
 ### 0.3.6
 
 Released 29 July 2017
