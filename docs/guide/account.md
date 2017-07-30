@@ -236,3 +236,46 @@ pagedTransactions.subscribe(x => {
 ```
 
 [Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_fetch_all_transactions_for_an_account.ts)
+
+
+### How to sign unconfirmed multisig transactions
+
+```typescript
+/**
+ * nem-library 0.3.7
+ */
+
+import { AccountHttp, TransactionHttp, Address, NEMLibrary, NetworkTypes, Account, Transaction, TransactionTypes, MultisigTransaction, MultisigSignatureTransaction, TimeWindow, PublicAccount } from "nem-library";
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+let accountHttp = new AccountHttp();
+let transactionHttp = new TransactionHttp();
+
+let account = Account.createWithPrivateKey("");
+
+accountHttp.unconfirmedTransactions(account.address)
+    .map(x => x)
+    // Convert result Transaction[] into Transaction
+    .flatMap(x => x )
+    // just return the Multisig Transactions
+    .filter(transaction => transaction.type == TransactionTypes.MULTISIG)
+    // Convert the multisig transaction into MultisigSignatureTransaction
+    .map((transaction: MultisigTransaction): MultisigSignatureTransaction => MultisigSignatureTransaction.create(
+        TimeWindow.createWithDeadline(),
+        transaction.otherTransaction.signer!.address,
+        transaction.hashData!
+    ))
+    // Sign the transaction
+    .map(transaction => account.signTransaction(transaction))
+    // announce the transaction to be included in a block
+    .flatMap(signedTransaction => transactionHttp.announceTransaction(signedTransaction))
+    .subscribe(result => {
+        // Listen the success
+        console.log(result);
+    }, err => {
+        // Know if something has gone wrong
+        console.error(err)
+    });
+```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_sign_all_multisig_transactions.ts)
