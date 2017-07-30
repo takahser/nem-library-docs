@@ -149,6 +149,9 @@
     <li class="toctree-l3"><a href="#how-receive-all-transactions">How receive all transactions</a></li>
     
 
+    <li class="toctree-l3"><a href="#how-to-sign-unconfirmed-multisig-transactions">How to sign unconfirmed multisig transactions</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -447,6 +450,45 @@ pagedTransactions.subscribe(x =&gt; {
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_fetch_all_transactions_for_an_account.ts">Source code</a></p>
+<h3 id="how-to-sign-unconfirmed-multisig-transactions">How to sign unconfirmed multisig transactions</h3>
+<pre><code class="typescript">/**
+ * nem-library 0.3.7
+ */
+
+import { AccountHttp, TransactionHttp, Address, NEMLibrary, NetworkTypes, Account, Transaction, TransactionTypes, MultisigTransaction, MultisigSignatureTransaction, TimeWindow, PublicAccount } from &quot;nem-library&quot;;
+
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+let accountHttp = new AccountHttp();
+let transactionHttp = new TransactionHttp();
+
+let account = Account.createWithPrivateKey(&quot;&quot;);
+
+accountHttp.unconfirmedTransactions(account.address)
+    .map(x =&gt; x)
+    // Convert result Transaction[] into Transaction
+    .flatMap(x =&gt; x )
+    // just return the Multisig Transactions
+    .filter(transaction =&gt; transaction.type == TransactionTypes.MULTISIG)
+    // Convert the multisig transaction into MultisigSignatureTransaction
+    .map((transaction: MultisigTransaction): MultisigSignatureTransaction =&gt; MultisigSignatureTransaction.create(
+        TimeWindow.createWithDeadline(),
+        transaction.otherTransaction.signer!.address,
+        transaction.hashData!
+    ))
+    // Sign the transaction
+    .map(transaction =&gt; account.signTransaction(transaction))
+    // announce the transaction to be included in a block
+    .flatMap(signedTransaction =&gt; transactionHttp.announceTransaction(signedTransaction))
+    .subscribe(result =&gt; {
+        // Listen the success
+        console.log(result);
+    }, err =&gt; {
+        // Know if something has gone wrong
+        console.error(err)
+    });
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_sign_all_multisig_transactions.ts">Source code</a></p>
               
             </div>
           </div>
