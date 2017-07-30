@@ -78,7 +78,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.4.0
 
+- Message: Added methods to know the type `isEncrypted()` & `isPlain()`
 
 ### 0.3.7
 
