@@ -464,7 +464,6 @@ let transactionHttp = new TransactionHttp();
 let account = Account.createWithPrivateKey(&quot;&quot;);
 
 accountHttp.unconfirmedTransactions(account.address)
-    .map(x =&gt; x)
     // Convert result Transaction[] into Transaction
     .flatMap(x =&gt; x )
     // just return the Multisig Transactions
