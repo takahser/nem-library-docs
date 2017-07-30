@@ -63,6 +63,10 @@ Until nem-library upgrade into [RxJS 6.0](https://www.npmjs.com/package/rxjs), `
 }
 ```
 
+## Seeds
+
+- [Angular4](https://github.com/guillemsole/nem-library-angular2-seed)
+
 # Usage
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -74,9 +78,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
-### 0.4.0
 
-- Message: Added methods to know the type `isEncrypted()` & `isPlain()`
 
 ### 0.3.7
 
