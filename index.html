@@ -66,7 +66,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#stable-version-037">stable version 0.3.7</a></li>
+            <li><a class="toctree-l3" href="#stable-version-040">stable version 0.4.0</a></li>
         
             <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
@@ -242,7 +242,7 @@
 <p>NEM Library is an abstraction for <a href="https://nem.io">NEM Blockchain</a> using a <a href="https://en.wikipedia.org/wiki/Reactive_programming">Reactive</a> approach
 for creating Blockchain applications.</p>
 <p><img alt="NEM Logo" src="./img/Nem-Logomark.png" /></p>
-<h4 id="stable-version-037">stable version 0.3.7</h4>
+<h4 id="stable-version-040">stable version 0.4.0</h4>
 <p>Check the <a href="https://www.npmjs.com/package/nem-library">npm repostory</a> for the latest updates</p>
 <h2 id="installation">Installation</h2>
 <pre><code class="sh">npm install nem-library --save
@@ -342,7 +342,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <li>Pagable<T> extends Subject<T></li>
 <li>OutgoingTransactionsPageable extends Pageable&lt;&gt;</li>
 <li>AllTransactionsPageable extends Pageable&lt;&gt;</li>
-<li>Account decryptMessage method now returns PlainMessage: No compatible with previus version</li>
+<li>Account decryptMessage method now returns PlainMessage: <strong>No compatible with previus version</strong></li>
+<li>ProvisionNamespaceTransaction added static createSub(timeWindow: TimeWindow, parentNamespace: string, newNamespaceName: string): ProvisionNamespaceTransaction;</li>
+<li>ProvisionNamespaceTransaction added static method createRoot(timeWindow: TimeWindow, namespaceName: string): ProvisionNamespaceTransaction;</li>
+<li>PlainMessage return the text decoded if it is encoded in UTF8, else plain payload</li>
 </ul>
 <h3 id="038">0.3.8</h3>
 <ul>
@@ -448,5 +451,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-11 18:07:54
+Build Date UTC : 2017-08-11 18:08:49
 -->
