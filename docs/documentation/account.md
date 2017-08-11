@@ -278,9 +278,9 @@ export declare class Account extends PublicAccount {
      * Decrypts an encrypted message
      * @param encryptedMessage
      * @param recipientPublicAccount
-     * @returns {EncryptedMessage}
+     * @returns {PlainMessage}
      */
-    decryptMessage(encryptedMessage: EncryptedMessage, recipientPublicAccount: PublicAccount): EncryptedMessage;
+    decryptMessage(encryptedMessage: EncryptedMessage, recipientPublicAccount: PublicAccount): PlainMessage;
 }
 ```
 
