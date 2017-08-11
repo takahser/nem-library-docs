@@ -511,6 +511,23 @@ export declare class ProvisionNamespaceTransaction extends Transaction {
      * @returns {ProvisionNamespaceTransaction}
      */
     static create(timeWindow: TimeWindow, newPart: string, parent?: string): ProvisionNamespaceTransaction;
+
+    /**
+   *
+   * @param {TimeWindow} timeWindow
+   * @param {string} namespaceName - Root namespace provision
+   * @returns {ProvisionNamespaceTransaction}
+   */
+  static createRoot(timeWindow: TimeWindow, namespaceName: string): ProvisionNamespaceTransaction;
+
+  /**
+   *
+   * @param {TimeWindow} timeWindow
+   * @param {string }parentNamespace
+   * @param {string} newNamespaceName
+   * @returns {ProvisionNamespaceTransaction}
+   */
+  static createSub(timeWindow: TimeWindow, parentNamespace: string, newNamespaceName: string): ProvisionNamespaceTransaction;
 }
 ```
 
