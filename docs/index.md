@@ -63,10 +63,6 @@ Until nem-library upgrade into [RxJS 6.0](https://www.npmjs.com/package/rxjs), `
 }
 ```
 
-## Seeds
-
-- [Angular4](https://github.com/guillemsole/nem-library-angular2-seed)
-
 # Usage
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -80,7 +76,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### 0.4.0
 
-- Message: Added methods to know the type `isEncrypted()` & `isPlain()`
+- Pagable<T> extends Subject<T>
+- OutgoingTransactionsPageable extends Pageable<>
+- AllTransactionsPageable extends Pageable<>
+- Account decryptMessage method now returns PlainMessage: No compatible with previus version
+
+### 0.3.8
+
+- Listeners allow HTTPS protocol
 
 ### 0.3.7
 
