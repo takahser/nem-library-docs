@@ -79,7 +79,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Pagable<T> extends Subject<T>
 - OutgoingTransactionsPageable extends Pageable<>
 - AllTransactionsPageable extends Pageable<>
-- Account decryptMessage method now returns PlainMessage: No compatible with previus version
+- Account decryptMessage method now returns PlainMessage: **No compatible with previus version**
 - ProvisionNamespaceTransaction added static createSub(timeWindow: TimeWindow, parentNamespace: string, newNamespaceName: string): ProvisionNamespaceTransaction;
 - ProvisionNamespaceTransaction added static method createRoot(timeWindow: TimeWindow, namespaceName: string): ProvisionNamespaceTransaction;
 - PlainMessage return the text decoded if it is encoded in UTF8, else plain payload
