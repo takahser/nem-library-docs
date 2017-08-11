@@ -18,6 +18,13 @@ export declare class TransactionHttp extends HttpEndpoint {
      * @returns Observable<NemAnnounceResult>
      */
     announceTransaction(transaction: SignedTransaction): Observable<NemAnnounceResult>;
+
+    /**
+    * Receive a transaction by its hash
+    * @param {string} hash - transaction hash
+    * @returns Observable<Transaction>
+    */
+    getByHash(hash: string): Observable<Transaction>;
 }
 ```
 
