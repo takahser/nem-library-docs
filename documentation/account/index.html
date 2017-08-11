@@ -114,6 +114,8 @@
         
             <li><a class="toctree-l4" href="#nodeharvestinfo">NodeHarvestInfo</a></li>
         
+            <li><a class="toctree-l4" href="#pageable">Pageable</a></li>
+        
         </ul>
     
 
@@ -146,6 +148,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../error/">Error</a>
                 </li>
     </ul>
 	    </li>
@@ -511,9 +517,9 @@ export declare class Account extends PublicAccount {
      * Decrypts an encrypted message
      * @param encryptedMessage
      * @param recipientPublicAccount
-     * @returns {EncryptedMessage}
+     * @returns {PlainMessage}
      */
-    decryptMessage(encryptedMessage: EncryptedMessage, recipientPublicAccount: PublicAccount): EncryptedMessage;
+    decryptMessage(encryptedMessage: EncryptedMessage, recipientPublicAccount: PublicAccount): PlainMessage;
 }
 </code></pre>
 
@@ -815,6 +821,18 @@ export declare class AccountImportanceData {
     readonly numUnlocked: number;
 }
 
+</code></pre>
+
+<h2 id="pageable">Pageable</h2>
+<pre><code class="typescript">/**
+ * Pageable class
+ */
+export declare class Pageable&lt;T&gt; extends Subject&lt;T&gt; {
+    /**
+     * Execute next page
+     */
+    nextPage(): void;
+}
 </code></pre>
               
             </div>

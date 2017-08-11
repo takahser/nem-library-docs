@@ -74,8 +74,6 @@
         
             <li><a class="toctree-l3" href="#typescript-compiler-options">TypeScript compiler options</a></li>
         
-            <li><a class="toctree-l3" href="#seeds">Seeds</a></li>
-        
         </ul>
     
 
@@ -134,6 +132,10 @@
                 <li class="">
                     
     <a class="" href="documentation/wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="documentation/error/">Error</a>
                 </li>
     </ul>
 	    </li>
@@ -327,10 +329,6 @@ Remark that <a href="https://en.wikipedia.org/wiki/Windows_Phone">Windows Phone<
 }
 </code></pre>
 
-<h2 id="seeds">Seeds</h2>
-<ul>
-<li><a href="https://github.com/guillemsole/nem-library-angular2-seed">Angular4</a></li>
-</ul>
 <h1 id="usage">Usage</h1>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
@@ -341,7 +339,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h2 id="changelog">Changelog</h2>
 <h3 id="040">0.4.0</h3>
 <ul>
-<li>Message: Added methods to know the type <code>isEncrypted()</code> &amp; <code>isPlain()</code></li>
+<li>Pagable<T> extends Subject<T></li>
+<li>OutgoingTransactionsPageable extends Pageable&lt;&gt;</li>
+<li>AllTransactionsPageable extends Pageable&lt;&gt;</li>
+<li>Account decryptMessage method now returns PlainMessage: No compatible with previus version</li>
+</ul>
+<h3 id="038">0.3.8</h3>
+<ul>
+<li>Listeners allow HTTPS protocol</li>
 </ul>
 <h3 id="037">0.3.7</h3>
 <ul>
@@ -443,5 +448,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-07-30 18:48:36
+Build Date UTC : 2017-08-11 18:07:54
 -->

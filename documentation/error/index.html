@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Error - NEM Library</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Error";
+    var mkdocs_page_input_path = "documentation/error.md";
+    var mkdocs_page_url = "/documentation/error/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83164077-5', 'nemlibrary.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NEM Library</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../architecture/">Architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Error</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#errors">Errors</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#error-messages">Error messages</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/wallet/">Wallet</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../support/">Support</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../internal_development_process/">Internal Development Process</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NEM Library</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+    
+    <li>Error</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/error.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="errors">Errors</h1>
+<p>In case NIS encounters an error while processing a request it returns an error.</p>
+<p>This chapter describes the errors messages that can be returned from NIS.</p>
+<h2 id="error-messages">Error messages</h2>
+<p><strong>Request method 'GET' not supported</strong></p>
+<p>The request was performed as GET request but was expected to be a POST request.</p>
+<p><strong>address must be valid:</strong></p>
+<p>At least one address supplied in the request was invalid. Addresses are validated before processing a request. If validation fails, an error containing this message is returned.</p>
+<p><strong>FAILURE_SERVER_LIMIT:</strong></p>
+<p>The number of accounts that are allowed to harvest on NIS was exceeded.</p>
+<p><strong>JSON Object was expected:</strong></p>
+<p>A parameter is missing in the request.</p>
+<p><strong>FAILURE_UNKNOWN_ACCOUNT:</strong></p>
+<p>The account specified in the request is not known.</p>
+<p><strong>block not found in the db</strong></p>
+<p>The block that was requested could not be found in the database.</p>
+<p><strong>height must be positive</strong></p>
+<p>The block height supplied in a request was zero or negative. Block height must always be greater than zero.</p>
+<p><strong>network has not been booted yet</strong></p>
+<p>Most requests need the node that should answer the request to be already booted. If node is not booted yet, this error message will be returned.</p>
+<p><strong>network boot was already attempted</strong></p>
+<p>It was attempted to boot an already booted node. Nodes can only be booted once.</p>
+<p><strong>remote 123.45.67.89 attempted to call local /node/boot</strong></p>
+<p>It was attempted to boot a remote node. Only local node can be booted.</p>
+<p><strong>FAILURE_PAST_DEADLINE</strong></p>
+<p>The deadline for the entity has already expired. The deadline must always lie in the future.</p>
+<p><strong>FAILURE_FUTURE_DEADLINE</strong></p>
+<p>The deadline lies too far in the future. Deadlines are only allowed to lie up to 24 hours in the future.</p>
+<p><strong>FAILURE_INSUFFICIENT_BALANCE</strong></p>
+<p>The account does not have enough funds.</p>
+<p><strong>FAILURE_MESSAGE_TOO_LARGE</strong></p>
+<p>The message for the transaction exceeds the limit of 512 bytes.</p>
+<p><strong>FAILURE_HASH_EXISTS</strong></p>
+<p>The hash of the entity already exists either in the cache or in the database.</p>
+<p><strong>FAILURE_SIGNATURE_NOT_VERIFIABLE</strong></p>
+<p>The signature of the entity failed upon verification.</p>
+<p><strong>FAILURE_TIMESTAMP_TOO_FAR_IN_PAST</strong></p>
+<p>The timestamp of the entity lies to far in the past.</p>
+<p><strong>FAILURE_TIMESTAMP_TOO_FAR_IN_FUTURE</strong></p>
+<p>The timestamp of the entity lies too far in the future.</p>
+<p><strong>FAILURE_INELIGIBLE_BLOCK_SIGNER</strong></p>
+<p>Validation failed because the block had an ineligible signer. This usually occurs when remote harvesting is in the process of being activated or deactivated.</p>
+<p><strong>FAILURE_ENTITY_UNUSABLE_OUT_OF_SYNC</strong></p>
+<p>The entity cannot be processed because the remote node is out of synchronization with the local node. This happens frequently when a node is not fully synchronized and receives a new block with much larger height than its own chain.</p>
+<p><strong>FAILURE_INSUFFICIENT_FEE</strong></p>
+<p>The supplied transaction has an insufficient fee.</p>
+<p><strong>FAILURE_NEMESIS_ACCOUNT_TRANSACTION_AFTER_NEMESIS_BLOCK</strong></p>
+<p>The supplied transaction has the nemesis account as sender and cannot be included in a normal block.</p>
+<p><strong>FAILURE_TRANSACTION_CACHE_TOO_FULL</strong></p>
+<p>The transaction was rejected because the transaction cache is too full. This happens when an account tries to send too many transactions in a short time. To improve the chance that the transaction gets accepted you can try to raise the transaction fee.</p>
+<p><strong>FAILURE_WRONG_NETWORK</strong></p>
+<p>Entity was rejected because it has the wrong network specified.</p>
+<p><strong>FAILURE_CANNOT_HARVEST_FROM_BLOCKED_ACCOUNT</strong></p>
+<p>Block was rejected because it was harvested by a blocked account (typically a reserved NEM fund).</p>
+<p><strong>FAILURE_DESTINATION_ACCOUNT_HAS_NONZERO_BALANCE</strong></p>
+<p>The importance cannot be transferred to an account with nonzero balance.</p>
+<p><strong>FAILURE_IMPORTANCE_TRANSFER_IN_PROGRESS</strong></p>
+<p>The transaction is conflicting because there is already a transfer of importance in progress.</p>
+<p><strong>FAILURE_IMPORTANCE_TRANSFER_NEEDS_TO_BE_DEACTIVATED</strong></p>
+<p>The transaction is conflicting because the importance was already transferred.</p>
+<p><strong>FAILURE_IMPORTANCE_TRANSFER_IS_NOT_ACTIVE</strong></p>
+<p>The transaction is conflicting because no importance has been transferred yet.</p>
+<p><strong>FAILURE_TRANSACTION_NOT_ALLOWED_FOR_REMOTE</strong></p>
+<p>Validation failed because transaction is using remote account in an improper way.</p>
+<p><strong>FAILURE_MULTISIG_NOT_A_COSIGNER</strong></p>
+<p>The multisig transaction was rejected because the signer of the transaction is not a cosignatory of the sender account of the inner transaction.</p>
+<p><strong>FAILURE_MULTISIG_INVALID_COSIGNERS</strong></p>
+<p>Validation failed because the cosignatories attached to a multisig transaction were invalid.</p>
+<p><strong>FAILURE_MULTISIG_NO_MATCHING_MULTISIG</strong></p>
+<p>The signature transaction was rejected because the corresponding multisig transaction was not found.</p>
+<p><strong>FAILURE_TRANSACTION_NOT_ALLOWED_FOR_MULTISIG</strong></p>
+<p>The transaction was rejected because the signer is a multisig account. Multisig accounts are not allowed to initiate any transaction (only cosignatories are allowed to do so).</p>
+<p><strong>FAILURE_MULTISIG_ALREADY_A_COSIGNER</strong></p>
+<p>The transaction was rejected because it tried to add a cosignatory to a multisig account which already has this cosignatory.</p>
+<p><strong>FAILURE_MULTISIG_MODIFICATION_MULTIPLE_DELETES</strong></p>
+<p>The transaction was rejected because it tried to remove multiple cosignatories at once. It is only allowed to remove one cosignatory at a time.</p>
+<p><strong>FAILURE_MULTISIG_MODIFICATION_REDUNDANT_MODIFICATIONS</strong></p>
+<p>The transaction was rejected because it tried to do redundant modifications. This can happen if a transaction tries to add the same cosignatory two time.</p>
+<p><strong>FAILURE_CONFLICTING_MULTISIG_MODIFICATION</strong></p>
+<p>The transaction was rejected because it contained conflicting modifications to a multisig account. This can for instance happen if a transaction tries to add and then delete the same cosignatory.</p>
+<p><strong>FAILURE_TOO_MANY_MULTISIG_COSIGNERS</strong></p>
+<p>The transaction was rejected because it contains too many cosignatories. The maximum number of cosignatories allowed for a multisig account is 32.</p>
+<p><strong>FAILURE_MULTISIG_ACCOUNT_CANNOT_BE_COSIGNER</strong></p>
+<p>Validation failed because a multisig modification would result in a multisig account being a cosigner.</p>
+<p><strong>FAILURE_MULTISIG_MIN_COSIGNATORIES_OUT_OF_RANGE</strong></p>
+<p>Validation failed because the minimum number of cosignatories is negative or larger than the number of cosignatories.</p>
+<p><strong>FAILURE_NAMESPACE_UNKNOWN</strong></p>
+<p>Validation failed because the namespace is unknown.</p>
+<p><strong>FAILURE_NAMESPACE_ALREADY_EXISTS</strong></p>
+<p>Validation failed because the namespace already exists.</p>
+<p><strong>FAILURE_NAMESPACE_EXPIRED</strong></p>
+<p>Validation failed because the namespace has expired.</p>
+<p><strong>FAILURE_NAMESPACE_OWNER_CONFLICT</strong></p>
+<p>Validation failed because the transaction signer is not the owner of the namespace.</p>
+<p><strong>FAILURE_NAMESPACE_INVALID_NAME(</strong></p>
+<p>Validation failed because the name for the namespace is invalid.</p>
+<p><strong>FAILURE_NAMESPACE_INVALID_RENTAL_FEE_SINK</strong></p>
+<p>Validation failed because the specified namespace rental fee sink is invalid.</p>
+<p><strong>FAILURE_NAMESPACE_INVALID_RENTAL_FEE</strong></p>
+<p>Validation failed because the specified rental fee is invalid.</p>
+<p><strong>FAILURE_NAMESPACE_PROVISION_TOO_EARLY</strong></p>
+<p>Validation failed because the provision was done too early.</p>
+<p><strong>FAILURE_NAMESPACE_NOT_CLAIMABLE</strong></p>
+<p>Validation failed because the namespace contains a reserved part and is not claimable.</p>
+<p><strong>FAILURE_MOSAIC_UNKNOWN</strong></p>
+<p>Validation failed because the mosaic is unknown.</p>
+<p><strong>FAILURE_MOSAIC_MODIFICATION_NOT_ALLOWED</strong></p>
+<p>Validation failed because the modification of the existing mosaic is not allowed.</p>
+<p><strong>FAILURE_MOSAIC_CREATOR_CONFLICT</strong></p>
+<p>Validation failed because the transaction signer is not the creator of the mosaic.</p>
+<p><strong>FAILURE_MOSAIC_SUPPLY_IMMUTABLE</strong></p>
+<p>Validation failed because the mosaic supply is immutable.</p>
+<p><strong>FAILURE_MOSAIC_MAX_SUPPLY_EXCEEDED</strong></p>
+<p>Validation failed because the maximum overall mosaic supply is exceeded.</p>
+<p><strong>FAILURE_MOSAIC_SUPPLY_NEGATIVE</strong></p>
+<p>Validation failed because the resulting mosaic supply would be negative.</p>
+<p><strong>FAILURE_MOSAIC_NOT_TRANSFERABLE</strong></p>
+<p>Validation failed because the mosaic is not transferable.</p>
+<p><strong>FAILURE_MOSAIC_DIVISIBILITY_VIOLATED</strong></p>
+<p>Validation failed because the divisibility of the mosaic is violated.</p>
+<p><strong>FAILURE_CONFLICTING_MOSAIC_CREATION</strong></p>
+<p>Validation failed because conflicting mosaic creation is present.</p>
+<p><strong>FAILURE_MOSAIC_INVALID_CREATION_FEE_SINK</strong></p>
+<p>Validation failed because the mosaic creation fee sink is invalid.</p>
+<p><strong>FAILURE_MOSAIC_INVALID_CREATION_FEE</strong></p>
+<p>Validation failed because the specified creation fee is invalid.</p>
+<p><strong>FAILURE_TOO_MANY_MOSAIC_TRANSFERS</strong></p>
+<p>Validation failed because a transfer transaction had too many attached mosaic transfers.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../guide/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../wallet/" class="btn btn-neutral" title="Wallet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../wallet/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../guide/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>
