@@ -49,6 +49,11 @@ The default values are:
 | domain    | bigalice2.nem.ninja |
 | port      | 7890 |
 
+| Parameter | Value |
+| ---       | ---   |
+| protocol  | https    |
+| domain    |pretestnet1.nem.ninja |
+| port      | 7778 |
 
 **MAIN NET**
 
@@ -57,3 +62,10 @@ The default values are:
 | protocol  | http    |
 | domain    | alice6.nem.ninja |
 | port      | 7890 |
+
+
+| Parameter | Value |
+| ---       | ---   |
+| protocol  | https    |
+| domain    | nis2.wnsl.biz |
+| port      | 7779 |
