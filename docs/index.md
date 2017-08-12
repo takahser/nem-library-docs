@@ -90,6 +90,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Wallet has static walletTypeGivenWLT(wlt: string): WalletType method
 - Created WalletType enum
 - MosaicHttp added getMosaicDefinition method
+- MosaicHttp added getMosaicTransferableWithAmount method
+- Created EcobitEco Mosaic model
+- Created DimToken Mosaic model
+- Created DimCoin Mosaic model
 
 ### 0.4.0
 
