@@ -8,6 +8,7 @@ pages:
     - 'documentation/transaction.md'
     - 'documentation/namespace.md'
     - 'documentation/mosaic.md'
+    - 'documentation/custom_mosaics.md'
     - 'documentation/node.md'
     - 'documentation/blockchain.md'
     - 'documentation/listener.md'
