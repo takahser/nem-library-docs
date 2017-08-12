@@ -304,6 +304,7 @@ const transferTransaction: Transaction = TransferTransaction.create(
 
 </code></pre>
 
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_a_Message.ts">Source code</a></p>
 <h3 id="how-to-create-a-transfer-transaction-with-an-encrypted-message">How to create a Transfer Transaction with an Encrypted Message</h3>
 <pre><code class="typescript">/**
  * nem-library 0.3.0
@@ -336,7 +337,50 @@ const transferTransaction = TransferTransaction.create(
 
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_send_a_Transaction_with_a_Message.ts">Source code</a></p>
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_an_Encrypted_Message.ts">Source code</a></p>
+<pre><code class="typescript">/**
+ * nem-library 0.5.1
+ */
+import {
+    NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,
+    MosaicHttp, TransactionHttp, Account, EmptyMessage
+} from &quot;nem-library&quot;;
+import {Observable} from &quot;rxjs/Observable&quot;;
+
+declare let process: any;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+// Replace with a cosignatory private key
+const privateKey: string = process.env.PRIVATE_KEY;
+
+const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
+const account = Account.createWithPrivateKey(privateKey);
+
+Observable.from([
+    {namespace: &quot;mynamespace&quot;, mosaic: &quot;mosaic1&quot;, quantity: 10},
+    {namespace: &quot;mynamespace&quot;, mosaic: &quot;mosaic2&quot;, quantity: 10},
+    {namespace: &quot;mynamespace&quot;, mosaic: &quot;mosaic3&quot;, quantity: 10}
+]).flatMap(_ =&gt; mosaicHttp.getMosaicTransferableWithAmount(_.namespace, _.mosaic, _.quantity))
+    .toArray()
+    .map(mosaics =&gt; TransferTransaction.createWithMosaics(
+        TimeWindow.createWithDeadline(),
+        new Address(&quot;TBV7LE4TFDEMGVOON5MYOK2P7TU2KEKLMHOLHQT6&quot;),
+        mosaics,
+        EmptyMessage
+        )
+    )
+    .map(transaction =&gt; account.signTransaction(transaction))
+    .flatMap(signedTransaction =&gt; transactionHttp.announceTransaction(signedTransaction))
+    .subscribe(nemAnnounceResult =&gt; {
+        console.log(nemAnnounceResult);
+    })
+
+</code></pre>
+
+<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_Mosaics.ts">Source code</a></p>
 <h3 id="how-to-create-a-multisig-transaction">How to create a MultiSig Transaction</h3>
 <pre><code class="typescript">import {
     NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,

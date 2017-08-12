@@ -290,7 +290,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
 const namespace = &quot;server&quot;;
 
-mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions =&gt; {
+mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&gt; {
     console.log(mosaicDefinitions);
 });
 </code></pre>
