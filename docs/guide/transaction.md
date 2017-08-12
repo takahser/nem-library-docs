@@ -75,6 +75,9 @@ const transferTransaction: Transaction = TransferTransaction.create(
 
 ```
 
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_a_Message.ts)
+
+
 ### How to create a Transfer Transaction with an Encrypted Message
 
 ```typescript
@@ -109,7 +112,54 @@ const transferTransaction = TransferTransaction.create(
 
 ```
 
-[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_send_a_Transaction_with_a_Message.ts)
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_an_Encrypted_Message.ts)
+
+```typescript
+/**
+ * nem-library 0.5.1
+ */
+import {
+    NEMLibrary, NetworkTypes, Address, TransferTransaction, TimeWindow,
+    MosaicHttp, TransactionHttp, Account, EmptyMessage
+} from "nem-library";
+import {Observable} from "rxjs/Observable";
+
+declare let process: any;
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+// Replace with a cosignatory private key
+const privateKey: string = process.env.PRIVATE_KEY;
+
+const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
+const mosaicHttp = new MosaicHttp({domain: "104.128.226.60"});
+const account = Account.createWithPrivateKey(privateKey);
+
+Observable.from([
+    {namespace: "mynamespace", mosaic: "mosaic1", quantity: 10},
+    {namespace: "mynamespace", mosaic: "mosaic2", quantity: 10},
+    {namespace: "mynamespace", mosaic: "mosaic3", quantity: 10}
+]).flatMap(_ => mosaicHttp.getMosaicTransferableWithAmount(_.namespace, _.mosaic, _.quantity))
+    .toArray()
+    .map(mosaics => TransferTransaction.createWithMosaics(
+        TimeWindow.createWithDeadline(),
+        new Address("TBV7LE4TFDEMGVOON5MYOK2P7TU2KEKLMHOLHQT6"),
+        mosaics,
+        EmptyMessage
+        )
+    )
+    .map(transaction => account.signTransaction(transaction))
+    .flatMap(signedTransaction => transactionHttp.announceTransaction(signedTransaction))
+    .subscribe(nemAnnounceResult => {
+        console.log(nemAnnounceResult);
+    })
+
+```
+
+[Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_Mosaics.ts)
+
+
 
 ### How to create a MultiSig Transaction
 
