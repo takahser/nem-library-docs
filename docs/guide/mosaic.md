@@ -52,8 +52,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const mosaicHttp = new MosaicHttp({domain: "104.128.226.60"});
 const namespace = "new-namespace";
 
-mosaicHttp.getMosaicDefinitions(namespace).subscribe(mosaicDefinitions => console.log(mosaicDefinitions));
-
+mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions => console.log(mosaicDefinitions));
 ```
 
 [Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_get_Namespace_Mosaic_Definitions.ts)
