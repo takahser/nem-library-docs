@@ -218,10 +218,11 @@ export declare class BrainPassword extends Password {
     
     /**
      * Constructor
-     * @param password - password must be secure, we are we recommend using a 12 random words password. The password must have at least 32 characters.
+     * @param password - password must be secure, the password must be at least a 12 random words password.
      */
     constructor(password: string);
 }
+
 
 ```
 

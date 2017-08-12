@@ -74,6 +74,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.5.1
+
+- BrainPassword must be at least a 12 word password to avoid collitions
+
 ### 0.5.0
 
 - TransactionHttp: Added getByHash method that returns a particular Transaction
