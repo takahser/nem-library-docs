@@ -92,6 +92,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../node/">Node</a>
                 </li>
                 <li class="">
@@ -284,6 +288,19 @@ export declare class SimpleWallet extends Wallet {
      * @returns {Account}
      */
     open(password: Password): Account;
+
+    /**
+    * Converts SimpleWallet into writable string to persist into a file
+    * @returns {string}
+    */
+    writeWLTFile(): string;
+
+    /**
+    * Reads the WLT content and converts it into a SimpleWallet
+    * @param {string} wlt
+    * @returns {SimpleWallet}
+    */
+    static readFromWLT(wlt: string): SimpleWallet;
 }
 
 </code></pre>
@@ -344,6 +361,19 @@ export declare class BrainWallet extends Wallet {
      * @returns {Account}
      */
     open(password: BrainPassword): Account;
+
+    /**
+    * Converts BrainWallet into writable string to persist into a file
+    * @returns {string}
+    */
+    writeWLTFile(): string;
+
+    /**
+    * Reads the WLT content and converts it into a BrainWallet
+    * @param {string} wlt
+    * @returns {BrainWallet}
+    */
+    static readFromWLT(wlt: string): BrainWallet;
 }
 
 </code></pre>
@@ -382,7 +412,12 @@ console.log(brainWallet);
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/wallet/BrainWalletExample.ts">Run the code</a></p>
 <h1 id="models">Models</h1>
 <h2 id="wallet">Wallet</h2>
-<pre><code class="typescript">/**
+<pre><code class="typescript">export enum WalletType {
+  SIMPLE,
+  BRAIN
+}
+
+/**
  * Wallet base model
  */
 export declare abstract class Wallet {
@@ -412,6 +447,13 @@ export declare abstract class Wallet {
      * @param password
      */
     abstract open(password: Password): Account;
+
+    /**
+    * Given a WLT string, retusn the WalletType
+    * @param {string} wlt
+    * @returns {WalletType}
+    */
+    static walletTypeGivenWLT(wlt: string): WalletType;
 }
 
 </code></pre>
@@ -444,10 +486,11 @@ export declare class BrainPassword extends Password {
 
     /**
      * Constructor
-     * @param password - password must be secure, we are we recommend using a 12 random words password. The password must have at least 32 characters.
+     * @param password - password must be secure, the password must be at least a 12 random words password.
      */
     constructor(password: string);
 }
+
 
 </code></pre>
 

@@ -145,6 +145,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../node/">Node</a>
                 </li>
                 <li class="">
@@ -282,6 +286,13 @@
      * @returns Observable&lt;NemAnnounceResult&gt;
      */
     announceTransaction(transaction: SignedTransaction): Observable&lt;NemAnnounceResult&gt;;
+
+    /**
+    * Receive a transaction by its hash
+    * @param {string} hash - transaction hash
+    * @returns Observable&lt;Transaction&gt;
+    */
+    getByHash(hash: string): Observable&lt;Transaction&gt;;
 }
 </code></pre>
 
@@ -304,7 +315,7 @@ const cosignerAccount = Account.createWithPrivateKey(privateKey);
 const transferTransaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 
@@ -593,12 +604,11 @@ export declare class TransferTransaction extends Transaction {
      * Create a TransferTransaction object
      * @param timeWindow
      * @param recipient
-     * @param amount
+     * @param xem
      * @param message
-     * @param mosaics
      * @returns {TransferTransaction}
      */
-    static create(timeWindow: TimeWindow, recipient: Address, amount: number, message: PlainMessage | EncryptedMessage): TransferTransaction;
+    static create(timeWindow: TimeWindow, recipient: Address, xem: XEM, message: PlainMessage | EncryptedMessage): TransferTransaction;
 
     /**
      * Create a TransferTransaction object
@@ -608,8 +618,9 @@ export declare class TransferTransaction extends Transaction {
      * @param message
      * @returns {TransferTransaction}
      */
-    static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: Mosaic[], message: PlainMessage | EncryptedMessage): TransferTransaction;
+    static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: MosaicTransferable[], message: PlainMessage | EncryptedMessage): TransferTransaction;
 }
+
 
 </code></pre>
 

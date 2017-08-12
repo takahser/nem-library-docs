@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Node - NEM Library</title>
+  <title>Custom mosaics - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Node";
-    var mkdocs_page_input_path = "guide/node.md";
-    var mkdocs_page_url = "/guide/node/";
+    var mkdocs_page_name = "Custom mosaics";
+    var mkdocs_page_input_path = "documentation/custom_mosaics.md";
+    var mkdocs_page_url = "/documentation/custom_mosaics/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -68,59 +68,8 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../documentation/architecture/">Architecture</a>
+    <a class="" href="../architecture/">Architecture</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/overview/">Overview</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/account/">Account</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/transaction/">Transaction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/namespace/">Namespace</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/mosaic/">Mosaic</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/custom_mosaics/">Custom mosaics</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/node/">Node</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/blockchain/">Blockchain</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/listener/">Listener</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/wallet/">Wallet</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/error/">Error</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Guide</span>
-    <ul class="subnav">
                 <li class="">
                     
     <a class="" href="../overview/">Overview</a>
@@ -143,19 +92,32 @@
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Node</a>
+    <a class="current" href="./">Custom mosaics</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#how-to-get-nem-node-information">How to get NEM Node information</a></li>
+    <li class="toctree-l3"><a href="#custom-mosaics-definitions">Custom Mosaics Definitions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#how-to-request-a-new-mosaic-definition">How to request a new Mosaic Definition</a></li>
+        
+        </ul>
     
 
-    <li class="toctree-l3"><a href="#how-to-get-extended-information-about-a-nem-node">How to get extended information about a NEM Node</a></li>
+    <li class="toctree-l3"><a href="#dimcoin-model">DimCoin Model</a></li>
     
 
-    <li class="toctree-l3"><a href="#how-to-get-all-active-nodes">How to get all active nodes</a></li>
+    <li class="toctree-l3"><a href="#dimtoken-model">DimToken Model</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ecobiteco-model">EcobitEco Model</a></li>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../node/">Node</a>
                 </li>
                 <li class="">
                     
@@ -168,6 +130,53 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../error/">Error</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
 	    </li>
@@ -214,14 +223,14 @@
     
       
         
-          <li>Guide &raquo;</li>
+          <li>Documentation &raquo;</li>
         
       
     
-    <li>Node</li>
+    <li>Custom mosaics</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/node.md"
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/custom_mosaics.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -231,40 +240,39 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="how-to-get-nem-node-information">How to get NEM Node information</h3>
-<pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
+                <h1 id="custom-mosaics-definitions">Custom Mosaics Definitions</h1>
+<p>NEM Library adds already defined <a href="../mosaic/">Mosaics</a> to be used like <a href="../mosaic/#XEM">XEM</a> model.</p>
+<h3 id="how-to-request-a-new-mosaic-definition">How to request a new Mosaic Definition</h3>
+<p>We like to support as Mosaics as we can, just <a href="../../about/">email us</a> with the mosaic that you would like to add to NEM Library. </p>
+<p>We just require that the mosaic <strong>must</strong> not be mutable.</p>
+<h1 id="dimcoin-model">DimCoin Model</h1>
+<p>DimToken is from <a href="https://www.dimcoin.io/">DIMCOIN</a></p>
+<pre><code class="typescript">export class DimCoin extends MosaicTransferable {
 
-// Initialize NEMLibrary for TEST_NET Network
-NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
-
-const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
-nodeHttp.getNodeInfo().subscribe(node =&gt; console.log(node));
-
+  constructor(amount: number) {
+    super(new MosaicId(&quot;dim&quot;, &quot;coin&quot;), new MosaicProperties(6, 9000000000, true, false), amount);
+  }
+}
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/node/How_to_get_NEM_Node_information.ts">Source code</a></p>
-<h3 id="how-to-get-extended-information-about-a-nem-node">How to get extended information about a NEM Node</h3>
-<pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
+<h1 id="dimtoken-model">DimToken Model</h1>
+<p>DimToken is from <a href="https://www.dimcoin.io/">DIMCOIN</a></p>
+<pre><code class="typescript">export class DimToken extends MosaicTransferable {
 
-// Initialize NEMLibrary for TEST_NET Network
-NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
-
-const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
-nodeHttp.getNisNodeInfo().subscribe(nisNodeInfo =&gt; console.log(nisNodeInfo));
+  constructor(amount: number) {
+    super(new MosaicId(&quot;dim&quot;, &quot;token&quot;), new MosaicProperties(6, 10000000, true, false), amount);
+  }
+}
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/node/How_to_get_extended_information_about_a_NEM_Node.ts">Source code</a></p>
-<h3 id="how-to-get-all-active-nodes">How to get all active nodes</h3>
-<pre><code class="typescript">import {NEMLibrary, NetworkTypes, NodeHttp} from &quot;nem-library&quot;;
-
-// Initialize NEMLibrary for TEST_NET Network
-NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
-
-const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
-nodeHttp.getActiveNodes().subscribe(nodes =&gt; console.log(nodes));
+<h1 id="ecobiteco-model">EcobitEco Model</h1>
+<p>EcobitEco is from <a href="http://www.ecobit.io/">Ecobit project</a></p>
+<pre><code class="typescript">export class EcobitEco extends MosaicTransferable {
+  constructor(amount: number) {
+    super(new MosaicId(&quot;ecobit&quot;, &quot;eco&quot;), new MosaicProperties(0, 8888888888, true, false), amount);
+  }
+}
 </code></pre>
-
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/node/How_to_get_all_active_nodes.ts">Source code</a></p>
               
             </div>
           </div>
@@ -272,7 +280,7 @@ nodeHttp.getActiveNodes().subscribe(nodes =&gt; console.log(nodes));
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../blockchain/" class="btn btn-neutral float-right" title="Blockchain">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../node/" class="btn btn-neutral float-right" title="Node">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../mosaic/" class="btn btn-neutral" title="Mosaic"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -306,7 +314,7 @@ nodeHttp.getActiveNodes().subscribe(nodes =&gt; console.log(nodes));
         <span><a href="../mosaic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../blockchain/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

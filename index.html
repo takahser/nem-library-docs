@@ -119,6 +119,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="documentation/custom_mosaics/">Custom mosaics</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="documentation/node/">Node</a>
                 </li>
                 <li class="">
@@ -337,6 +341,26 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h2 id="changelog">Changelog</h2>
+<h3 id="050">0.5.0</h3>
+<p><strong>BRAKING CHANGES</strong></p>
+<ul>
+<li>Where you had <code>XEM(3)</code> now you should add the <code>new</code> apperator first -&gt; <code>new XEM(3)</code></li>
+<li>Where you had <code>mosaicHttp.getMosaicDefinitions</code>, now you should call <code>mosaicHttp.getAllMosaicsGivenNamespace</code></li>
+</ul>
+<p><strong>NEW FEATURES</strong></p>
+<ul>
+<li>TransactionHttp: Added getByHash method that returns a particular Transaction</li>
+<li>BrainPassword must be at least a 12 word password to avoid collitions</li>
+<li>SimpleWallet has readFromWLT &amp; writeWLTFile methods to persist it</li>
+<li>BrainWallet has readFromWLT &amp; writeWLTFile methods to persist it</li>
+<li>Wallet has static walletTypeGivenWLT(wlt: string): WalletType method</li>
+<li>Created WalletType enum</li>
+<li>MosaicHttp added getMosaicDefinition method</li>
+<li>MosaicHttp added getMosaicTransferableWithAmount method</li>
+<li>Created EcobitEco Mosaic model</li>
+<li>Created DimToken Mosaic model</li>
+<li>Created DimCoin Mosaic model</li>
+</ul>
 <h3 id="040">0.4.0</h3>
 <ul>
 <li>Pagable<T> extends Subject<T></li>
@@ -451,5 +475,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-11 18:08:49
+Build Date UTC : 2017-08-12 19:34:51
 -->

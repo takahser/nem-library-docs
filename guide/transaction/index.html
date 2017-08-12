@@ -92,6 +92,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../documentation/custom_mosaics/">Custom mosaics</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../documentation/node/">Node</a>
                 </li>
                 <li class="">
@@ -248,7 +252,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 </code></pre>
@@ -274,7 +278,7 @@ const account = Account.createWithPrivateKey(privateKey);
 const transferTransaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 
@@ -299,7 +303,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;),
-    XEM(0),
+    new XEM(0),
     PlainMessage.create(&quot;a transaction&quot;)
 );
 
@@ -330,7 +334,7 @@ const encryptedMessage = account.encryptMessage(&quot;a transaction&quot;, recip
 const transferTransaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     recipientPublicAccount.address,
-    XEM(2),
+    new XEM(2),
     encryptedMessage
 );
 
@@ -355,7 +359,7 @@ const multisigAccountPublicKey: string = process.env.MULTISIG_PUBLIC_KEY;
 const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 

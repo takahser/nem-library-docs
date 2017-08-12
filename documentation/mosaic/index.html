@@ -112,10 +112,18 @@
         
             <li><a class="toctree-l4" href="#mosaiclevy">MosaicLevy</a></li>
         
+            <li><a class="toctree-l4" href="#mosaictransferable">MosaicTransferable</a></li>
+        
+            <li><a class="toctree-l4" href="#xem">XEM</a></li>
+        
         </ul>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../custom_mosaics/">Custom mosaics</a>
                 </li>
                 <li class="">
                     
@@ -256,7 +264,24 @@
      * @param pageSize - The number of mosaic definition objects to be returned for each request. The parameter is optional. The default value is 25, the minimum value is 5 and hte maximum value is 100.
      * @returns Observable&lt;MosaicDefinition[]&gt;
      */
-    getMosaicDefinitions(namespace: string, id?: number, pageSize?: string): Observable&lt;MosaicDefinition[]&gt;;
+    getAllMosaicsGivenNamespace(namespace: string, id?: number, pageSize?: number): Observable&lt;MosaicDefinition[]&gt;;
+
+    /**
+     * Return the Mosaic Definition given a namespace and mosaic. Throw exception if no mosaic is found
+     * @param {string} namespace
+     * @param {string} mosaic
+     * @returns {Observable&lt;MosaicDefinition&gt;}
+     */
+    getMosaicDefinition(namespace: string, mosaic: string): Observable&lt;MosaicDefinition&gt;;
+
+    /**
+     * Return a MosaicTransferable with the amount
+     * @param {string} namespace
+     * @param {string} mosaic
+     * @param {number} amount
+     * @returns {Observable&lt;MosaicTransferable&gt;}
+     */
+    getMosaicTransferableWithAmount(namespace: string, mosaic: string, amount: number): Observable&lt;MosaicTransferable&gt;;
 }
 
 </code></pre>
@@ -516,6 +541,61 @@ export declare class MosaicLevy {
     constructor(type: MosaicLevyType, recipient: Address, mosaicId: MosaicId, fee: number);
 }
 </code></pre>
+
+<h2 id="mosaictransferable">MosaicTransferable</h2>
+<pre><code class="typescript">
+/**
+ * Mosaic transferable model
+ */
+export declare class MosaicTransferable {
+
+    /**
+     * Quantity to be send
+     */
+    readonly quantity: number;
+
+    /**
+     * Mosaic definition properties
+     */
+    readonly properties: MosaicProperties;
+
+    /**
+     * Mosaic id
+     */
+    readonly mosaicId: MosaicId;
+
+    /**
+     * constructor
+     * @param mosaicId
+     * @param properties
+     * @param quantity
+     */
+    constructor(mosaicId: MosaicId, properties: MosaicProperties, quantity: number);
+
+    /**
+     * Create a MosaicTransferable object with mosaic definition
+     * @param mosaicDefinition
+     * @param quantity
+     * @returns {MosaicTransferable}
+     */
+    static createWithMosaicDefinition(mosaicDefinition: MosaicDefinition, quantity: number): MosaicTransferable;
+}
+</code></pre>
+
+<h2 id="xem">XEM</h2>
+<pre><code class="typescript">/**
+ * XEM mosaic transferable
+ */
+export declare class XEM extends MosaicTransferable {
+   /**
+    * constructor
+    * @param amount
+    */
+    constructor(amount: number) {
+        super(new MosaicId(&quot;nem&quot;, &quot;xem&quot;), new MosaicProperties(6, 8999999999, true, false), amount);
+    }
+}
+</code></pre>
               
             </div>
           </div>
@@ -523,7 +603,7 @@ export declare class MosaicLevy {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../node/" class="btn btn-neutral float-right" title="Node">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../custom_mosaics/" class="btn btn-neutral float-right" title="Custom mosaics">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../namespace/" class="btn btn-neutral" title="Namespace"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -557,7 +637,7 @@ export declare class MosaicLevy {
         <span><a href="../namespace/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../custom_mosaics/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
