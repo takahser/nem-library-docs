@@ -39,6 +39,19 @@ export declare class SimpleWallet extends Wallet {
      * @returns {Account}
      */
     open(password: Password): Account;
+
+    /**
+    * Converts SimpleWallet into writable string to persist into a file
+    * @returns {string}
+    */
+    writeWLTFile(): string;
+
+    /**
+    * Reads the WLT content and converts it into a SimpleWallet
+    * @param {string} wlt
+    * @returns {SimpleWallet}
+    */
+    static readFromWLT(wlt: string): SimpleWallet;
 }
 
 ```
@@ -107,6 +120,19 @@ export declare class BrainWallet extends Wallet {
      * @returns {Account}
      */
     open(password: BrainPassword): Account;
+
+    /**
+    * Converts BrainWallet into writable string to persist into a file
+    * @returns {string}
+    */
+    writeWLTFile(): string;
+
+    /**
+    * Reads the WLT content and converts it into a BrainWallet
+    * @param {string} wlt
+    * @returns {BrainWallet}
+    */
+    static readFromWLT(wlt: string): BrainWallet;
 }
 
 ```
@@ -153,6 +179,11 @@ BrainWallet {
 ## Wallet
 
 ```typescript
+export enum WalletType {
+  SIMPLE,
+  BRAIN
+}
+
 /**
  * Wallet base model
  */
@@ -183,6 +214,13 @@ export declare abstract class Wallet {
      * @param password
      */
     abstract open(password: Password): Account;
+
+    /**
+    * Given a WLT string, retusn the WalletType
+    * @param {string} wlt
+    * @returns {WalletType}
+    */
+    static walletTypeGivenWLT(wlt: string): WalletType;
 }
 
 ```

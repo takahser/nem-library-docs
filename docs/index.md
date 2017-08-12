@@ -74,13 +74,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
-### 0.5.1
-
-- BrainPassword must be at least a 12 word password to avoid collitions
-
 ### 0.5.0
 
 - TransactionHttp: Added getByHash method that returns a particular Transaction
+- BrainPassword must be at least a 12 word password to avoid collitions
+- SimpleWallet has readFromWLT & writeWLTFile methods to persist it
+- BrainWallet has readFromWLT & writeWLTFile methods to persist it
+- Wallet has static walletTypeGivenWLT(wlt: string): WalletType method
+- Created WalletType enum
 
 ### 0.4.0
 
