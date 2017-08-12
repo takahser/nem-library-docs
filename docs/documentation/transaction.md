@@ -350,17 +350,16 @@ export declare class TransferTransaction extends Transaction {
      * The array of Mosaic objects.
      */
     readonly mosaics?: Mosaic[];
-   
+    
     /**
      * Create a TransferTransaction object
      * @param timeWindow
      * @param recipient
-     * @param amount
+     * @param xem
      * @param message
-     * @param mosaics
      * @returns {TransferTransaction}
      */
-    static create(timeWindow: TimeWindow, recipient: Address, amount: number, message: PlainMessage | EncryptedMessage): TransferTransaction;
+    static create(timeWindow: TimeWindow, recipient: Address, xem: XEM, message: PlainMessage | EncryptedMessage): TransferTransaction;
     
     /**
      * Create a TransferTransaction object
@@ -370,8 +369,9 @@ export declare class TransferTransaction extends Transaction {
      * @param message
      * @returns {TransferTransaction}
      */
-    static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: Mosaic[], message: PlainMessage | EncryptedMessage): TransferTransaction;
+    static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: MosaicTransferable[], message: PlainMessage | EncryptedMessage): TransferTransaction;
 }
+
 
 ```
 

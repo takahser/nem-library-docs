@@ -17,7 +17,24 @@ export declare class MosaicHttp extends HttpEndpoint {
      * @param pageSize - The number of mosaic definition objects to be returned for each request. The parameter is optional. The default value is 25, the minimum value is 5 and hte maximum value is 100.
      * @returns Observable<MosaicDefinition[]>
      */
-    getMosaicDefinitions(namespace: string, id?: number, pageSize?: string): Observable<MosaicDefinition[]>;
+    getAllMosaicsGivenNamespace(namespace: string, id?: number, pageSize?: number): Observable<MosaicDefinition[]>;
+    
+    /**
+     * Return the Mosaic Definition given a namespace and mosaic. Throw exception if no mosaic is found
+     * @param {string} namespace
+     * @param {string} mosaic
+     * @returns {Observable<MosaicDefinition>}
+     */
+    getMosaicDefinition(namespace: string, mosaic: string): Observable<MosaicDefinition>;
+    
+    /**
+     * Return a MosaicTransferable with the amount
+     * @param {string} namespace
+     * @param {string} mosaic
+     * @param {number} amount
+     * @returns {Observable<MosaicTransferable>}
+     */
+    getMosaicTransferableWithAmount(namespace: string, mosaic: string, amount: number): Observable<MosaicTransferable>;
 }
 
 ```
@@ -289,5 +306,62 @@ export declare class MosaicLevy {
      * @param fee
      */
     constructor(type: MosaicLevyType, recipient: Address, mosaicId: MosaicId, fee: number);
+}
+```
+
+## MosaicTransferable
+
+```typescript
+
+/**
+ * Mosaic transferable model
+ */
+export declare class MosaicTransferable {
+    
+    /**
+     * Quantity to be send
+     */
+    readonly quantity: number;
+    
+    /**
+     * Mosaic definition properties
+     */
+    readonly properties: MosaicProperties;
+    
+    /**
+     * Mosaic id
+     */
+    readonly mosaicId: MosaicId;
+    
+    /**
+     * constructor
+     * @param mosaicId
+     * @param properties
+     * @param quantity
+     */
+    constructor(mosaicId: MosaicId, properties: MosaicProperties, quantity: number);
+    
+    /**
+     * Create a MosaicTransferable object with mosaic definition
+     * @param mosaicDefinition
+     * @param quantity
+     * @returns {MosaicTransferable}
+     */
+    static createWithMosaicDefinition(mosaicDefinition: MosaicDefinition, quantity: number): MosaicTransferable;
+}
+```
+
+## XEM
+
+```typescript
+/**
+ * XEM mosaic transferable
+ */
+export declare class XEM extends MosaicTransferable {
+   /**
+    * constructor
+    * @param amount
+    */
+    constructor(amount: number);
 }
 ```
