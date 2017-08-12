@@ -362,6 +362,8 @@ export declare class XEM extends MosaicTransferable {
     * constructor
     * @param amount
     */
-    constructor(amount: number);
+    constructor(amount: number) {
+        super(new MosaicId("nem", "xem"), new MosaicProperties(6, 8999999999, true, false), amount);
+    }
 }
 ```
