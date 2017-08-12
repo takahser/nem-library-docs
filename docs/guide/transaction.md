@@ -12,7 +12,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J"),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 ```
@@ -41,7 +41,7 @@ const account = Account.createWithPrivateKey(privateKey);
 const transferTransaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J"),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 
@@ -69,7 +69,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J"),
-    XEM(0),
+    new XEM(0),
     PlainMessage.create("a transaction")
 );
 
@@ -102,7 +102,7 @@ const encryptedMessage = account.encryptMessage("a transaction", recipientPublic
 const transferTransaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     recipientPublicAccount.address,
-    XEM(2),
+    new XEM(2),
     encryptedMessage
 );
 
@@ -130,7 +130,7 @@ const multisigAccountPublicKey: string = process.env.MULTISIG_PUBLIC_KEY;
 const transferTransaction: Transaction = TransferTransaction.create(
     TimeWindow.createWithDeadline(),
     new Address("TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J"),
-    XEM(2),
+    new XEM(2),
     EmptyMessage
 );
 
