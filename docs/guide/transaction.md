@@ -114,6 +114,8 @@ const transferTransaction = TransferTransaction.create(
 
 [Source code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_an_Encrypted_Message.ts)
 
+### How to create a Transfer Transaction with Mosaics
+
 ```typescript
 /**
  * nem-library 0.5.1
