@@ -74,7 +74,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
-### 0.5.0
+### 0.5.0 
+
+**BRAKING CHANGES**
+
+- Where you had `XEM(3)` now you should add the `new` apperator first -> `new XEM(3)`
+- Where you had `mosaicHttp.getMosaicDefinitions`, now you should call `mosaicHttp.getAllMosaicsGivenNamespace`
+
+**NEW FEATURES**
 
 - TransactionHttp: Added getByHash method that returns a particular Transaction
 - BrainPassword must be at least a 12 word password to avoid collitions
@@ -82,6 +89,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - BrainWallet has readFromWLT & writeWLTFile methods to persist it
 - Wallet has static walletTypeGivenWLT(wlt: string): WalletType method
 - Created WalletType enum
+- MosaicHttp added getMosaicDefinition method
 
 ### 0.4.0
 
