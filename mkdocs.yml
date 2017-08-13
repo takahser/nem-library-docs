@@ -13,6 +13,7 @@ pages:
     - 'documentation/blockchain.md'
     - 'documentation/listener.md'
     - 'documentation/wallet.md'
+    - 'documentation/service.md'
     - 'documentation/error.md'
 
   - Guide:
