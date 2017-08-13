@@ -11,7 +11,7 @@ import {AccountListener, Address, NEMLibrary, NetworkTypes} from "nem-library";
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA");
-let listener = new AccountListener({domain: "23.228.67.85"}).given(address);
+let listener = new AccountListener().given(address);
 
 listener.subscribe(x => {
     console.log(x);
@@ -34,7 +34,7 @@ import {BlockchainListener, NEMLibrary, NetworkTypes} from "nem-library";
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-let blockchainListener = new BlockchainListener({domain: "23.228.67.85"}).newBlock();
+let blockchainListener = new BlockchainListener().newBlock();
 
 blockchainListener.subscribe(x => {
     console.log(x);
@@ -59,7 +59,7 @@ import {BlockchainListener, NEMLibrary, NetworkTypes} from "nem-library";
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-let blockchainListener = new BlockchainListener({domain: "23.228.67.85"}).newHeight();
+let blockchainListener = new BlockchainListener().newHeight();
 
 blockchainListener.subscribe(x => {
     console.log(x);
@@ -85,7 +85,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K");
 
-let unconfirmedTransactionListener = new UnconfirmedTransactionListener({domain: "23.228.67.85"}).given(address);
+let unconfirmedTransactionListener = new UnconfirmedTransactionListener().given(address);
 unconfirmedTransactionListener.subscribe(x => {
     console.log(x);
 }, err => {
@@ -108,7 +108,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K");
 
-let confirmedTransactionListener = new ConfirmedTransactionListener({domain: "23.228.67.85"}).given(address);
+let confirmedTransactionListener = new ConfirmedTransactionListener().given(address);
 confirmedTransactionListener.subscribe(x => {
     console.log(x);
 }, err => {

@@ -139,7 +139,7 @@ declare let process: any;
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
+const transactionHttp = new TransactionHttp();
 
 // Replace with the private key of the account that you want to convert into multisig
 const privateKey: string = process.env.PRIVATE_KEY;
@@ -193,12 +193,12 @@ const importanceTransferTransaction = ImportanceTransferTransaction.create(
 
 const signedTransaction = account.signTransaction(importanceTransferTransaction);
 
-const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
+const transactionHttp = new TransactionHttp();
 transactionHttp.announceTransaction(signedTransaction).subscribe(x => console.log(x));
 
 // Wait aproximately 6h for you delegated account to be active
 
-const accountHttp = new AccountHttp({domain: "104.128.226.60"});
+const accountHttp = new AccountHttp();
 
 // Testnet supernode
 const supernodeDomain = "188.68.50.161";

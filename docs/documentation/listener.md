@@ -11,9 +11,9 @@ export declare class AccountListener extends Listener {
     
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
     
     /**
      * Start listening updates
@@ -39,7 +39,7 @@ import {AccountListener, Address, NEMLibrary, NetworkTypes} from "nem-library";
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA");
-let accountListener = new AccountListener({domain: "23.228.67.85"}).given(address).subscribe(x => {
+let accountListener = new AccountListener().given(address).subscribe(x => {
     console.log(x);
 }, err => {
     console.log(err);
@@ -102,9 +102,9 @@ export declare class BlockchainListener extends Listener {
     
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
     
     /**
      * Start listening new blocks
@@ -133,9 +133,9 @@ export declare class UnconfirmedTransactionListener extends Listener {
     
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
     
     /**
      * Start listening new unconfirmed transactions
@@ -160,9 +160,9 @@ export declare class ConfirmedTransactionListener extends Listener {
     
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
     
     /**
      * Start listening new confirmed transactions
@@ -172,6 +172,5 @@ export declare class ConfirmedTransactionListener extends Listener {
     given(address: Address): Observable<Transaction>;
     
 }
-
 
 ```

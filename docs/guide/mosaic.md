@@ -14,7 +14,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const privateKey: string = process.env.PRIVATE_KEY;
 const account = Account.createWithPrivateKey(privateKey);
-const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
+const transactionHttp = new TransactionHttp();
 
 const mosaicDefinitionTransaction = MosaicDefinitionCreationTransaction.create(
     TimeWindow.createWithDeadline(),
@@ -49,7 +49,7 @@ import {
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const mosaicHttp = new MosaicHttp({domain: "104.128.226.60"});
+const mosaicHttp = new MosaicHttp();
 const namespace = "new-namespace";
 
 mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions => console.log(mosaicDefinitions));

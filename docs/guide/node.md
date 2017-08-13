@@ -6,7 +6,7 @@ import {NEMLibrary, NetworkTypes, NodeHttp} from "nem-library";
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const nodeHttp = new NodeHttp({domain: "104.128.226.60"});
+const nodeHttp = new NodeHttp();
 nodeHttp.getNodeInfo().subscribe(node => console.log(node));
 
 ```
@@ -22,7 +22,7 @@ import {NEMLibrary, NetworkTypes, NodeHttp} from "nem-library";
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const nodeHttp = new NodeHttp({domain: "104.128.226.60"});
+const nodeHttp = new NodeHttp();
 nodeHttp.getNisNodeInfo().subscribe(nisNodeInfo => console.log(nisNodeInfo));
 ```
 
@@ -36,7 +36,7 @@ import {NEMLibrary, NetworkTypes, NodeHttp} from "nem-library";
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const nodeHttp = new NodeHttp({domain: "104.128.226.60"});
+const nodeHttp = new NodeHttp();
 nodeHttp.getActiveNodes().subscribe(nodes => console.log(nodes));
 ```
 

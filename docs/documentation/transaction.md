@@ -10,7 +10,7 @@ Crypto currencies have the ability to roll back part the block chain. This is es
 
 ```typescript
 export declare class TransactionHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
     
     /**
      * Send the signed transaction
@@ -59,7 +59,7 @@ const multisigTransaction = MultisigTransaction.create(
     PublicAccount.createWithPublicKey(multisigAccountPublicKey)
 );
 
-const transactionHttp = new TransactionHttp({domain: "104.128.226.60"});
+const transactionHttp = new TransactionHttp();
 
 const signedTransaction: SignedTransaction = cosignerAccount.signTransaction(multisigTransaction);
 
