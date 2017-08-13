@@ -36,4 +36,4 @@ const accountHttpWithDefaultNodes = new AccountHttp(undefined, "https");
 
 1. The NEM Library start the request to a NIS node.
 2. If the request is successfull, the result is returned. If not, step 3.
-3. The connection pool handles the error, and tries the next available server.
+3. The connection pool handles the connection error, and tries the next available server.

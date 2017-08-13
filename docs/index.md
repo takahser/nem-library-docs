@@ -76,7 +76,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### 0.6.0
 
-- **Connection Pool**
+- [**Connection Pool**](documentation/connection_pool.md)
 - Created `AccountOwnedMosaicService`
 - FIXED issue with Mosaics. Now a Mosaic can be created without a Levy
 
