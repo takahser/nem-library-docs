@@ -22,7 +22,7 @@ NEM Library replaces the Keypair model, which usually holds the public and priva
 
 ```typescript
 export declare class AccountHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
     /**
      * Gets an AccountInfoWithMetaData for an account.
      * @param address - Address
@@ -206,7 +206,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address("");
 
-const accountHttp = new AccountHttp({domain: "104.128.226.60"});
+const accountHttp = new AccountHttp();
 accountHttp.getFromAddress(address).subscribe(accountInfoWithMetaData => {
     console.log(accountInfoWithMetaData);
 });
