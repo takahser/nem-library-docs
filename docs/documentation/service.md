@@ -86,5 +86,5 @@ Output:
     metaId: 386 }]
 ```
 
-[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/service/NodeHttpExample.ts)
+[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/service/AccountOwnedMosaicsService.ts)
 
