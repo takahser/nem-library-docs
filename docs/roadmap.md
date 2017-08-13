@@ -32,9 +32,9 @@ This version **is** compatible with 0.2.34
 
 ## 0.4 Under development
 
-- [ ] Error handling
-- [ ] Connection pool
-- [ ] Persistent Wallet
+- [X] Error handling
+- [X] Connection pool
+- [X] Persistent Wallet
 
 ## Future
 

@@ -74,6 +74,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.6.0
+
+- **Connection Pool**
+- Created `AccountOwnedMosaicService`
+- FIXED issue with Mosaics. Now a Mosaic can be created without a Levy
+
 ### 0.5.1 
 
 **BRAKING CHANGES**

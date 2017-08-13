@@ -4,6 +4,7 @@ pages:
   - Documentation:
     - 'documentation/architecture.md'
     - 'documentation/overview.md'
+    - 'documentation/connection_pool.md'
     - 'documentation/account.md'
     - 'documentation/transaction.md'
     - 'documentation/namespace.md'
