@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../account/">Account</a>
                 </li>
                 <li class="">
@@ -136,6 +140,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -246,7 +254,7 @@
 <p><a href="https://bob.nem.ninja/docs/#node-related-requests">Official Source</a></p>
 <h1 id="nodehttp-definition">NodeHttp definition</h1>
 <pre><code class="typescript">export declare class NodeHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
 
     /**
      * Gets basic information about a node
@@ -298,7 +306,7 @@
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const nodeHttp = new NodeHttp({domain: &quot;104.128.226.60&quot;});
+const nodeHttp = new NodeHttp();
 nodeHttp.getNodeInfo().subscribe(node =&gt; {
     console.log(node);
 });

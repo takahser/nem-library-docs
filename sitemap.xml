@@ -24,6 +24,12 @@
     </url>
         
     <url>
+     <loc>https://nemlibrary.com/documentation/connection_pool/</loc>
+     <lastmod>2017-08-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>https://nemlibrary.com/documentation/account/</loc>
      <lastmod>2017-08-13</lastmod>
      <changefreq>daily</changefreq>
@@ -73,6 +79,12 @@
         
     <url>
      <loc>https://nemlibrary.com/documentation/wallet/</loc>
+     <lastmod>2017-08-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://nemlibrary.com/documentation/service/</loc>
      <lastmod>2017-08-13</lastmod>
      <changefreq>daily</changefreq>
     </url>

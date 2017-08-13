@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../account/">Account</a>
                 </li>
                 <li class="">
@@ -130,6 +134,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -244,9 +252,9 @@ export declare class AccountListener extends Listener {
 
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
 
     /**
      * Start listening updates
@@ -270,7 +278,7 @@ import {AccountListener, Address, NEMLibrary, NetworkTypes} from &quot;nem-libra
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA&quot;);
-let accountListener = new AccountListener({domain: &quot;23.228.67.85&quot;}).given(address).subscribe(x =&gt; {
+let accountListener = new AccountListener().given(address).subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
     console.log(err);
@@ -327,9 +335,9 @@ export declare class BlockchainListener extends Listener {
 
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
 
     /**
      * Start listening new blocks
@@ -355,9 +363,9 @@ export declare class UnconfirmedTransactionListener extends Listener {
 
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
 
     /**
      * Start listening new unconfirmed transactions
@@ -379,9 +387,9 @@ export declare class ConfirmedTransactionListener extends Listener {
 
     /**
      * Constructor
-     * @param config
+     * @param nodes
      */
-    constructor(config?: WebSocketConfig);
+    constructor(nodes?: WebSocketConfig[]);
 
     /**
      * Start listening new confirmed transactions
@@ -391,7 +399,6 @@ export declare class ConfirmedTransactionListener extends Listener {
     given(address: Address): Observable&lt;Transaction&gt;;
 
 }
-
 
 </code></pre>
               

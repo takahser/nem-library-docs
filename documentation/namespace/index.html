@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../account/">Account</a>
                 </li>
                 <li class="">
@@ -130,6 +134,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -241,7 +249,7 @@
 <p><a href="https://bob.nem.ninja/docs/#namespaces">Official Source</a></p>
 <h1 id="namespacehttp-definition">NamespaceHttp definition</h1>
 <pre><code class="typescript">export declare class NamespaceHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
 
     /**
      * Gets the root namespaces. The requests supports paging, i.e. retrieving the root namespaces in batches of a specified size.
@@ -267,7 +275,7 @@
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const namespaceHttp = new NamespaceHttp({domain: &quot;104.128.226.60&quot;});
+const namespaceHttp = new NamespaceHttp();
 const id = 12344;
 
 namespaceHttp.getRootNamespaces(id).subscribe(namespaces =&gt; {

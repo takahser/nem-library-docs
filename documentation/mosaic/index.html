@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../account/">Account</a>
                 </li>
                 <li class="">
@@ -140,6 +144,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -250,7 +258,7 @@
 <p><a href="https://bob.nem.ninja/docs/#mosaics">Official Source</a></p>
 <h1 id="mosaichttp-definition">MosaicHttp definition</h1>
 <pre><code class="typescript">export declare class MosaicHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
 
     /**
      * Gets the mosaic definitions for a given namespace. The request supports paging.
@@ -287,7 +295,7 @@
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
+const mosaicHttp = new MosaicHttp();
 const namespace = &quot;server&quot;;
 
 mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&gt; {

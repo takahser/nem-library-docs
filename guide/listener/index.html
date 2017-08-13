@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../documentation/account/">Account</a>
                 </li>
                 <li class="">
@@ -109,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../../documentation/wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../documentation/service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -243,7 +251,7 @@ import {AccountListener, Address, NEMLibrary, NetworkTypes} from &quot;nem-libra
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TCJZJH-AV63RE-2JSKN2-7DFIHZ-RXIHAI-736WXE-OJGA&quot;);
-let listener = new AccountListener({domain: &quot;23.228.67.85&quot;}).given(address);
+let listener = new AccountListener().given(address);
 
 listener.subscribe(x =&gt; {
     console.log(x);
@@ -262,7 +270,7 @@ import {BlockchainListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quo
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newBlock();
+let blockchainListener = new BlockchainListener().newBlock();
 
 blockchainListener.subscribe(x =&gt; {
     console.log(x);
@@ -283,7 +291,7 @@ import {BlockchainListener, NEMLibrary, NetworkTypes} from &quot;nem-library&quo
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-let blockchainListener = new BlockchainListener({domain: &quot;23.228.67.85&quot;}).newHeight();
+let blockchainListener = new BlockchainListener().newHeight();
 
 blockchainListener.subscribe(x =&gt; {
     console.log(x);
@@ -305,7 +313,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K&quot;);
 
-let unconfirmedTransactionListener = new UnconfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address);
+let unconfirmedTransactionListener = new UnconfirmedTransactionListener().given(address);
 unconfirmedTransactionListener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {
@@ -325,7 +333,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;TDM3DO-ZM5WJ3-ZRBPSM-YRU6JS-WKUCAH-5VIPOF-4W7K&quot;);
 
-let confirmedTransactionListener = new ConfirmedTransactionListener({domain: &quot;23.228.67.85&quot;}).given(address);
+let confirmedTransactionListener = new ConfirmedTransactionListener().given(address);
 confirmedTransactionListener.subscribe(x =&gt; {
     console.log(x);
 }, err =&gt; {

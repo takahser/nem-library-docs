@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../account/">Account</a>
                 </li>
                 <li class="">
@@ -136,6 +140,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -252,7 +260,7 @@
 export declare type BlockChainScore = number;
 
 export declare class BlockHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
 
     /**
      * Gets a block from the chain that has a given hash.
@@ -270,7 +278,7 @@ export declare class BlockHttp extends HttpEndpoint {
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const blockHttp = new BlockHttp({domain: &quot;104.128.226.60&quot;});
+const blockHttp = new BlockHttp();
 blockHttp.getBlockByHeight(1033023).subscribe(block =&gt; {
     console.log(block);
 });
@@ -297,7 +305,7 @@ blockHttp.getBlockByHeight(1033023).subscribe(block =&gt; {
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/blockchain/BlockHttpExample.ts">Run the code</a></p>
 <h1 id="chainhttp-definition">ChainHttp definition</h1>
 <pre><code class="typescript">export declare class ChainHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
     /**
      * Gets the current height of the block chain.
      * @returns Observable&lt;BlockHeight&gt;
@@ -325,7 +333,7 @@ blockHttp.getBlockByHeight(1033023).subscribe(block =&gt; {
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const chainHttp = new ChainHttp({domain: &quot;104.128.226.60&quot;});
+const chainHttp = new ChainHttp();
 chainHttp.getBlockchainLastBlock().subscribe(block =&gt; {
     console.log(block);
 });

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Mosaic - NEM Library</title>
+  <title>Connection pool - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mosaic";
-    var mkdocs_page_input_path = "guide/mosaic.md";
-    var mkdocs_page_url = "/guide/mosaic/";
+    var mkdocs_page_name = "Connection pool";
+    var mkdocs_page_input_path = "documentation/connection_pool.md";
+    var mkdocs_page_url = "/documentation/connection_pool/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -68,70 +68,29 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../documentation/architecture/">Architecture</a>
+    <a class="" href="../architecture/">Architecture</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/overview/">Overview</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/account/">Account</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/transaction/">Transaction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/namespace/">Namespace</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/mosaic/">Mosaic</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/custom_mosaics/">Custom mosaics</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/node/">Node</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/blockchain/">Blockchain</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/listener/">Listener</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/wallet/">Wallet</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/error/">Error</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Guide</span>
-    <ul class="subnav">
                 <li class="">
                     
     <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Connection pool</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#connection-pool">Connection Pool</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#how-to-use-it">How to use it</a></li>
+        
+            <li><a class="toctree-l4" href="#how-it-works">How it works</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -145,18 +104,13 @@
                     
     <a class="" href="../namespace/">Namespace</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Mosaic</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#how-to-create-a-mosaic">How to create a Mosaic</a></li>
-    
-
-    <li class="toctree-l3"><a href="#how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</a></li>
-    
-
-    </ul>
+    <a class="" href="../mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../custom_mosaics/">Custom mosaics</a>
                 </li>
                 <li class="">
                     
@@ -173,6 +127,57 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../error/">Error</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/account/">Account</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/namespace/">Namespace</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/mosaic/">Mosaic</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/node/">Node</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/blockchain/">Blockchain</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/listener/">Listener</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
 	    </li>
@@ -214,14 +219,14 @@
     
       
         
-          <li>Guide &raquo;</li>
+          <li>Documentation &raquo;</li>
         
       
     
-    <li>Mosaic</li>
+    <li>Connection pool</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/mosaic.md"
+        <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/connection_pool.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -231,59 +236,36 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="how-to-create-a-mosaic">How to create a Mosaic</h3>
-<pre><code class="typescript">import {
-    NEMLibrary, NetworkTypes, TimeWindow, Account, TransactionHttp,
-    MosaicDefinitionCreationTransaction, MosaicDefinition, PublicAccount, MosaicId, MosaicProperties, MosaicLevy,
-    MosaicLevyType
-} from &quot;nem-library&quot;;
+                <h1 id="connection-pool">Connection Pool</h1>
+<p>NEM Library handle the connections to the NEM Nodes (NIS) automatically.</p>
+<h2 id="how-to-use-it">How to use it</h2>
+<p>We use <code>AccountHttp</code> for this example, but it works for every <code>*Http</code> class.</p>
+<p>All <code>*Http</code> classes already use the Connection Pool by default. If no argument is passet into its constructor, the default NIS nodes will be used.
+If you like to use your own NIS nodes, you could specify an array with the domain information.</p>
+<p>Furthermore, the Connection Pool allows you to specify the protocol that you like to use in the second constructor argument.</p>
+<pre><code class="typescript">NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+// Creates an AccountHttp instance with a pool of NIS nodes for TEST_NET
+const accountHttpWithDefaultNodes = new AccountHttp();
 
-declare let process: any;
-
-// Initialize NEMLibrary for TEST_NET Network
-NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
-
-const privateKey: string = process.env.PRIVATE_KEY;
-const account = Account.createWithPrivateKey(privateKey);
-const transactionHttp = new TransactionHttp();
-
-const mosaicDefinitionTransaction = MosaicDefinitionCreationTransaction.create(
-    TimeWindow.createWithDeadline(),
-    new MosaicDefinition(
-        PublicAccount.createWithPublicKey(account.publicKey),
-        new MosaicId(&quot;new-namespace&quot;, &quot;new-mosaic&quot;),
-        &quot;mosaic description&quot;,
-        new MosaicProperties(0, 9000000, true, true),
-        new MosaicLevy(
-            MosaicLevyType.Percentil,
-            account.address,
-            new MosaicId(&quot;nem&quot;, &quot;xem&quot;),
-            2
-        )
-    )
-);
-
-const signedTransaction = account.signTransaction(mosaicDefinitionTransaction);
-transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
-
+// Using an AccountHttp with a custom NIS nodes
+const accountHttpWithCustomNodes = new AccountHttp([
+    {protocol: &quot;http&quot;, domain: &quot;192.3.61.243&quot;, port: 7890},
+    {protocol: &quot;http&quot;, domain: &quot;23.228.67.85&quot;, port: 7890}
+]);
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_create_a_Mosaic.ts">Source code</a></p>
-<h3 id="how-to-get-namespace-mosaic-definitions">How to get Namespace Mosaic Definitions</h3>
-<pre><code class="typescript">import {
-    NEMLibrary, NetworkTypes, MosaicHttp, TransactionTypes
-} from &quot;nem-library&quot;;
-
-// Initialize NEMLibrary for TEST_NET Network
-NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
-
-const mosaicHttp = new MosaicHttp();
-const namespace = &quot;new-namespace&quot;;
-
-mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&gt; console.log(mosaicDefinitions));
+<p>In case that you wanted an specific protocol, per example <code>HTTPS</code>, you could specify your preferred protocol in the <code>AccountHttp</code> constructor.</p>
+<pre><code class="typescript">NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+const accountHttpWithDefaultNodes = new AccountHttp(undefined, &quot;https&quot;);
 </code></pre>
 
-<p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/mosaic/How_to_get_Namespace_Mosaic_Definitions.ts">Source code</a></p>
+<h2 id="how-it-works">How it works</h2>
+<p><img alt="Functional" src="../../img/Connection_Pool.png" /></p>
+<ol>
+<li>The NEM Library start the request to a NIS node.</li>
+<li>If the request is successfull, the result is returned. If not, step 3.</li>
+<li>The connection pool handles the connection error, and tries the next available server.</li>
+</ol>
               
             </div>
           </div>
@@ -291,10 +273,10 @@ mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../node/" class="btn btn-neutral float-right" title="Node">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../account/" class="btn btn-neutral float-right" title="Account">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../namespace/" class="btn btn-neutral" title="Namespace"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -322,10 +304,10 @@ mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&
           <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../namespace/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../account/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

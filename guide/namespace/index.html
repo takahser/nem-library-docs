@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../documentation/account/">Account</a>
                 </li>
                 <li class="">
@@ -109,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../../documentation/wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../documentation/service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -241,7 +249,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const privateKey: string = process.env.PRIVATE_KEY;
 const account = Account.createWithPrivateKey(privateKey);
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const transactionHttp = new TransactionHttp();
 
 const namespace = &quot;new-namespace&quot;;
 
@@ -267,7 +275,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const privateKey: string = process.env.PRIVATE_KEY;
 const account = Account.createWithPrivateKey(privateKey);
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const transactionHttp = new TransactionHttp();
 
 const namespace = &quot;new-namespace&quot;;
 const subnamespace = &quot;subnamespace&quot;;
@@ -292,7 +300,7 @@ transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; consol
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const namespaceHttp = new NamespaceHttp({domain: &quot;104.128.226.60&quot;});
+const namespaceHttp = new NamespaceHttp();
 const namespace = &quot;new-namespace&quot;;
 
 namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
@@ -307,7 +315,7 @@ namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(name
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const namespaceHttp = new NamespaceHttp({domain: &quot;104.128.226.60&quot;});
+const namespaceHttp = new NamespaceHttp();
 const namespace = &quot;new-namespace&quot;;
 
 namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));

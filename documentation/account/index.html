@@ -74,6 +74,10 @@
                     
     <a class="" href="../overview/">Overview</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
                 <li class=" current">
                     
     <a class="current" href="./">Account</a>
@@ -152,6 +156,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -269,7 +277,7 @@
 <p>NEM Library replaces the Keypair model, which usually holds the public and private key, with the <a href="#account">Account</a> model. The reason is that we aim to keep the private key as secret as possible, just providing a set of methods where the private key is involved.</p>
 <h1 id="accounthttp-definition">AccountHttp definition</h1>
 <pre><code class="typescript">export declare class AccountHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
     /**
      * Gets an AccountInfoWithMetaData for an account.
      * @param address - Address
@@ -451,7 +459,7 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
 const address = new Address(&quot;&quot;);
 
-const accountHttp = new AccountHttp({domain: &quot;104.128.226.60&quot;});
+const accountHttp = new AccountHttp();
 accountHttp.getFromAddress(address).subscribe(accountInfoWithMetaData =&gt; {
     console.log(accountInfoWithMetaData);
 });
@@ -843,7 +851,7 @@ export declare class Pageable&lt;T&gt; extends Subject&lt;T&gt; {
         <a href="../transaction/" class="btn btn-neutral float-right" title="Transaction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../connection_pool/" class="btn btn-neutral" title="Connection pool"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -871,7 +879,7 @@ export declare class Pageable&lt;T&gt; extends Subject&lt;T&gt; {
           <a href="https://github.com/aleixmorgadas/nem-library-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../connection_pool/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../transaction/" style="color: #fcfcfc">Next &raquo;</a></span>

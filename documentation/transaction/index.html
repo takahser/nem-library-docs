@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../account/">Account</a>
                 </li>
                 <li class=" current">
@@ -162,6 +166,10 @@
                 <li class="">
                     
     <a class="" href="../wallet/">Wallet</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../service/">Service</a>
                 </li>
                 <li class="">
                     
@@ -273,7 +281,7 @@
 <p><a href="https://bob.nem.ninja/docs/#initiating-transactions">Official Source</a></p>
 <h1 id="transactionhttp-definition">TransactionHttp definition</h1>
 <pre><code class="typescript">export declare class TransactionHttp extends HttpEndpoint {
-    constructor(serverConfig?: ServerConfig);
+    constructor(nodes?: ServerConfig[]);
 
     /**
      * Send the signed transaction
@@ -320,7 +328,7 @@ const multisigTransaction = MultisigTransaction.create(
     PublicAccount.createWithPublicKey(multisigAccountPublicKey)
 );
 
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const transactionHttp = new TransactionHttp();
 
 const signedTransaction: SignedTransaction = cosignerAccount.signTransaction(multisigTransaction);
 

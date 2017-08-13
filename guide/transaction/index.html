@@ -76,6 +76,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../documentation/account/">Account</a>
                 </li>
                 <li class="">
@@ -112,6 +116,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../documentation/service/">Service</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../documentation/error/">Error</a>
                 </li>
     </ul>
@@ -144,6 +152,9 @@
     
 
     <li class="toctree-l3"><a href="#how-to-create-a-transfer-transaction-with-an-encrypted-message">How to create a Transfer Transaction with an Encrypted Message</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-to-create-a-transfer-transaction-with-mosaics">How to create a Transfer Transaction with Mosaics</a></li>
     
 
     <li class="toctree-l3"><a href="#how-to-create-a-multisig-transaction">How to create a MultiSig Transaction</a></li>
@@ -263,7 +274,7 @@ declare let process: any;
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const transactionHttp = new TransactionHttp();
 
 // Replace with a cosignatory private key
 const privateKey: string = process.env.PRIVATE_KEY;
@@ -318,7 +329,7 @@ declare let process: any;
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
+const transactionHttp = new TransactionHttp();
 
 // Replace with a cosignatory private key
 const privateKey: string = process.env.PRIVATE_KEY;
@@ -338,6 +349,7 @@ const transferTransaction = TransferTransaction.create(
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/transaction/How_to_create_a_Transfer_Transaction_with_an_Encrypted_Message.ts">Source code</a></p>
+<h3 id="how-to-create-a-transfer-transaction-with-mosaics">How to create a Transfer Transaction with Mosaics</h3>
 <pre><code class="typescript">/**
  * nem-library 0.5.1
  */
@@ -355,8 +367,8 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 // Replace with a cosignatory private key
 const privateKey: string = process.env.PRIVATE_KEY;
 
-const transactionHttp = new TransactionHttp({domain: &quot;104.128.226.60&quot;});
-const mosaicHttp = new MosaicHttp({domain: &quot;104.128.226.60&quot;});
+const transactionHttp = new TransactionHttp();
+const mosaicHttp = new MosaicHttp();
 const account = Account.createWithPrivateKey(privateKey);
 
 Observable.from([
