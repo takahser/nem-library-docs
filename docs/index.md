@@ -12,7 +12,7 @@ Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the lat
 ## Installation
 
 ```sh
-npm install nem-library --save
+npm install nem-library rxjs --save
 ```
 
 NEM Library is build with [TypeScript Language][TS-lang], so be sure that you have 
@@ -25,6 +25,8 @@ to be used, without counting other great benefits that TypeScript provides.
 ```sh
 npm install -g typescript
 ```
+
+**MINIMUM TypeScript version 2.4.X**
 
 ![TypeScript Superset](img/typescript-superset.png)
 
