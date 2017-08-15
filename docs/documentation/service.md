@@ -36,7 +36,7 @@ export declare class AccountOwnedMosaicsService {
 
 ```
 
-AccountOwnedMosaicsService usage
+Usage
 
 ```typescript
 import {NEMLibrary, NetworkTypes, Address, AccountOwnedMosaicsService, AccountHttp, MosaicHttp} from "nem-library";
@@ -87,4 +87,60 @@ Output:
 ```
 
 [Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/service/AccountOwnedMosaicsService.ts)
+
+
+# MosaicService
+
+Definition
+
+```typescript
+/**
+ * Mosaic service
+ */
+export declare class MosaicService {
+    /**
+     * mosaicHttp
+     */
+    private mosaicHttp;
+    /**
+     * constructor
+     * @param mosaicHttp
+     */
+    constructor(mosaicHttp: MosaicHttp);
+    /**
+     * Calculate levy for a given mosaicTransferable
+     * @param mosaicTransferable
+     * @returns {any}
+     */
+    calculateLevy(mosaicTransferable: MosaicTransferable): Observable<number>;
+}
+
+
+```
+
+Usage
+
+```typescript
+import {NEMLibrary, NetworkTypes, MosaicId, MosaicLevy, MosaicLevyType, Address, MosaicTransferable, MosaicHttp, MosaicProperties, MosaicService} from "nem-library";
+
+// Initialize NEMLibrary for TEST_NET Network
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
+
+let levyMosaicId = new MosaicId("server", "testmosaic");
+let levy = new MosaicLevy(MosaicLevyType.Percentil, new Address(""), levyMosaicId, 5);
+let mosaicTransferable = new MosaicTransferable(new MosaicId("server", "mosaic"), new MosaicProperties(0, 10000000, true, false), 100000, levy);
+
+let mosaicService = new MosaicService(new MosaicHttp());
+mosaicService.calculateLevy(mosaicTransferable).subscribe(levy => {
+    console.log(levy);
+});
+```
+
+Output:
+
+```
+5
+```
+
+[Run the code](https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/service/MosaicService.ts)
 

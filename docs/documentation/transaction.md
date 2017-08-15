@@ -399,9 +399,7 @@ export declare abstract class Message {
  * Plain Message model
  */
 export declare class PlainMessage extends Message {
-    
-    constructor(payload: string);
-    
+        
     /**
      * Create new constructor
      * @returns {boolean}

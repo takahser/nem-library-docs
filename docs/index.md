@@ -74,6 +74,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
+### 0.6.1
+- Added statics to XEM Mosaic model
+- Added optional levy to MosaicTransferable
+- Created MosaicService to calculate levy value of a Mosaic
+- MosaicId has equals & description methods
+- FIXED issue TransferTransaction. When sending mosaics and message wrong fee calculation.
+
 ### 0.6.0
 
 - [**Connection Pool**](documentation/connection_pool.md)
