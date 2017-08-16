@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.6.0
+#### stable version 0.7.0
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -74,7 +74,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
 
-### 0.6.1
+### 0.7.0
 - Added statics to XEM Mosaic model
 - Added optional levy to MosaicTransferable
 - Created MosaicService to calculate levy value of a Mosaic
