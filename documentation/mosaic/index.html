@@ -271,20 +271,18 @@
 
     /**
      * Return the Mosaic Definition given a namespace and mosaic. Throw exception if no mosaic is found
-     * @param {string} namespace
-     * @param {string} mosaic
+     * @param {string} mosaicId
      * @returns {Observable&lt;MosaicDefinition&gt;}
      */
-    getMosaicDefinition(namespace: string, mosaic: string): Observable&lt;MosaicDefinition&gt;;
+    getMosaicDefinition(mosaicId: MosaicId): Observable&lt;MosaicDefinition&gt;;
 
     /**
      * Return a MosaicTransferable with the amount
-     * @param {string} namespace
-     * @param {string} mosaic
+     * @param {string} mosaicId
      * @param {number} amount
      * @returns {Observable&lt;MosaicTransferable&gt;}
      */
-    getMosaicTransferableWithAmount(namespace: string, mosaic: string, amount: number): Observable&lt;MosaicTransferable&gt;;
+    getMosaicTransferableWithAmount(mosaicId: MosaicId, amount: number): Observable&lt;MosaicTransferable&gt;;
 }
 
 </code></pre>
@@ -358,24 +356,32 @@ mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&
  * A mosaic id uniquely identifies an underlying mosaic definition.
  */
 export declare class MosaicId {
-
     /**
      * The corresponding namespace id
      */
     readonly namespaceId: string;
-
     /**
      * The name of the mosaic definition.
      */
     readonly name: string;
-
     /**
      * constructor
      * @param namespaceId
      * @param name
      */
     constructor(namespaceId: string, name: string);
+    /**
+     * Compares mosaicIds for equality
+     * @param mosaicId
+     * @returns {boolean}
+     */
+    equals(mosaicId: MosaicId): boolean;
+    /**
+     * Mosaic Id description in format namespaceId:name ex: nem:xem
+     */
+    description(): string;
 }
+
 
 </code></pre>
 
@@ -568,12 +574,18 @@ export declare class MosaicTransferable {
     readonly mosaicId: MosaicId;
 
     /**
+     * Levy
+     */
+    readonly levy?: MosaicLevy;
+
+    /**
      * constructor
      * @param mosaicId
      * @param properties
-     * @param quantity
+     * @param amount
+     * @param levy
      */
-    constructor(mosaicId: MosaicId, properties: MosaicProperties, quantity: number);
+    constructor(mosaicId: MosaicId, properties: MosaicProperties, amount: number, levy?: MosaicLevy);
 
     /**
      * Create a MosaicTransferable object with mosaic definition
@@ -590,7 +602,32 @@ export declare class MosaicTransferable {
  * XEM mosaic transferable
  */
 export declare class XEM extends MosaicTransferable {
-   /**
+    /**
+     * Divisiblity
+     * @type {number}
+     */
+    static DIVISIBILITY: number;
+    /**
+     * Initial supply
+     * @type {number}
+     */
+    static INITIALSUPPLY: number;
+    /**
+     * Is tranferable
+     * @type {boolean}
+     */
+    static TRANSFERABLE: boolean;
+    /**
+     * Is mutable
+     * @type {boolean}
+     */
+    static SUPPLYMUTABLE: boolean;
+    /**
+     * mosaicId
+     * @type {MosaicId}
+     */
+    static MOSAICID: MosaicId;
+    /**
     * constructor
     * @param amount
     */
