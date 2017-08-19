@@ -76,6 +76,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### 0.8.0
 - Wallet: Added `unlockPrivateKey(password: Password): string` method.
+- Created [QRService](/documentation/service/#qrservice)
 
 ### 0.7.0
 - Added statics to XEM Mosaic model
