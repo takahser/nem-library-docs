@@ -160,6 +160,5 @@ export declare class QRService {
      * @return Decrypted private key
      */
     decryptPrivateKey(password: Password, qrText: QRText): string;
-    private AES_PBKF2_encryption(password, privateKey);
 }
 ```
