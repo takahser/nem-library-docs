@@ -21,6 +21,9 @@ NEM Library replaces the Keypair model, which usually holds the public and priva
 # AccountHttp definition
 
 ```typescript
+/**
+ *
+ */
 export declare class AccountHttp extends HttpEndpoint {
     constructor(nodes?: ServerConfig[]);
     /**
@@ -60,12 +63,9 @@ export declare class AccountHttp extends HttpEndpoint {
      * Unconfirmed transactions are those transactions that have not yet been included in a block.
      * Unconfirmed transactions are not guaranteed to be included in any block
      * @param address - The address of the account.
-     * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
-     * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
-     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
-     * @return Observable<Transaction[]>
+     * @param params
      */
-    incomingTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable<Transaction[]>;
+    incomingTransactions(address: Address, params?: QueryParams): Observable<Transaction[]>;
     /**
      * Paginaged version of incomingTransactions request
      * @param address
@@ -73,17 +73,14 @@ export declare class AccountHttp extends HttpEndpoint {
      * @param pageSize - between 5 and 100, otherwise 10
      * @returns {IncomingTransactionsPageable}
      */
-    incomingTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable<Transaction[]>;
+    incomingTransactionsPaginated(address: Address, pageSize?: number, hash?: string): Pageable<Transaction[]>;
     /**
      * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
      * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
      * @param address - The address of the account.
-     * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
-     * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
-     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
-     * @return Observable<Transaction[]>
+     * @param params
      */
-    outgoingTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable<Transaction[]>;
+    outgoingTransactions(address: Address, params?: QueryParams): Observable<Transaction[]>;
     /**
      * Paginaged version of outgoingTransactions request
      * @param address
@@ -91,18 +88,15 @@ export declare class AccountHttp extends HttpEndpoint {
      * @param pageSize - between 5 and 100, otherwise 10
      * @returns {OutgoingTransactionsPageable}
      */
-    outgoingTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable<Transaction[]>;
+    outgoingTransactionsPaginated(address: Address, pageSize?: number, hash?: string): Pageable<Transaction[]>;
     /**
      * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
      * A maximum of 25 transaction meta data pairs is returned.
      * For details about sorting and discussion of the second parameter see Incoming transactions.
      * @param address - The address of the account.
-     * @param hash - (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
-     * @param id - (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
-     * @param pageSize - (Optional) The amount of transactions returned. Between 5 and 100, otherwise 10
-     * @return Observable<Transaction[]>
+     * @param params
      */
-    allTransactions(address: Address, hash?: string, id?: string, pageSize?: number): Observable<Transaction[]>;
+    allTransactions(address: Address, params?: QueryParams): Observable<Transaction[]>;
     /**
      * Paginaged version of allTransactions request
      * @param address
@@ -110,7 +104,7 @@ export declare class AccountHttp extends HttpEndpoint {
      * @param pageSize - between 5 and 100, otherwise 10
      * @returns {AllTransactionsPageable}
      */
-    allTransactionsPaginated(address: Address, hash?: string, pageSize?: number): Pageable<Transaction[]>;
+    allTransactionsPaginated(address: Address, pageSize?: number, hash?: string): Pageable<Transaction[]>;
     /**
      * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
      * @param address - NEM Address
@@ -145,7 +139,7 @@ export declare class AccountHttp extends HttpEndpoint {
      * @param pageSize - The (optional) number of namespaces to be returned.
      * @return Observable<Namespace[]>
      */
-    getNamespaceOwnedByAddress(address: Address, parent?: string, id?: string, pageSize?: number): Observable<Namespace[]>;
+    getNamespaceOwnedByAddress(address: Address, parent?: string, pageSize?: number, id?: string): Observable<Namespace[]>;
     /**
      * Gets an array of mosaic definition objects for a given account address. The parent parameter is optional.
      * If supplied, only mosaic definitions for the given parent namespace are returned.
@@ -193,7 +187,25 @@ export declare class AccountHttp extends HttpEndpoint {
      */
     getHistoricalAccountData(address: Address, startHeight: number, endHeight: number, increment: number): Observable<AccountHistoricalInfo[]>;
 }
+```
 
+### QueryParams
+
+```typescript
+export interface QueryParams {
+    /**
+     * (Optional) The xem of transactions returned. Between 5 and 100, otherwise 10
+     */
+    pageSize?: number;
+    /**
+     * (Optional) The 256 bit sha3 hash of the transaction up to which transactions are returned.
+     */
+    hash?: string;
+    /**
+     * (Optional) The transaction id up to which transactions are returned. This parameter will prevail over hash.
+     */
+    id?: string;
+}
 ```
 
 # AccountHttp usage

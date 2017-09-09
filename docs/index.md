@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.8.2
+#### stable version 0.9.0
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -75,6 +75,19 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
+
+### 0.9.0
+
+**BRAKING CHANGES**
+
+- [TransferTransaction](/documentation/transaction.md): amount and mosaic fields are now private, you have to use xem() and mosaic() methods instead
+- [AccountHttp](/documentation/account.md): replaced function arguements by QueryParams & changed the order of the params in some cases
+
+**NEW FEATURES**
+
+- [TransferTransaction](/documentation/transaction.md): added containMosaic method to verify if the Transfer Transaction contains mosaics
+- Address now accepts lowercase
+- MosaicId.toString() returns the same as MosaicId.description()
 
 ### 0.8.2
 - QRService: Added address and transaction generate and decrypt QR code
