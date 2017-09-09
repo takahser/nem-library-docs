@@ -66,7 +66,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#stable-version-082">stable version 0.8.2</a></li>
+            <li><a class="toctree-l3" href="#stable-version-090">stable version 0.9.0</a></li>
         
             <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
@@ -249,10 +249,10 @@
 <p>NEM Library is an abstraction for <a href="https://nem.io">NEM Blockchain</a> using a <a href="https://en.wikipedia.org/wiki/Reactive_programming">Reactive</a> approach
 for creating Blockchain applications.</p>
 <p><img alt="NEM Logo" src="./img/Nem-Logomark.png" /></p>
-<h4 id="stable-version-082">stable version 0.8.2</h4>
+<h4 id="stable-version-090">stable version 0.9.0</h4>
 <p>Check the <a href="https://www.npmjs.com/package/nem-library">npm repostory</a> for the latest updates</p>
 <h2 id="installation">Installation</h2>
-<pre><code class="sh">npm install nem-library --save
+<pre><code class="sh">npm install nem-library rxjs --save
 </code></pre>
 
 <p>NEM Library is build with <a href="https://www.typescriptlang.org/">TypeScript Language</a>, so be sure that you have 
@@ -263,6 +263,7 @@ to be used, without counting other great benefits that TypeScript provides.</p>
 <pre><code class="sh">npm install -g typescript
 </code></pre>
 
+<p><strong>MINIMUM TypeScript version 2.4.X</strong></p>
 <p><img alt="TypeScript Superset" src="./img/typescript-superset.png" /></p>
 <h2 id="platforms-supported">Platforms supported</h2>
 <table>
@@ -344,6 +345,18 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h2 id="changelog">Changelog</h2>
+<h3 id="090">0.9.0</h3>
+<p><strong>BRAKING CHANGES</strong></p>
+<ul>
+<li><a href="documentation/transaction/">TransferTransaction</a>: amount and mosaic fields are now private, you have to use xem() and mosaic() methods instead</li>
+<li><a href="documentation/account/">AccountHttp</a>: replaced function arguements by QueryParams &amp; changed the order of the params in some cases</li>
+</ul>
+<p><strong>NEW FEATURES</strong></p>
+<ul>
+<li><a href="documentation/transaction/">TransferTransaction</a>: added containMosaic method to verify if the Transfer Transaction contains mosaics</li>
+<li>Address now accepts lowercase</li>
+<li>MosaicId.toString() returns the same as MosaicId.description()</li>
+</ul>
 <h3 id="082">0.8.2</h3>
 <ul>
 <li>QRService: Added address and transaction generate and decrypt QR code</li>
@@ -501,5 +514,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-20 11:14:10
+Build Date UTC : 2017-09-09 14:03:25
 -->
