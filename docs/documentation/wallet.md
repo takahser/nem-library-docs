@@ -41,6 +41,13 @@ export declare class SimpleWallet extends Wallet {
     open(password: Password): Account;
 
     /**
+    * Receives the Private Key for the Wallet
+    * @param {Password} password
+    * @returns {string}
+    */
+    unlockPrivateKey(password: Password): string;
+
+    /**
     * Converts SimpleWallet into writable string to persist into a file
     * @returns {string}
     */
@@ -120,6 +127,14 @@ export declare class BrainWallet extends Wallet {
      * @returns {Account}
      */
     open(password: BrainPassword): Account;
+
+
+    /**
+    * Receives the Private Key for the Wallet
+    * @param {Password} password
+    * @returns {string}
+    */
+    unlockPrivateKey(password: Password): string;
 
     /**
     * Converts BrainWallet into writable string to persist into a file

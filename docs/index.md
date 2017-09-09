@@ -5,7 +5,7 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
-#### stable version 0.6.0
+#### stable version 0.8.2
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -75,6 +75,20 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
+
+### 0.8.2
+- QRService: Added address and transaction generate and decrypt QR code
+
+### 0.8.0
+- Wallet: Added `unlockPrivateKey(password: Password): string` method.
+- Created [QRService](/documentation/service/#qrservice)
+
+### 0.7.0
+- Added statics to XEM Mosaic model
+- Added optional levy to MosaicTransferable
+- Created MosaicService to calculate levy value of a Mosaic
+- MosaicId has equals & description methods
+- FIXED issue TransferTransaction. When sending mosaics and message wrong fee calculation.
 
 ### 0.6.0
 
