@@ -21,9 +21,6 @@ NEM Library replaces the Keypair model, which usually holds the public and priva
 # AccountHttp definition
 
 ```typescript
-/**
- *
- */
 export declare class AccountHttp extends HttpEndpoint {
     constructor(nodes?: ServerConfig[]);
     /**
@@ -69,11 +66,9 @@ export declare class AccountHttp extends HttpEndpoint {
     /**
      * Paginaged version of incomingTransactions request
      * @param address
-     * @param hash
-     * @param pageSize - between 5 and 100, otherwise 10
-     * @returns {IncomingTransactionsPageable}
+     * @param params
      */
-    incomingTransactionsPaginated(address: Address, pageSize?: number, hash?: string): Pageable<Transaction[]>;
+    incomingTransactionsPaginated(address: Address, params?: QueryParams): Pageable<Transaction[]>;
     /**
      * Gets an array of transaction meta data pairs where the recipient has the address given as parameter to the request.
      * A maximum of 25 transaction meta data pairs is returned. For details about sorting and discussion of the second parameter see Incoming transactions.
@@ -84,11 +79,10 @@ export declare class AccountHttp extends HttpEndpoint {
     /**
      * Paginaged version of outgoingTransactions request
      * @param address
-     * @param hash
-     * @param pageSize - between 5 and 100, otherwise 10
-     * @returns {OutgoingTransactionsPageable}
+     * @param params
+     * @param params
      */
-    outgoingTransactionsPaginated(address: Address, pageSize?: number, hash?: string): Pageable<Transaction[]>;
+    outgoingTransactionsPaginated(address: Address, params?: QueryParams): Pageable<Transaction[]>;
     /**
      * Gets an array of transaction meta data pairs for which an account is the sender or receiver.
      * A maximum of 25 transaction meta data pairs is returned.
@@ -100,11 +94,9 @@ export declare class AccountHttp extends HttpEndpoint {
     /**
      * Paginaged version of allTransactions request
      * @param address
-     * @param hash
-     * @param pageSize - between 5 and 100, otherwise 10
-     * @returns {AllTransactionsPageable}
+     * @param params
      */
-    allTransactionsPaginated(address: Address, pageSize?: number, hash?: string): Pageable<Transaction[]>;
+    allTransactionsPaginated(address: Address, params?: QueryParams): Pageable<Transaction[]>;
     /**
      * Gets the array of transactions for which an account is the sender or receiver and which have not yet been included in a block
      * @param address - NEM Address
@@ -187,6 +179,7 @@ export declare class AccountHttp extends HttpEndpoint {
      */
     getHistoricalAccountData(address: Address, startHeight: number, endHeight: number, increment: number): Observable<AccountHistoricalInfo[]>;
 }
+
 ```
 
 ### QueryParams
