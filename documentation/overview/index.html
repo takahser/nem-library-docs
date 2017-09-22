@@ -251,11 +251,11 @@ In case that you need to change between environments in runtime, call <code>NEML
 <h1 id="configure-endpoints">Configure endpoints</h1>
 <p>Each infrastructure endpoints share the same constructor.</p>
 <pre><code class="typescript">// Using custom NIS Node
-const accountHttp = new AccountHttp({
+const accountHttp = new AccountHttp([{
     protocol: &quot;http&quot;,
     domain: &quot;104.128.226.60&quot;,
     port: &quot;7890&quot;
-});
+}]);
 
 // Using default NIS Node
 const accountHttpWithDefaultConfig = new AccountHttp();
