@@ -29,11 +29,11 @@ Each infrastructure endpoints share the same constructor.
  
 ```typescript
 // Using custom NIS Node
-const accountHttp = new AccountHttp({
+const accountHttp = new AccountHttp([{
     protocol: "http",
     domain: "104.128.226.60",
     port: "7890"
-});
+}]);
 
 // Using default NIS Node
 const accountHttpWithDefaultConfig = new AccountHttp();
