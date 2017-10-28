@@ -5,6 +5,8 @@ for creating Blockchain applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
+[Source Code Repository on GitHub](https://github.com/aleixmorgadas/nem-library-ts)
+
 #### stable version 0.10.0
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
