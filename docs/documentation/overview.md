@@ -20,8 +20,8 @@ Your application can have two modes, `NetworkTypes.TEST_NET` and `NetworkTypes.M
 Depending on the environment that you want to use, you should call the bootstrap method, with `MAIN_NET`
 or `TEST_NET`.
 
-Because the application should have a unique environment, call two times `NEMLibrary.bootstrap(_)` will throw an `Error`.
-In case that you need to change between environments in runtime, call `NEMLibrary.reset()` first.
+Because the application should have a unique environment, calling `NEMLibrary.bootstrap(_)` multiple times will throw an `Error`.
+In case you need to change between environments in runtime, call `NEMLibrary.reset()` first.
 
 # Configure endpoints
 
