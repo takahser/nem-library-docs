@@ -10,7 +10,7 @@ Crypto currencies have the ability to roll back part the block chain. This is es
 
 ```typescript
 export declare class TransactionHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Send the signed transaction

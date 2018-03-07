@@ -8,7 +8,7 @@ NEM mosaics are assets that expose additional properties and other features. Eac
 
 ```typescript
 export declare class MosaicHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Gets the mosaic definitions for a given namespace. The request supports paging.

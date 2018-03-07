@@ -13,7 +13,7 @@ export declare class AccountListener extends Listener {
      * Constructor
      * @param nodes
      */
-    constructor(nodes?: WebSocketConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Start listening updates
@@ -104,7 +104,7 @@ export declare class BlockchainListener extends Listener {
      * Constructor
      * @param nodes
      */
-    constructor(nodes?: WebSocketConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Start listening new blocks
@@ -135,7 +135,7 @@ export declare class UnconfirmedTransactionListener extends Listener {
      * Constructor
      * @param nodes
      */
-    constructor(nodes?: WebSocketConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Start listening new unconfirmed transactions
@@ -162,7 +162,7 @@ export declare class ConfirmedTransactionListener extends Listener {
      * Constructor
      * @param nodes
      */
-    constructor(nodes?: WebSocketConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Start listening new confirmed transactions

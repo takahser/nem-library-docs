@@ -22,7 +22,7 @@ NEM Library replaces the Keypair model, which usually holds the public and priva
 
 ```typescript
 export declare class AccountHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
     /**
      * Gets an AccountInfoWithMetaData for an account.
      * @param address - Address

@@ -16,7 +16,7 @@ export declare type BlockHeight = number;
 export declare type BlockChainScore = number;
 
 export declare class BlockHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
 
     /**
      * Gets a block from the chain that has a given hash.
@@ -69,7 +69,7 @@ Block {
 
 ```typescript
 export declare class ChainHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
     /**
      * Gets the current height of the block chain.
      * @returns Observable<BlockHeight>

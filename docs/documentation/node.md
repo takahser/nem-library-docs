@@ -8,7 +8,7 @@ Nodes are the entities that exchange data in a network. A node is essentially a 
 
 ```typescript
 export declare class NodeHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
 
     /**
      * Gets basic information about a node

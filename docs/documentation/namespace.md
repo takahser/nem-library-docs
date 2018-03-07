@@ -10,7 +10,7 @@ Namespaces have certain restrictions with respected to the characters being allo
 
 ```typescript
 export declare class NamespaceHttp extends HttpEndpoint {
-    constructor(nodes?: ServerConfig[]);
+    constructor(nodes?: NisConfig[]);
     
     /**
      * Gets the root namespaces. The requests supports paging, i.e. retrieving the root namespaces in batches of a specified size.
